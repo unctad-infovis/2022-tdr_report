@@ -6,9 +6,7 @@ import CSVtoJSON from './helpers/CSVtoJSON.js';
 
 import BarChart from './helpers/BarChart.jsx';
 
-// const appID = '#app-root-2022-tdr_report';
-
-function Figure2_3() {
+function Figure2_03() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
@@ -31,10 +29,10 @@ function Figure2_3() {
 
   return (
     <div className="app">
-      {dataFigure && <BarChart idx="2_3" data={dataFigure} data_decimals={1} source="UNCTAD secretariat calculations based on Refinitiv" note="Estimated change in per cent of the nominal exchange rate against the US dollar between 1 January 2022 and 8 July 2022. This includes data for common currency areas, such as the East Caribbean dollar and the West and Central Africa CFA franc." sub_title="January–July 2022, percentage" title="Expected output GDB in 2023" xlabel="" /> }
+      {dataFigure && <BarChart idx="2_03" data={dataFigure} data_decimals={1} source="UNCTAD secretariat calculations based on Refinitiv" note="Estimated change in per cent of the nominal exchange rate against the US dollar between 1 January 2022 and 8 July 2022. This includes data for common currency areas, such as the East Caribbean dollar and the West and Central Africa CFA franc." sub_title="January–July 2022, percentage" title="Expected output GDB in 2023" xlabel="" ymax={90} ymin={0} />}
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }
 
-export default Figure2_3;
+export default Figure2_03;

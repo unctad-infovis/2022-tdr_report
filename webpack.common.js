@@ -77,6 +77,11 @@ module.exports = {
         { from: 'assets/data/Fig_1_9 - data.csv', to: '../public/assets/data/2022-tdr_report_figure_1_09.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/Fig_1_10 - data.csv', to: '../public/assets/data/2022-tdr_report_figure_1_10.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/Fig_2_3 - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_03.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Fig_2_5a - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_05a.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Fig_2_5b - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_05b.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Fig_2_6 - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_06.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Fig_2_9a - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_09a.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Fig_2_9a - data.csv', to: '../public/assets/data/2022-tdr_report_figure_2_09b.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'src/font/', to: '../public/font/', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: './favicon.png', to: '../public', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }}
       ]

@@ -4,9 +4,9 @@ import '../styles/styles.less';
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 
-import ColumnChart from './helpers/ColumnChart.jsx';
+import LineChart from './helpers/LineChart.jsx';
 
-function Figure1_10() {
+function Figure2_05a() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
@@ -17,7 +17,7 @@ function Figure1_10() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_10.csv' : './assets/data/2022-tdr_report_figure_1_10.csv';
+    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_05a.csv' : './assets/data/2022-tdr_report_figure_2_05a.csv';
     try {
       fetch(data_file)
         .then(response => response.text())
@@ -29,10 +29,10 @@ function Figure1_10() {
 
   return (
     <div className="app">
-      {dataFigure && <ColumnChart idx="1_10" data={dataFigure} data_decimals={1} source="UNCTAD secretariat calculations based on the United Nations Global Policy Model" sub_title="G20 countries" title="Expected output GDB in 2023" xlabel="" ymax={10} ymin={-16} />}
+      {dataFigure && <LineChart idx="2_05a" data={dataFigure} data_decimals={0} source="" sub_title="" title="Energy" xlabel="" />}
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }
 
-export default Figure1_10;
+export default Figure2_05a;

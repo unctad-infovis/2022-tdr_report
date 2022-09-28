@@ -26,7 +26,7 @@ Highcharts.setOptions({
 });
 
 function ColumnChart({
-  idx, data, data_decimals, source, sub_title, title, xlabel
+  idx, data, data_decimals, source, sub_title, title, xlabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -155,6 +155,7 @@ function ColumnChart({
         },
         labels: {
           rotation: -60,
+          formatter: (el) => ((el.value === 'Euro area') ? `<strong>${el.value}</strong>` : el.value),
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
@@ -204,8 +205,8 @@ function ColumnChart({
         endOnTick: false,
         lineColor: 'transparent',
         lineWidth: 0,
-        max: 10,
-        min: -16,
+        max: ymax,
+        min: ymin,
         opposite: false,
         startOnTick: false,
         plotLines: [{
@@ -235,7 +236,7 @@ function ColumnChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, xlabel]);
+  }, [idx, data, data_decimals, xlabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -249,17 +250,17 @@ function ColumnChart({
     <div className="chart_container">
       <div ref={chartRef}>
         {(isVisible) && (
-        <div>
-          <div className="title_container">
-            <h3>{title}</h3>
-            {sub_title && <h4>{sub_title}</h4>}
+          <div>
+            <div className="title_container">
+              <h3>{title}</h3>
+              {sub_title && <h4>{sub_title}</h4>}
+            </div>
+            <div className="chart" id={`chartIdx${idx}`} />
+            <div className="source_container">
+              <span className="source">Source:</span>
+              <span className="source_text">{source}</span>
+            </div>
           </div>
-          <div className="chart" id={`chartIdx${idx}`} />
-          <div className="source_container">
-            <span className="source">Source:</span>
-            <span className="source_text">{source}</span>
-          </div>
-        </div>
         ) }
       </div>
     </div>
@@ -273,7 +274,9 @@ ColumnChart.propTypes = {
   source: PropTypes.string.isRequired,
   sub_title: PropTypes.string,
   title: PropTypes.string.isRequired,
-  xlabel: PropTypes.string.isRequired
+  xlabel: PropTypes.string.isRequired,
+  ymax: PropTypes.number.isRequired,
+  ymin: PropTypes.number.isRequired
 };
 
 ColumnChart.defaultProps = {

@@ -26,7 +26,7 @@ Highcharts.setOptions({
 });
 
 function BarChart({
-  idx, data, data_decimals, note, source, sub_title, title, xlabel
+  idx, data, data_decimals, note, source, sub_title, title, xlabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -154,6 +154,7 @@ function BarChart({
           width: 1
         },
         labels: {
+          formatter: (el) => el.value,
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -203,7 +204,8 @@ function BarChart({
         endOnTick: false,
         lineColor: 'transparent',
         lineWidth: 0,
-        max: 90,
+        max: ymax,
+        min: ymin,
         opposite: false,
         startOnTick: false,
         plotLines: [{
@@ -233,7 +235,7 @@ function BarChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, xlabel]);
+  }, [idx, data, data_decimals, xlabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -247,22 +249,24 @@ function BarChart({
     <div className="chart_container">
       <div ref={chartRef}>
         {(isVisible) && (
-        <div>
-          <div className="title_container">
-            <h3>{title}</h3>
-            {sub_title && <h4>{sub_title}</h4>}
+          <div>
+            <div className="title_container">
+              <h3>{title}</h3>
+              {sub_title && <h4>{sub_title}</h4>}
+            </div>
+            <div className="chart" id={`chartIdx${idx}`} />
+            <div className="source_container">
+              <span className="source">Source:</span>
+              <span className="source_text">{source}</span>
+            </div>
+            {note && (
+              <div className="note_container">
+                <span className="note">Note:</span>
+                <span className="note_text">{note}</span>
+              </div>
+            )}
           </div>
-          <div className="chart" id={`chartIdx${idx}`} />
-          <div className="source_container">
-            <span className="source">Source:</span>
-            <span className="source_text">{source}</span>
-          </div>
-          <div className="note_container">
-            <span className="note">Note:</span>
-            <span className="note_text">{note}</span>
-          </div>
-        </div>
-        ) }
+        )}
       </div>
     </div>
   );
@@ -272,14 +276,17 @@ BarChart.propTypes = {
   idx: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
-  note: PropTypes.string.isRequired,
+  note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   sub_title: PropTypes.string,
   title: PropTypes.string.isRequired,
-  xlabel: PropTypes.string.isRequired
+  xlabel: PropTypes.string.isRequired,
+  ymax: PropTypes.number.isRequired,
+  ymin: PropTypes.number.isRequired
 };
 
 BarChart.defaultProps = {
+  note: false,
   sub_title: false
 };
 
