@@ -2,6 +2,8 @@ import React from 'react';
 
 import { createRoot } from 'react-dom/client';
 
+import Video from './jsx/Video.jsx';
+import Quote from './jsx/Quote.jsx';
 import Figure104 from './jsx/Figure1_04.jsx';
 import Figure108 from './jsx/Figure1_08.jsx';
 import Figure109 from './jsx/Figure1_09.jsx';
@@ -15,6 +17,8 @@ import Figure209a from './jsx/Figure2_09a.jsx';
 import Figure209b from './jsx/Figure2_09b.jsx';
 import Figure309 from './jsx/Figure3_09.jsx';
 
+createRoot(document.getElementById('app-root-2022-tdr_report_video')).render(<Video />);
+createRoot(document.getElementById('app-root-2022-tdr_report_quote')).render(<Quote />);
 createRoot(document.getElementById('app-root-2022-tdr_report_figure_1_04')).render(<Figure104 />);
 createRoot(document.getElementById('app-root-2022-tdr_report_figure_1_08')).render(<Figure108 />);
 createRoot(document.getElementById('app-root-2022-tdr_report_figure_1_09')).render(<Figure109 />);

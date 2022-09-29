@@ -284,6 +284,7 @@ function BarChart({
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>
+      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }
