@@ -26,7 +26,7 @@ Highcharts.setOptions({
 });
 
 function BarChart({
-  idx, data, data_decimals, note, source, sub_title, title, xlabel, ylabel, ymax, ymin
+  idx, data, data_decimals, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -34,7 +34,7 @@ function BarChart({
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       chart: {
-        height: 440,
+        height: 550,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -51,7 +51,7 @@ function BarChart({
             stroke: '#7c7067',
             style: {
               fontFamily: 'Roboto',
-              fontSize: 13,
+              fontSize: '13px',
               fontWeight: 400
             }
           }
@@ -77,19 +77,36 @@ function BarChart({
       },
       legend: {
         align: 'right',
-        enabled: false,
-        floating: true,
+        enabled: (data.length > 1),
         itemStyle: {
           color: '#000',
+          cursor: 'default',
           fontFamily: 'Roboto',
-          fontSize: 22,
+          fontSize: '16px',
           fontWeight: 400
         },
-        verticalAlign: 'top',
-        y: -20
+        layout: 'horizontal',
+        margin: 0,
+        verticalAlign: 'top'
+      },
+      subtitle: {
+        align: 'left',
+        enabled: true,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '20px',
+          fontWeight: 400
+        },
+        text: subtitle
       },
       title: {
-        text: null
+        align: 'left',
+        style: {
+          color: '#000',
+          fontSize: '30px',
+          fontWeight: 700
+        },
+        text: `${idx} ${title}`
       },
       tooltip: {
         backgroundColor: '#fff',
@@ -122,7 +139,7 @@ function BarChart({
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
-              fontSize: 20,
+              fontSize: '22px',
               fontWeight: 400
             }
           },
@@ -159,7 +176,7 @@ function BarChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           }
         },
@@ -197,7 +214,7 @@ function BarChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           }
         },
@@ -223,7 +240,7 @@ function BarChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           },
           text: ylabel,
@@ -232,7 +249,7 @@ function BarChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, xlabel, ylabel, ymax, ymin]);
+  }, [idx, data, data_decimals, subtitle, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -247,10 +264,6 @@ function BarChart({
       <div ref={chartRef}>
         {(isVisible) && (
           <div>
-            <div className="title_container">
-              <h3>{`${idx} ${title}`}</h3>
-              {sub_title && <h4>{sub_title}</h4>}
-            </div>
             <div className="chart" id={`chartIdx${idx}`} />
             <div className="source_container">
               <span className="source">Source:</span>
@@ -275,7 +288,7 @@ BarChart.propTypes = {
   data_decimals: PropTypes.number.isRequired,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
-  sub_title: PropTypes.string,
+  subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
   ylabel: PropTypes.string,
@@ -285,7 +298,7 @@ BarChart.propTypes = {
 
 BarChart.defaultProps = {
   note: false,
-  sub_title: false,
+  subtitle: false,
   xlabel: '',
   ylabel: '',
   ymax: undefined,

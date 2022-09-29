@@ -12,6 +12,7 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
+import highchartsExporting from 'highcharts/modules/exporting';
 import highchartsRegression from 'highcharts-regression';
 
 // Load helpers.
@@ -19,6 +20,7 @@ import roundNr from './RoundNr.js';
 
 highchartsAccessibility(Highcharts);
 highchartsRegression(Highcharts);
+highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -28,7 +30,7 @@ Highcharts.setOptions({
 });
 
 function LineChart({
-  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, sub_title, tick_interval, title, xlabel, ymax, ymin, ystep
+  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
 }) {
   const chartRef = useRef();
 
@@ -62,9 +64,7 @@ function LineChart({
             }
           }
         },
-        height: 440,
-        marginRight: [40],
-        marginTop: [40],
+        height: 550,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -81,7 +81,7 @@ function LineChart({
             stroke: '#7c7067',
             style: {
               fontFamily: 'Roboto',
-              fontSize: 13,
+              fontSize: '13px',
               fontWeight: 400
             }
           }
@@ -107,19 +107,35 @@ function LineChart({
       legend: {
         align: 'right',
         enabled: (data.length > 1),
-        floating: true,
         itemStyle: {
           color: '#000',
           cursor: 'default',
           fontFamily: 'Roboto',
-          fontSize: 22,
+          fontSize: '16px',
           fontWeight: 400
         },
-        verticalAlign: 'top',
-        y: -20
+        layout: 'horizontal',
+        margin: 0,
+        verticalAlign: 'top'
+      },
+      subtitle: {
+        align: 'left',
+        enabled: true,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '20px',
+          fontWeight: 400
+        },
+        text: subtitle
       },
       title: {
-        text: null
+        align: 'left',
+        style: {
+          color: '#000',
+          fontSize: '30px',
+          fontWeight: 700
+        },
+        text: `${idx} ${title}`
       },
       tooltip: {
         backgroundColor: '#fff',
@@ -151,7 +167,7 @@ function LineChart({
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
-              fontSize: 20,
+              fontSize: '22px',
               fontWeight: 400
             }
           },
@@ -225,7 +241,7 @@ function LineChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           },
           useHTML: false,
@@ -244,7 +260,7 @@ function LineChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           },
           text: xlabel
@@ -270,7 +286,7 @@ function LineChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           }
         },
@@ -294,7 +310,7 @@ function LineChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           },
           text: '',
@@ -305,7 +321,7 @@ function LineChart({
         type: 'linear'
       }
     });
-  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, tick_interval, xlabel, ymax, ymin, ystep]);
+  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -320,10 +336,6 @@ function LineChart({
       <div ref={chartRef}>
         {(isVisible) && (
         <div>
-          <div className="title_container">
-            <h3>{`${idx} ${title}`}</h3>
-            {sub_title && <h4>{sub_title}</h4>}
-          </div>
           <div className="chart" id={`chartIdx${idx}`} />
           <div className="source_container">
             <span className="source">Source:</span>
@@ -345,7 +357,7 @@ LineChart.propTypes = {
   line_width: PropTypes.number,
   show_only_first_and_last_labels: PropTypes.bool,
   source: PropTypes.string.isRequired,
-  sub_title: PropTypes.string,
+  subtitle: PropTypes.string,
   tick_interval: PropTypes.number,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
@@ -359,7 +371,7 @@ LineChart.defaultProps = {
   labels: true,
   line_width: 5,
   show_only_first_and_last_labels: false,
-  sub_title: false,
+  subtitle: false,
   tick_interval: 1,
   xlabel: '',
   ymax: undefined,

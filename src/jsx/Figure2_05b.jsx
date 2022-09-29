@@ -40,7 +40,7 @@ function Figure2_05b() {
         data_decimals={1}
         idx="2_05b"
         source="UNCTAD secretariat calculations based on World Bank data"
-        sub_title=""
+        subtitle=""
         title="Top 20 Countries, 2020"
         ylabel="Percentage"
         ymax={109}

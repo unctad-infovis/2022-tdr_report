@@ -71,7 +71,7 @@ function Figure1_04() {
         labels={false}
         show_only_first_and_last_labels
         source=""
-        sub_title="Income from employment as percentage of GDP"
+        subtitle="Income from employment as percentage of GDP"
         tick_interval={1}
         title="Labour shares"
         xlabel="Year"

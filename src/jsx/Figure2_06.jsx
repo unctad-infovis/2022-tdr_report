@@ -36,6 +36,7 @@ function Figure2_06() {
     <div className="app">
       {dataFigure && (
       <LineChart
+        allow_decimals={false}
         data={dataFigure}
         data_decimals={2}
         idx="2_06"
@@ -43,7 +44,7 @@ function Figure2_06() {
         note="Price indices correspond to Dow Jones Commodity Index, except “Natural Gas (Europe)” which corresponds to Hamburg Institute of International Economics (HWWI) Natural Gas Europe price index and “Iron Ore” which corresponds to Credit Suisse Commodity Benchmark (CSCB) iron ore TR index."
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on Refinitiv data."
-        sub_title="January 2015 – July 2022"
+        subtitle="January 2015 – July 2022"
         tick_interval={13}
         title="Daily commodity price indices by commodity group and product"
       />

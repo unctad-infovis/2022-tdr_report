@@ -36,6 +36,7 @@ function Figure2_09a() {
     <div className="app">
       {dataFigure && (
       <LineChart
+        allow_decimals={false}
         data={dataFigure}
         data_decimals={0}
         idx="2_09a"
@@ -43,7 +44,7 @@ function Figure2_09a() {
         line_width={3}
         show_only_first_and_last_labels
         source=""
-        sub_title=""
+        subtitle=""
         tick_interval={493}
         title=""
         ymin={0}

@@ -42,7 +42,7 @@ function Figure1_25() {
         labels={false}
         show_only_first_and_last_labels
         source="United States Bureau of Economics Analysis"
-        sub_title="Ratio of corporate profits to gross output"
+        subtitle="Ratio of corporate profits to gross output"
         tick_interval={1}
         title="Aggregate markup in the United States"
       />
