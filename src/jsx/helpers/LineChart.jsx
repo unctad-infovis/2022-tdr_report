@@ -40,31 +40,34 @@ function LineChart({
       chart: {
         events: {
           load() {
-            if (show_only_first_and_last_labels === true) {
-              // eslint-disable-next-line react/no-this-in-sfc
-              this.series.forEach((series) => {
-                if (series.userOptions.isRegressionLine !== true) {
-                  series.points[series.points.length - 1].update({
-                    dataLabels: {
-                      backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                      enabled: true,
-                      padding: 0,
-                      x: 0,
-                      y: 25
-                    }
-                  });
-                  series.points[0].update({
-                    dataLabels: {
-                      enabled: true,
-                      y: -10
-                    }
-                  });
-                }
-              });
-            }
+            setTimeout(() => {
+              if (show_only_first_and_last_labels === true) {
+                // eslint-disable-next-line react/no-this-in-sfc
+                this.series.forEach((series) => {
+                  if (series.userOptions.isRegressionLine !== true) {
+                    series.points[series.points.length - 1].update({
+                      dataLabels: {
+                        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                        enabled: true,
+                        padding: 0,
+                        x: 0,
+                        y: 25
+                      }
+                    });
+                    series.points[0].update({
+                      dataLabels: {
+                        enabled: true,
+                        y: -10
+                      }
+                    });
+                  }
+                });
+              }
+            }, 1000);
           }
         },
         height: 550,
+        marginRight: 40,
         resetZoomButton: {
           theme: {
             fill: '#fff',
