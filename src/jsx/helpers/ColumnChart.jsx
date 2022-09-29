@@ -26,13 +26,26 @@ Highcharts.setOptions({
 });
 
 function ColumnChart({
-  idx, data, data_decimals, source, subtitle, title, xlabel, ymax, ymin
+  idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
+      caption: {
+        align: 'left',
+        margin: 15,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '11px',
+          maxWidth: '95%',
+          whiteSpace: 'normal'
+        },
+        text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        verticalAlign: 'bottom',
+        x: 0
+      },
       chart: {
         height: 650,
         resetZoomButton: {
@@ -128,18 +141,21 @@ function ColumnChart({
       },
       plotOptions: {
         column: {
+          animation: {
+            duration: 2000,
+          },
           cursor: 'pointer',
-          groupPadding: 0,
+          groupPadding: 0.05,
           dataLabels: {
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals)}</div>`;
+              return `${roundNr(this.y, data_decimals)}`;
             },
+            color: 'rgba(0, 0, 0, 0.8)',
             style: {
-              color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
-              fontSize: '18px',
+              fontSize: '13px',
               fontWeight: 400
             }
           },
@@ -253,28 +269,20 @@ function ColumnChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, subtitle, title, xlabel, ymax, ymin]);
+  }, [idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
       setTimeout(() => {
         createChart();
-      }, 300);
+      }, 600);
     }
   }, [createChart, isVisible]);
 
   return (
     <div className="chart_container">
       <div ref={chartRef}>
-        {(isVisible) && (
-          <div>
-            <div className="chart" id={`chartIdx${idx}`} />
-            <div className="source_container">
-              <span className="source">Source:</span>
-              <span className="source_text">{source}</span>
-            </div>
-          </div>
-        ) }
+        {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>
     </div>
   );
@@ -284,6 +292,7 @@ ColumnChart.propTypes = {
   idx: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
+  note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
@@ -293,6 +302,7 @@ ColumnChart.propTypes = {
 };
 
 ColumnChart.defaultProps = {
+  note: false,
   subtitle: false,
   xlabel: '',
   ymax: undefined,

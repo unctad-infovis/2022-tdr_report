@@ -17,7 +17,7 @@ function Figure2_09a() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_09a.csv' : './assets/data/2022-tdr_report_figure_2_09a.csv';
+    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_09a_monthly.csv' : './assets/data/2022-tdr_report_figure_2_09a_monthly.csv';
     try {
       fetch(data_file)
         .then((response) => {
@@ -46,7 +46,8 @@ function Figure2_09a() {
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on Refinitiv data."
         subtitle="Index numbers, 2015=100"
-        tick_interval={493}
+        // tick_interval={493}
+        tick_interval={3}
         title="Grain price indices, Jan. 2015–July 2022"
         ymin={0}
       />

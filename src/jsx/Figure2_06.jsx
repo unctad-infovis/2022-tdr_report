@@ -41,12 +41,13 @@ function Figure2_06() {
         data_decimals={2}
         idx="2_06"
         labels={false}
+        line_width={4}
         note="The index is normalized such that a zero indicates the index is at its average value, with positive values representing how many standard deviations the index is above this average value (and negative values representing the opposite)."
         show_only_first_and_last_labels
-        source="UBenigno et al. (2022)."
+        source="Benigno et al. (2022)."
         subtitle="Standard deviations from average value"
         tick_interval={13}
-        title="Global supply chain pressure index (GSCPI), January 2005 – June 2022"
+        title="Global supply chain pressure index (GSCPI), January 2005–June 2022"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

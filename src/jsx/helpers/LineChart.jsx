@@ -30,13 +30,26 @@ Highcharts.setOptions({
 });
 
 function LineChart({
-  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
+  allow_decimals, data, data_decimals, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
 }) {
   const chartRef = useRef();
 
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
+      caption: {
+        align: 'left',
+        margin: 15,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '11px',
+          maxWidth: '95%',
+          whiteSpace: 'normal'
+        },
+        text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        verticalAlign: 'bottom',
+        x: 0
+      },
       chart: {
         events: {
           load() {
@@ -47,7 +60,6 @@ function LineChart({
                   if (series.userOptions.isRegressionLine !== true) {
                     series.points[series.points.length - 1].update({
                       dataLabels: {
-                        backgroundColor: 'rgba(255, 255, 255, 0.5)',
                         enabled: true,
                         padding: 0,
                         x: 0,
@@ -63,7 +75,7 @@ function LineChart({
                   }
                 });
               }
-            }, 1000);
+            }, 1800);
           }
         },
         height: 550,
@@ -160,6 +172,9 @@ function LineChart({
       },
       plotOptions: {
         line: {
+          animation: {
+            duration: 2000,
+          },
           cursor: 'pointer',
           dataLabels: {
             enabled: labels,
@@ -171,7 +186,8 @@ function LineChart({
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
               fontSize: '22px',
-              fontWeight: 400
+              fontWeight: 400,
+              textOutline: '3px solid #fff'
             }
           },
           events: {
@@ -324,28 +340,20 @@ function LineChart({
         type: 'linear'
       }
     });
-  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
+  }, [allow_decimals, data, data_decimals, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
 
   useEffect(() => {
     if (isVisible === true) {
       setTimeout(() => {
         createChart();
-      }, 300);
+      }, 600);
     }
   }, [createChart, isVisible]);
 
   return (
     <div className="chart_container">
       <div ref={chartRef}>
-        {(isVisible) && (
-        <div>
-          <div className="chart" id={`chartIdx${idx}`} />
-          <div className="source_container">
-            <span className="source">Source:</span>
-            <span className="source_text">{source}</span>
-          </div>
-        </div>
-        ) }
+        {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>
     </div>
   );
@@ -358,6 +366,7 @@ LineChart.propTypes = {
   idx: PropTypes.string.isRequired,
   labels: PropTypes.bool,
   line_width: PropTypes.number,
+  note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   show_only_first_and_last_labels: PropTypes.bool,
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
@@ -370,6 +379,7 @@ LineChart.propTypes = {
 };
 
 LineChart.defaultProps = {
+  note: false,
   allow_decimals: true,
   labels: true,
   line_width: 5,

@@ -10,10 +10,10 @@ function Figure1_04() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
-  const cleanData = (data) => data.map((el, i) => ({
+  const cleanData = (data) => data.map((el) => ({
     data: Object.entries(el).map((val, j) => ([j, parseFloat(val[1])])).filter(val => !Number.isNaN(val[1])),
     labels: Object.keys(el).filter(val => val !== 'Name'),
-    name: el.Name,
+    name: el.Name/* ,
     regression: true,
     regressionSettings: {
       color: (i === 1) ? '#72bf44' : '#0077b8',
@@ -41,7 +41,7 @@ function Figure1_04() {
           }
         }
       }
-    },
+    } */
   }));
 
   useEffect(() => {

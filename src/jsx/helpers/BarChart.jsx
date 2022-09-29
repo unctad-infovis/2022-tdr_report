@@ -26,13 +26,26 @@ Highcharts.setOptions({
 });
 
 function BarChart({
-  idx, data, data_decimals, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+  idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
+      caption: {
+        align: 'left',
+        margin: 15,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '11px',
+          maxWidth: '95%',
+          whiteSpace: 'normal'
+        },
+        text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        verticalAlign: 'bottom',
+        x: 0
+      },
       chart: {
         height: 700,
         resetZoomButton: {
@@ -128,21 +141,26 @@ function BarChart({
       },
       plotOptions: {
         bar: {
+          animation: {
+            duration: 2000,
+          },
           cursor: 'pointer',
           groupPadding: 0,
           dataLabels: {
-            allowOverlap: true,
+            align: (labels_inside) ? 'left' : undefined,
+            inside: (labels_inside === true) ? true : undefined,
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals).toFixed(data_decimals)}</div>`;
+              return `${roundNr(this.y, data_decimals).toFixed(data_decimals)}`;
             },
             step: 2,
+            color: (labels_inside) ? '#fff' : 'rgba(0, 0, 0, 0.8)',
             style: {
-              color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
               fontSize: '18px',
-              fontWeight: 400
+              fontWeight: 400,
+              textOutline: 'none'
             }
           },
         }
@@ -251,34 +269,20 @@ function BarChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
       setTimeout(() => {
         createChart();
-      }, 300);
+      }, 600);
     }
   }, [createChart, isVisible]);
 
   return (
     <div className="chart_container">
       <div ref={chartRef}>
-        {(isVisible) && (
-          <div>
-            <div className="chart" id={`chartIdx${idx}`} />
-            <div className="source_container">
-              <span className="source">Source:</span>
-              <span className="source_text">{source}</span>
-            </div>
-            {note && (
-              <div className="note_container">
-                <span className="note">Note:</span>
-                <span className="note_text">{note}</span>
-              </div>
-            )}
-          </div>
-        )}
+        {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>
     </div>
   );
@@ -288,6 +292,7 @@ BarChart.propTypes = {
   idx: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
+  labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
@@ -299,6 +304,7 @@ BarChart.propTypes = {
 };
 
 BarChart.defaultProps = {
+  labels_inside: false,
   note: false,
   subtitle: false,
   xlabel: '',

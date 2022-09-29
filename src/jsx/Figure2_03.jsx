@@ -39,6 +39,7 @@ function Figure2_03() {
         idx="2_03"
         data={dataFigure}
         data_decimals={1}
+        labels_inside
         source="UNCTAD secretariat calculations based on Refinitiv."
         note="Estimated change in per cent of the nominal exchange rate against the United States dollar between 1 January 2022 and 8 July 2022."
         subtitle="Percentage"
