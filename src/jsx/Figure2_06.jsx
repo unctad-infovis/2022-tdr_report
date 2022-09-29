@@ -41,12 +41,12 @@ function Figure2_06() {
         data_decimals={2}
         idx="2_06"
         labels={false}
-        note="Price indices correspond to Dow Jones Commodity Index, except “Natural Gas (Europe)” which corresponds to Hamburg Institute of International Economics (HWWI) Natural Gas Europe price index and “Iron Ore” which corresponds to Credit Suisse Commodity Benchmark (CSCB) iron ore TR index."
+        note="The index is normalized such that a zero indicates the index is at its average value, with positive values representing how many standard deviations the index is above this average value (and negative values representing the opposite)."
         show_only_first_and_last_labels
-        source="UNCTAD secretariat calculations based on Refinitiv data."
-        subtitle="January 2015 – July 2022"
+        source="UBenigno et al. (2022)."
+        subtitle="Standard deviations from average value"
         tick_interval={13}
-        title="Daily commodity price indices by commodity group and product"
+        title="Global supply chain pressure index (GSCPI), January 2005 – June 2022"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

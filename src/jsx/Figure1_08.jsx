@@ -41,9 +41,9 @@ function Figure1_08() {
         data_decimals={1}
         idx="1_08"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="Percentage changes"
+        subtitle="Percentage change"
         tick_interval={1}
-        title="Growth cycles before and after the GFC and the covid shock"
+        title="Global growth cycles before and after the GFC and the Covid shock, global economy"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

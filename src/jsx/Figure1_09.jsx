@@ -47,8 +47,8 @@ function Figure1_09() {
         data_decimals={0}
         idx="1_09"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="2016=100"
-        title="Covid recovery to pre-covid trend"
+        subtitle="Index numbers, 2016=100"
+        title="Covid recovery compared to pre-Covid trend, 2016–2023"
         xlabel="Year"
       />
       )}

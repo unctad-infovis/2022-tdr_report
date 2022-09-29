@@ -42,11 +42,12 @@ function Figure2_09a() {
         idx="2_09a"
         labels={false}
         line_width={3}
+        note="Price indices correspond to Dow Jones Commodity Index, except “Natural Gas (Europe)” which corresponds to Ham- burg Institute of International Economics (HWWI) Natural Gas Europe price index and “Iron Ore” which corresponds to Credit Suisse Commodity Benchmark (CSCB) iron ore TR index."
         show_only_first_and_last_labels
-        source=""
-        subtitle=""
+        source="UNCTAD secretariat calculations based on Refinitiv data."
+        subtitle="Index numbers, 2015=100"
         tick_interval={493}
-        title=""
+        title="Grain price indices, Jan. 2015–July 2022"
         ymin={0}
       />
       )}

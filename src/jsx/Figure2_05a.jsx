@@ -42,10 +42,10 @@ function Figure2_05a() {
         data_decimals={0}
         labels={false}
         show_only_first_and_last_labels
-        source="UNCTAD secretariat calculations based on World Bank data"
-        subtitle="Percentage"
+        source="UNCTAD secretariat calculations based on World Bank data."
+        subtitle="Income group averages, percentage"
         tick_interval={1}
-        title="Income group averages, developing countries"
+        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups, 2010–2021"
         xlabel="Year"
       />
       )}

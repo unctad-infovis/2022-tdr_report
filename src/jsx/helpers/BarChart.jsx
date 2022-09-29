@@ -34,7 +34,7 @@ function BarChart({
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       chart: {
-        height: 550,
+        height: 700,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -94,7 +94,7 @@ function BarChart({
         enabled: true,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '20px',
+          fontSize: '18px',
           fontWeight: 400
         },
         text: subtitle
@@ -131,15 +131,17 @@ function BarChart({
           cursor: 'pointer',
           groupPadding: 0,
           dataLabels: {
+            allowOverlap: true,
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals)}</div>`;
+              return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals).toFixed(data_decimals)}</div>`;
             },
+            step: 2,
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
-              fontSize: '22px',
+              fontSize: '18px',
               fontWeight: 400
             }
           },

@@ -34,7 +34,7 @@ function ColumnChart({
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       chart: {
-        height: 550,
+        height: 650,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -139,7 +139,7 @@ function ColumnChart({
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
-              fontSize: '22px',
+              fontSize: '18px',
               fontWeight: 400
             }
           },

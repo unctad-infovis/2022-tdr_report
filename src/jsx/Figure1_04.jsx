@@ -69,11 +69,12 @@ function Figure1_04() {
         data_decimals={1}
         idx="1_04"
         labels={false}
+        note="Labour share is calculated as the ratio of the sum of compensation of employees and mixed income to GDP."
         show_only_first_and_last_labels
-        source=""
-        subtitle="Income from employment as percentage of GDP"
+        source="United Nations Global Policy Model database."
+        subtitle="Percentage of the GDP"
         tick_interval={1}
-        title="Labour shares"
+        title="Labour share, 1980–2022"
         xlabel="Year"
       />
       )}

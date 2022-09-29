@@ -41,11 +41,11 @@ function Figure3_09() {
         idx="3_09"
         labels={false}
         show_only_first_and_last_labels
-        source="UNCTAD secretariat calculations based on United Stations Global Policy Model."
-        subtitle="Percentage of GDP; PPP"
+        source=""
+        subtitle=""
         tick_interval={1}
-        title="Private investment"
-        xlabel="Percentage"
+        title=""
+        xlabel=""
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

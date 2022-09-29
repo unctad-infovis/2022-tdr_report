@@ -39,10 +39,10 @@ function Figure2_03() {
         idx="2_03"
         data={dataFigure}
         data_decimals={1}
-        source="UNCTAD secretariat calculations based on Refinitiv"
-        note="Estimated change in per cent of the nominal exchange rate against the US dollar between 1 January 2022 and 8 July 2022. This includes data for common currency areas, such as the East Caribbean dollar and the West and Central Africa CFA franc."
-        subtitle="Selected developing countries, January–July 2022"
-        title="Nominal exchange rate depreciations against the US dollar"
+        source="UNCTAD secretariat calculations based on Refinitiv."
+        note="Estimated change in per cent of the nominal exchange rate against the United States dollar between 1 January 2022 and 8 July 2022."
+        subtitle="Percentage"
+        title="Nominal exchange rate depreciations against the United States dollar, selected developing countries, January–July 2022"
         ymax={90}
         ymin={0}
         ylabel="Percentage"

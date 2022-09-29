@@ -39,9 +39,9 @@ function Figure2_05b() {
         data={dataFigure}
         data_decimals={1}
         idx="2_05b"
-        source="UNCTAD secretariat calculations based on World Bank data"
-        subtitle=""
-        title="Top 20 Countries, 2020"
+        source="UNCTAD secretariat calculations based on World Bank data."
+        subtitle="Top 20 countries in 2020, percentage"
+        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups, 2010–2021"
         ylabel="Percentage"
         ymax={109}
         ymin={0}

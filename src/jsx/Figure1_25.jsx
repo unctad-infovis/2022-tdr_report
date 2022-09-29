@@ -40,11 +40,12 @@ function Figure1_25() {
         data_decimals={1}
         idx="1_25"
         labels={false}
+        note="Data refer to the ratio of corporate profits to gross production value."
         show_only_first_and_last_labels
-        source="United States Bureau of Economics Analysis"
-        subtitle="Ratio of corporate profits to gross output"
+        source="UNCTAD secretariat calculations based on OECD data."
+        subtitle="Percentage"
         tick_interval={1}
-        title="Aggregate markup in the United States"
+        title="Aggregate markup, United States, 1st quarter 2017 - 2nd quarter of 2021"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>
