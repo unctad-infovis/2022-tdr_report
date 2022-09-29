@@ -42,10 +42,11 @@ function Figure1_09() {
     <div className="app">
       {dataFigure && (
       <LineChart
+        allow_decimals={false}
         data={dataFigure}
         data_decimals={0}
         idx="1_09"
-        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model"
+        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
         sub_title="2016=100"
         title="Covid recovery to pre-covid trend"
         xlabel="Year"

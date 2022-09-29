@@ -19,7 +19,28 @@ function Figure1_04() {
       color: (i === 1) ? '#72bf44' : '#0077b8',
       dashStyle: 'longdash',
       hideInLegend: true,
-      lineWidth: 1
+      lineWidth: 1,
+      regressionSeriesOptions: {
+        marker: {
+          enabled: false,
+          states: {
+            hover: {
+              animation: false,
+              enabled: false,
+              radius: 8
+            }
+          },
+        },
+        states: {
+          hover: {
+            halo: {
+              size: 0
+            },
+            enabled: true,
+            lineWidth: 1,
+          }
+        }
+      }
     },
   }));
 
@@ -50,9 +71,9 @@ function Figure1_04() {
         labels={false}
         show_only_first_and_last_labels
         source=""
-        sub_title=""
-        tick_interval={2}
-        title=""
+        sub_title="Income from employment as percentage of GDP"
+        tick_interval={1}
+        title="Labour shares"
         xlabel="Year"
       />
       )}

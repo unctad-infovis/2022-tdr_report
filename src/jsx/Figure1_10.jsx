@@ -39,9 +39,9 @@ function Figure1_10() {
         data={dataFigure}
         data_decimals={1}
         idx="1_10"
-        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model"
+        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
         sub_title="G20 countries"
-        title="Expected output GDB in 2023"
+        title="Expected GDP output gap in 2023"
         ymax={10}
         ymin={-16}
       />

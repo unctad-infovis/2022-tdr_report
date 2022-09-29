@@ -11,7 +11,7 @@ function Figure1_08() {
   const [dataFigure, setDataFigure] = useState(false);
 
   const cleanData = (data) => data.map((el) => ({
-    data: Object.entries(el).map(val => ({ y: parseFloat(val[1]), name: val[0] })).filter(val => !Number.isNaN(val.y)),
+    data: Object.entries(el).map((val, i) => ({ y: parseFloat(val[1]), name: val[0], x: (i - 1) })).filter(val => !Number.isNaN(val.y)),
     labels: Object.keys(el).filter(val => val !== 'Name'),
     name: el.Name
   }));
@@ -36,10 +36,11 @@ function Figure1_08() {
     <div className="app">
       {dataFigure && (
       <LineChart
+        allow_decimals={false}
         data={dataFigure}
         data_decimals={1}
         idx="1_08"
-        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model"
+        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
         sub_title="Percentage changes"
         tick_interval={1}
         title="Growth cycles before and after the GFC and the covid shock"

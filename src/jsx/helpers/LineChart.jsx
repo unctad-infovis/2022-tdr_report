@@ -28,7 +28,7 @@ Highcharts.setOptions({
 });
 
 function LineChart({
-  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, sub_title, tick_interval, title, xlabel, ymax, ymin
+  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, sub_title, tick_interval, title, xlabel, ymax, ymin, ystep
 }) {
   const chartRef = useRef();
 
@@ -93,7 +93,7 @@ function LineChart({
         },
         zoomType: 'x'
       },
-      colors: ['#0077b8', '#72bf44', '#a066aa', '#f58220'],
+      colors: ['#009edb', '#72bf44', '#a066aa', '#f58220'],
       credits: {
         enabled: false
       },
@@ -110,6 +110,7 @@ function LineChart({
         floating: true,
         itemStyle: {
           color: '#000',
+          cursor: 'default',
           fontFamily: 'Roboto',
           fontSize: 22,
           fontWeight: 400
@@ -128,7 +129,7 @@ function LineChart({
         crosshairs: true,
         formatter() {
           // eslint-disable-next-line react/no-this-in-sfc
-          const values = this.points.map(point => [point.series.name, point.y, point.color]);
+          const values = this.points.filter(point => point.series.userOptions.isRegressionLine !== true).map(point => [point.series.name, point.y, point.color]);
           const rows = [];
           rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${point[0]}:</span> <span class="tooltip_value">${roundNr(point[1], data_decimals)}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
@@ -152,6 +153,11 @@ function LineChart({
               fontFamily: 'Roboto',
               fontSize: 20,
               fontWeight: 400
+            }
+          },
+          events: {
+            legendItemClick() {
+              return false;
             }
           },
           lineWidth: line_width,
@@ -208,24 +214,21 @@ function LineChart({
           formatter() {
             if (show_only_first_and_last_labels === true) {
               // eslint-disable-next-line react/no-this-in-sfc
-              if (this.isLast || this.isFirst || (this.pos === parseInt(this.chart.pointCount / 2, 10))) {
-                // eslint-disable-next-line react/no-this-in-sfc
-                // eslint-disable-next-line react/no-this-in-sfc
-                return this.value;
-              }
-              return undefined;
+              return (this.isLast || this.isFirst || (this.pos === parseInt(this.tick.axis.dataMax / 2, 10))) ? this.value : undefined;
             }
             // eslint-disable-next-line react/no-this-in-sfc
             return this.value;
           },
+          step: 1,
           enabled: true,
-          rotation: show_only_first_and_last_labels ? 1 : 0,
+          rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
             fontSize: 16,
             fontWeight: 400
           },
+          useHTML: false,
           y: 30
         },
         lineColor: 'transparent',
@@ -234,6 +237,7 @@ function LineChart({
         opposite: false,
         tickInterval: tick_interval,
         tickWidth: 1,
+        tickLength: 5,
         title: {
           enabled: true,
           offset: 40,
@@ -258,6 +262,11 @@ function LineChart({
         gridLineDashStyle: 'shortdot',
         gridLineWidth: 1,
         labels: {
+          formatter() {
+            // eslint-disable-next-line react/no-this-in-sfc
+            return (allow_decimals) ? this.value.toFixed(2) : this.value;
+          },
+          step: ystep,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
@@ -296,7 +305,7 @@ function LineChart({
         type: 'linear'
       }
     });
-  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, tick_interval, xlabel, ymax, ymin]);
+  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, tick_interval, xlabel, ymax, ymin, ystep]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -341,7 +350,8 @@ LineChart.propTypes = {
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
   ymax: PropTypes.number,
-  ymin: PropTypes.number
+  ymin: PropTypes.number,
+  ystep: PropTypes.number
 };
 
 LineChart.defaultProps = {
@@ -353,7 +363,8 @@ LineChart.defaultProps = {
   tick_interval: 1,
   xlabel: '',
   ymax: undefined,
-  ymin: undefined
+  ymin: undefined,
+  ystep: 1
 };
 
 export default LineChart;

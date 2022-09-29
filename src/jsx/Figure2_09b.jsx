@@ -44,7 +44,7 @@ function Figure2_09b() {
         show_only_first_and_last_labels
         source=""
         sub_title=""
-        tick_interval={2}
+        tick_interval={493}
         title=""
         ymin={0}
       />

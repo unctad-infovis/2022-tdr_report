@@ -40,8 +40,10 @@ function Figure2_05a() {
         data={dataFigure}
         data_decimals={0}
         labels={false}
+        show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on World Bank data"
-        sub_title="percentage"
+        sub_title="Percentage"
+        tick_interval={1}
         title="Income group averages, developing countries"
         xlabel="Year"
       />

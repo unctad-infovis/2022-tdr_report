@@ -44,7 +44,7 @@ function Figure2_06() {
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on Refinitiv data."
         sub_title="January 2015 – July 2022"
-        tick_interval={19}
+        tick_interval={13}
         title="Daily commodity price indices by commodity group and product"
       />
       )}

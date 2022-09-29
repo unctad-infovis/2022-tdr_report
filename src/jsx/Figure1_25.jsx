@@ -41,10 +41,10 @@ function Figure1_25() {
         idx="1_25"
         labels={false}
         show_only_first_and_last_labels
-        source=""
-        sub_title=""
+        source="United States Bureau of Economics Analysis"
+        sub_title="Ratio of corporate profits to gross output"
         tick_interval={1}
-        title=""
+        title="Aggregate markup in the United States"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

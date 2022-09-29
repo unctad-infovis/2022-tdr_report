@@ -64,7 +64,7 @@ function ColumnChart({
         type: 'column',
         zoomType: 'x'
       },
-      colors: ['#0077b8', '#72bf44', '#a066aa', '#f58220'],
+      colors: ['#009edb', '#72bf44', '#a066aa', '#f58220'],
       credits: {
         enabled: false
       },

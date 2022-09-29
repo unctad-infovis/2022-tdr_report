@@ -42,9 +42,10 @@ function Figure3_09() {
         labels={false}
         show_only_first_and_last_labels
         source=""
-        sub_title=""
-        tick_interval={4}
-        title=""
+        sub_title="Percentage of GDP; PPP"
+        tick_interval={1}
+        title="Private investment"
+        xlabel="Percentage"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>
