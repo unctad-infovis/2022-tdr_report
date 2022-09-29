@@ -12,11 +12,13 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
+import highchartsRegression from 'highcharts-regression';
 
 // Load helpers.
 import roundNr from './RoundNr.js';
 
 highchartsAccessibility(Highcharts);
+highchartsRegression(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -26,7 +28,7 @@ Highcharts.setOptions({
 });
 
 function LineChart({
-  idx, data, data_decimals, source, sub_title, title, xlabel
+  allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, source, sub_title, tick_interval, title, xlabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -34,7 +36,34 @@ function LineChart({
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       chart: {
+        events: {
+          load() {
+            if (show_only_first_and_last_labels === true) {
+              // eslint-disable-next-line react/no-this-in-sfc
+              this.series.forEach((series) => {
+                if (series.userOptions.isRegressionLine !== true) {
+                  series.points[series.points.length - 1].update({
+                    dataLabels: {
+                      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                      enabled: true,
+                      padding: 0,
+                      x: 0,
+                      y: 25
+                    }
+                  });
+                  series.points[0].update({
+                    dataLabels: {
+                      enabled: true,
+                      y: -10
+                    }
+                  });
+                }
+              });
+            }
+          }
+        },
         height: 440,
+        marginRight: [40],
         marginTop: [40],
         resetZoomButton: {
           theme: {
@@ -77,7 +106,7 @@ function LineChart({
       },
       legend: {
         align: 'right',
-        enabled: true,
+        enabled: (data.length > 1),
         floating: true,
         itemStyle: {
           color: '#000',
@@ -113,7 +142,7 @@ function LineChart({
         line: {
           cursor: 'pointer',
           dataLabels: {
-            enabled: true,
+            enabled: labels,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
               return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals)}</div>`;
@@ -125,7 +154,7 @@ function LineChart({
               fontWeight: 400
             }
           },
-          lineWidth: 5,
+          lineWidth: line_width,
           marker: {
             enabled: true,
             radius: 0,
@@ -144,7 +173,7 @@ function LineChart({
                 size: 0
               },
               enabled: true,
-              lineWidth: 5,
+              lineWidth: line_width,
             }
           }
         }
@@ -175,7 +204,22 @@ function LineChart({
           width: 1
         },
         labels: {
-          rotation: 0,
+          allowOverlap: false,
+          formatter() {
+            if (show_only_first_and_last_labels === true) {
+              // eslint-disable-next-line react/no-this-in-sfc
+              if (this.isLast || this.isFirst || (this.pos === parseInt(this.chart.pointCount / 2, 10))) {
+                // eslint-disable-next-line react/no-this-in-sfc
+                // eslint-disable-next-line react/no-this-in-sfc
+                return this.value;
+              }
+              return undefined;
+            }
+            // eslint-disable-next-line react/no-this-in-sfc
+            return this.value;
+          },
+          enabled: true,
+          rotation: show_only_first_and_last_labels ? 1 : 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
@@ -186,10 +230,9 @@ function LineChart({
         },
         lineColor: 'transparent',
         lineWidth: 0,
+        rotation: 0,
         opposite: false,
-        plotLines: null,
-        showFirstLabel: true,
-        showLastLabel: true,
+        tickInterval: tick_interval,
         tickWidth: 1,
         title: {
           enabled: true,
@@ -207,7 +250,7 @@ function LineChart({
         accessibility: {
           description: 'Index'
         },
-        allowDecimals: true,
+        allowDecimals: allow_decimals,
         custom: {
           allowNegativeLog: true
         },
@@ -224,6 +267,8 @@ function LineChart({
         },
         lineColor: 'transparent',
         lineWidth: 0,
+        max: ymax,
+        min: ymin,
         opposite: false,
         plotLines: [{
           color: 'rgba(124, 112, 103, 0.6)',
@@ -251,7 +296,7 @@ function LineChart({
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, xlabel]);
+  }, [allow_decimals, data, data_decimals, idx, labels, line_width, show_only_first_and_last_labels, tick_interval, xlabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -267,7 +312,7 @@ function LineChart({
         {(isVisible) && (
         <div>
           <div className="title_container">
-            <h3>{title}</h3>
+            <h3>{`${idx} ${title}`}</h3>
             {sub_title && <h4>{sub_title}</h4>}
           </div>
           <div className="chart" id={`chartIdx${idx}`} />
@@ -283,17 +328,32 @@ function LineChart({
 }
 
 LineChart.propTypes = {
-  idx: PropTypes.string.isRequired,
+  allow_decimals: PropTypes.bool,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
+  idx: PropTypes.string.isRequired,
+  labels: PropTypes.bool,
+  line_width: PropTypes.number,
+  show_only_first_and_last_labels: PropTypes.bool,
   source: PropTypes.string.isRequired,
   sub_title: PropTypes.string,
+  tick_interval: PropTypes.number,
   title: PropTypes.string.isRequired,
-  xlabel: PropTypes.string.isRequired
+  xlabel: PropTypes.string,
+  ymax: PropTypes.number,
+  ymin: PropTypes.number
 };
 
 LineChart.defaultProps = {
-  sub_title: false
+  allow_decimals: true,
+  labels: true,
+  line_width: 5,
+  show_only_first_and_last_labels: false,
+  sub_title: false,
+  tick_interval: 1,
+  xlabel: '',
+  ymax: undefined,
+  ymin: undefined
 };
 
 export default LineChart;

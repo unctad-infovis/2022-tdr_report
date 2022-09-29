@@ -6,7 +6,7 @@ import CSVtoJSON from './helpers/CSVtoJSON.js';
 
 import LineChart from './helpers/LineChart.jsx';
 
-function Figure1_08() {
+function Figure3_09() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
@@ -17,7 +17,7 @@ function Figure1_08() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_08.csv' : './assets/data/2022-tdr_report_figure_1_08.csv';
+    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_3_09.csv' : './assets/data/2022-tdr_report_figure_3_09.csv';
     try {
       fetch(data_file)
         .then((response) => {
@@ -37,12 +37,14 @@ function Figure1_08() {
       {dataFigure && (
       <LineChart
         data={dataFigure}
-        data_decimals={1}
-        idx="1_08"
-        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model"
-        sub_title="Percentage changes"
-        tick_interval={1}
-        title="Growth cycles before and after the GFC and the covid shock"
+        data_decimals={0}
+        idx="3_09"
+        labels={false}
+        show_only_first_and_last_labels
+        source=""
+        sub_title=""
+        tick_interval={4}
+        title=""
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>
@@ -50,4 +52,4 @@ function Figure1_08() {
   );
 }
 
-export default Figure1_08;
+export default Figure3_09;

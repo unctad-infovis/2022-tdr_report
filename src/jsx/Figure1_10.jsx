@@ -20,7 +20,12 @@ function Figure1_10() {
     const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_10.csv' : './assets/data/2022-tdr_report_figure_1_10.csv';
     try {
       fetch(data_file)
-        .then(response => response.text())
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response.text();
+        })
         .then(body => setDataFigure(cleanData(CSVtoJSON(body))));
     } catch (error) {
       console.error(error);
@@ -29,7 +34,18 @@ function Figure1_10() {
 
   return (
     <div className="app">
-      {dataFigure && <ColumnChart idx="1_10" data={dataFigure} data_decimals={1} source="UNCTAD secretariat calculations based on the United Nations Global Policy Model" sub_title="G20 countries" title="Expected output GDB in 2023" xlabel="" ymax={10} ymin={-16} />}
+      {dataFigure && (
+      <ColumnChart
+        data={dataFigure}
+        data_decimals={1}
+        idx="1_10"
+        source="UNCTAD secretariat calculations based on the United Nations Global Policy Model"
+        sub_title="G20 countries"
+        title="Expected output GDB in 2023"
+        ymax={10}
+        ymin={-16}
+      />
+      )}
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );

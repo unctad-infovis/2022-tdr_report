@@ -26,7 +26,7 @@ Highcharts.setOptions({
 });
 
 function BarChart({
-  idx, data, data_decimals, note, source, sub_title, title, xlabel, ymax, ymin
+  idx, data, data_decimals, note, source, sub_title, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -217,9 +217,8 @@ function BarChart({
         showLastLabel: true,
         tickInterval: 10,
         title: {
-          align: 'high',
           enabled: true,
-          reserveSpace: false,
+          reserveSpace: true,
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -227,15 +226,13 @@ function BarChart({
             fontSize: 16,
             fontWeight: 400
           },
-          text: '',
+          text: ylabel,
           verticalAlign: 'top',
-          x: 94,
-          y: -25
         },
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, xlabel, ymax, ymin]);
+  }, [idx, data, data_decimals, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -251,7 +248,7 @@ function BarChart({
         {(isVisible) && (
           <div>
             <div className="title_container">
-              <h3>{title}</h3>
+              <h3>{`${idx} ${title}`}</h3>
               {sub_title && <h4>{sub_title}</h4>}
             </div>
             <div className="chart" id={`chartIdx${idx}`} />
@@ -280,14 +277,19 @@ BarChart.propTypes = {
   source: PropTypes.string.isRequired,
   sub_title: PropTypes.string,
   title: PropTypes.string.isRequired,
-  xlabel: PropTypes.string.isRequired,
-  ymax: PropTypes.number.isRequired,
-  ymin: PropTypes.number.isRequired
+  xlabel: PropTypes.string,
+  ylabel: PropTypes.string,
+  ymax: PropTypes.number,
+  ymin: PropTypes.number
 };
 
 BarChart.defaultProps = {
   note: false,
-  sub_title: false
+  sub_title: false,
+  xlabel: '',
+  ylabel: '',
+  ymax: undefined,
+  ymin: undefined
 };
 
 export default BarChart;

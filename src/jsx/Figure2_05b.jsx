@@ -20,7 +20,12 @@ function Figure2_05b() {
     const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_05b.csv' : './assets/data/2022-tdr_report_figure_2_05b.csv';
     try {
       fetch(data_file)
-        .then(response => response.text())
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response.text();
+        })
         .then(body => setDataFigure(cleanData(CSVtoJSON(body))));
     } catch (error) {
       console.error(error);
@@ -29,7 +34,19 @@ function Figure2_05b() {
 
   return (
     <div className="app">
-      {dataFigure && <BarChart idx="2_05b" data={dataFigure} data_decimals={1} source="" sub_title="" title="" xlabel="" ymax={90} ymin={0} />}
+      {dataFigure && (
+      <BarChart
+        data={dataFigure}
+        data_decimals={1}
+        idx="2_05b"
+        source="UNCTAD secretariat calculations based on World Bank data"
+        sub_title=""
+        title="Top 20 Countries, 2020"
+        ylabel="Percentage"
+        ymax={109}
+        ymin={0}
+      />
+      )}
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );

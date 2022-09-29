@@ -252,7 +252,7 @@ function ColumnChart({
         {(isVisible) && (
           <div>
             <div className="title_container">
-              <h3>{title}</h3>
+              <h3>{`${idx} ${title}`}</h3>
               {sub_title && <h4>{sub_title}</h4>}
             </div>
             <div className="chart" id={`chartIdx${idx}`} />
@@ -274,13 +274,16 @@ ColumnChart.propTypes = {
   source: PropTypes.string.isRequired,
   sub_title: PropTypes.string,
   title: PropTypes.string.isRequired,
-  xlabel: PropTypes.string.isRequired,
-  ymax: PropTypes.number.isRequired,
-  ymin: PropTypes.number.isRequired
+  xlabel: PropTypes.string,
+  ymax: PropTypes.number,
+  ymin: PropTypes.number
 };
 
 ColumnChart.defaultProps = {
-  sub_title: false
+  sub_title: false,
+  xlabel: '',
+  ymax: undefined,
+  ymin: undefined
 };
 
 export default ColumnChart;

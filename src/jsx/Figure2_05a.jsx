@@ -20,7 +20,12 @@ function Figure2_05a() {
     const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_05a.csv' : './assets/data/2022-tdr_report_figure_2_05a.csv';
     try {
       fetch(data_file)
-        .then(response => response.text())
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response.text();
+        })
         .then(body => setDataFigure(cleanData(CSVtoJSON(body))));
     } catch (error) {
       console.error(error);
@@ -29,7 +34,18 @@ function Figure2_05a() {
 
   return (
     <div className="app">
-      {dataFigure && <LineChart idx="2_05a" data={dataFigure} data_decimals={0} source="" sub_title="" title="Energy" xlabel="" />}
+      {dataFigure && (
+      <LineChart
+        idx="2_05a"
+        data={dataFigure}
+        data_decimals={0}
+        labels={false}
+        source="UNCTAD secretariat calculations based on World Bank data"
+        sub_title="percentage"
+        title="Income group averages, developing countries"
+        xlabel="Year"
+      />
+      )}
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
