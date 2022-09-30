@@ -10,6 +10,10 @@ import Figure104 from './Figure1_04.jsx';
 import Figure108 from './Figure1_08.jsx';
 import Figure109 from './Figure1_09.jsx';
 import Figure110 from './Figure1_10.jsx';
+import Figure205a from './Figure2_05a.jsx';
+import Figure205b from './Figure2_05b.jsx';
+import Figure209a from './Figure2_09a.jsx';
+import Figure209b from './Figure2_09b.jsx';
 
 function App() {
   return (
@@ -59,25 +63,25 @@ function App() {
           <p>Interest rate hikes by advanced economies are hitting the most vulnerable hardest. Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.</p>
           <p>The prices of necessities like food and energy have soared in the wake of the war in Ukraine. And a stronger dollar makes the situation worse, raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.</p>
           <p>This year’s interest rate hikes in the United States, for example, could cut $3.6 trillion of future income for developing countries (excluding China).</p>
-          <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to increase public spending and use strategic price controls to directly target energy, food and other vital areas.', 'Public and private investors to channel more money into renewable energy research and development. ', 'Stronger global support for the UN-led Black Sea Grain Initiative set up to reintroduce vital food and fertilizer exports from Ukraine to the rest of the world. ']} />
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to increase public spending and use strategic price controls to directly target energy, food and other vital areas.', 'Public and private investors to channel more money into renewable energy research and development.', 'Stronger global support for the UN-led Black Sea Grain Initiative set up to reintroduce vital food and fertilizer exports from Ukraine to the rest of the world.']} />
         </div>
         <div className="right_column">
-          <Figure109 />
-          <Figure110 />
+          <Figure205a />
+          <Figure205b />
         </div>
       </div>
       <PhotoHeadline img="AdobeStock_111833592.jpeg" text_upper="More must be done to" text_lower="calm commodity markets and address price speculation" />
       <div className="two_column_layout">
         <div className="left_column">
-          <p>Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means the damage could be lasting since it’s the top input cost for many small farmers around the world.  </p>
+          <p>Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means the damage could be lasting since it’s the top input cost for many small farmers around the world.</p>
           <p>Although the war in Ukraine has contributed to this situation, commodity markets have been in a turbulent state for a decade.</p>
           <p>The Black Sea Grain Initiative led by the United Nations has had a significant impact in lowering global food prices. However, insufficient attention has been paid to the role of speculators and betting frenzies in futures contracts, commodity swaps and exchange traded funds.</p>
           <p>Also, large multinational corporations with considerable market power appear to have taken undue advantage of the current context to raise markups to boost profits on the backs of some of the world’s poorest people.</p>
-          <Recommendations headline="UNCTAD urges" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard. ', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.', '']} />
+          <Recommendations headline="UNCTAD urges" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
         </div>
         <div className="right_column">
-          <Figure109 />
-          <Figure110 />
+          <Figure209a />
+          <Figure209b />
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
