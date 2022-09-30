@@ -4,7 +4,7 @@ import '../styles/styles.less';
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 
-import BarChart from './helpers/BarChart.jsx';
+import ChartBar from './helpers/ChartBar.jsx';
 
 function Figure2_03() {
   // Data states.
@@ -33,9 +33,9 @@ function Figure2_03() {
   }, []);
 
   return (
-    <div className="app">
+    <div>
       {dataFigure && (
-      <BarChart
+      <ChartBar
         idx="2_03"
         data={dataFigure}
         data_decimals={1}

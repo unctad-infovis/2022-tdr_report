@@ -346,7 +346,7 @@ function LineChart({
     if (isVisible === true) {
       setTimeout(() => {
         createChart();
-      }, 600);
+      }, 300);
     }
   }, [createChart, isVisible]);
 

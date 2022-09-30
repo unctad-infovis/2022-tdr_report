@@ -4,7 +4,7 @@ import '../styles/styles.less';
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 
-import LineChart from './helpers/LineChart.jsx';
+import ChartLine from './helpers/ChartLine.jsx';
 
 function Figure3_09() {
   // Data states.
@@ -33,9 +33,9 @@ function Figure3_09() {
   }, []);
 
   return (
-    <div className="app">
+    <div>
       {dataFigure && (
-      <LineChart
+      <ChartLine
         data={dataFigure}
         data_decimals={0}
         idx="3_09"

@@ -25,8 +25,8 @@ Highcharts.setOptions({
   }
 });
 
-function BarChart({
-  idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+function ColumnChart({
+  idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -47,7 +47,7 @@ function BarChart({
         x: 0
       },
       chart: {
-        height: 700,
+        height: 650,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -64,7 +64,7 @@ function BarChart({
             stroke: '#7c7067',
             style: {
               fontFamily: 'Roboto',
-              fontSize: '13px',
+              fontSize: 13,
               fontWeight: 400
             }
           }
@@ -74,7 +74,7 @@ function BarChart({
           fontFamily: 'Roboto',
           fontWeight: 400
         },
-        type: 'bar',
+        type: 'column',
         zoomType: 'x'
       },
       colors: ['#009edb', '#72bf44', '#a066aa', '#f58220'],
@@ -107,7 +107,7 @@ function BarChart({
         enabled: true,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '18px',
+          fontSize: '20px',
           fontWeight: 400
         },
         text: subtitle
@@ -140,27 +140,23 @@ function BarChart({
         useHTML: true
       },
       plotOptions: {
-        bar: {
+        column: {
           animation: {
             duration: 2000,
           },
           cursor: 'pointer',
-          groupPadding: 0,
+          groupPadding: 0.05,
           dataLabels: {
-            align: (labels_inside) ? 'left' : undefined,
-            inside: (labels_inside === true) ? true : undefined,
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `${roundNr(this.y, data_decimals).toFixed(data_decimals)}`;
+              return `${roundNr(this.y, data_decimals)}`;
             },
-            step: 2,
-            color: (labels_inside) ? '#fff' : 'rgba(0, 0, 0, 0.8)',
+            color: 'rgba(0, 0, 0, 0.8)',
             style: {
               fontFamily: 'Roboto',
-              fontSize: '18px',
-              fontWeight: 400,
-              textOutline: 'none'
+              fontSize: '13px',
+              fontWeight: 400
             }
           },
         }
@@ -191,14 +187,15 @@ function BarChart({
           width: 1
         },
         labels: {
-          formatter: (el) => el.value,
-          rotation: 0,
+          rotation: -60,
+          formatter: (el) => ((el.value === 'Euro area') ? `<strong>${el.value}</strong>` : el.value),
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: '16px',
+            fontSize: 16,
             fontWeight: 400
-          }
+          },
+          y: 30
         },
         lineColor: 'transparent',
         lineWidth: 0,
@@ -213,7 +210,7 @@ function BarChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: '16px',
             fontWeight: 400
           },
           text: xlabel
@@ -234,7 +231,7 @@ function BarChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: '16px',
+            fontSize: 16,
             fontWeight: 400
           }
         },
@@ -250,12 +247,13 @@ function BarChart({
           value: 0,
           width: 1
         }],
-        showFirstLabel: false,
+        showFirstLabel: true,
         showLastLabel: true,
-        tickInterval: 10,
+        tickInterval: 5,
         title: {
+          align: 'high',
           enabled: true,
-          reserveSpace: true,
+          reserveSpace: false,
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -263,19 +261,21 @@ function BarChart({
             fontSize: '16px',
             fontWeight: 400
           },
-          text: ylabel,
+          text: '',
           verticalAlign: 'top',
+          x: 94,
+          y: -25
         },
         type: 'linear'
       }
     });
-  }, [idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
       setTimeout(() => {
         createChart();
-      }, 600);
+      }, 300);
     }
   }, [createChart, isVisible]);
 
@@ -289,29 +289,25 @@ function BarChart({
   );
 }
 
-BarChart.propTypes = {
+ColumnChart.propTypes = {
   idx: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
-  labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
-  ylabel: PropTypes.string,
   ymax: PropTypes.number,
   ymin: PropTypes.number
 };
 
-BarChart.defaultProps = {
-  labels_inside: false,
+ColumnChart.defaultProps = {
   note: false,
   subtitle: false,
   xlabel: '',
-  ylabel: '',
   ymax: undefined,
   ymin: undefined
 };
 
-export default BarChart;
+export default ColumnChart;
