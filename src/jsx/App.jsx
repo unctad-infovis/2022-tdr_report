@@ -6,6 +6,7 @@ import PageNavigation from './PageNavigation.jsx';
 import Quote from './Quote.jsx';
 import PhotoHeadline from './PhotoHeadline.jsx';
 import Recommendations from './Recommendations.jsx';
+import Footer from './Footer.jsx';
 import Figure104 from './Figure1_04.jsx';
 import Figure108 from './Figure1_08.jsx';
 import Figure109 from './Figure1_09.jsx';
@@ -84,6 +85,7 @@ function App() {
           <Figure209b />
         </div>
       </div>
+      <Footer />
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
