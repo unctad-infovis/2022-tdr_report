@@ -106,7 +106,7 @@ function BarChart({
           fontSize: '18px',
           fontWeight: 400
         },
-        text: `${subtitle}, ${idx}`
+        text: subtitle
       },
       title: {
         align: 'left',
@@ -165,9 +165,7 @@ function BarChart({
         rules: [{
           chartOptions: {
             legend: {
-              align: 'center',
-              layout: 'horizontal',
-              verticalAlign: 'bottom'
+              layout: 'horizontal'
             }
           },
           condition: {

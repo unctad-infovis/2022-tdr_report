@@ -106,7 +106,7 @@ function ColumnChart({
           fontSize: '20px',
           fontWeight: 400
         },
-        text: `${subtitle}, ${idx}`
+        text: subtitle
       },
       title: {
         align: 'left',
@@ -161,9 +161,7 @@ function ColumnChart({
         rules: [{
           chartOptions: {
             legend: {
-              align: 'center',
-              layout: 'horizontal',
-              verticalAlign: 'bottom'
+              layout: 'horizontal'
             }
           },
           condition: {
