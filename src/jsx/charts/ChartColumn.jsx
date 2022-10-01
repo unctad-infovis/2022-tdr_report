@@ -24,7 +24,7 @@ Highcharts.setOptions({
 });
 
 function ColumnChart({
-  idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin
+  idx, data, data_decimals, note, source, subtitle, title, xlabel, xlabelrotation, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -184,7 +184,8 @@ function ColumnChart({
           width: 1
         },
         labels: {
-          rotation: -60,
+          allowOverlap: true,
+          rotation: xlabelrotation,
           formatter: (el) => ((el.value === 'Euro area') ? `<strong>${el.value}</strong>` : el.value),
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -267,7 +268,7 @@ function ColumnChart({
       }
     });
     document.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [idx, data, data_decimals, note, source, subtitle, title, xlabel, ymax, ymin]);
+  }, [idx, data, data_decimals, note, source, subtitle, title, xlabel, xlabelrotation, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -296,6 +297,7 @@ ColumnChart.propTypes = {
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
+  xlabelrotation: PropTypes.number,
   ymax: PropTypes.number,
   ymin: PropTypes.number
 };
@@ -303,6 +305,7 @@ ColumnChart.propTypes = {
 ColumnChart.defaultProps = {
   note: false,
   subtitle: false,
+  xlabelrotation: 0,
   xlabel: '',
   ymax: undefined,
   ymin: undefined

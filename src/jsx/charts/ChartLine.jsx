@@ -74,7 +74,7 @@ function LineChart({
           }
         },
         height: 600,
-        marginRight: 40,
+        marginRight: 20,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -252,6 +252,7 @@ function LineChart({
           step: 1,
           enabled: true,
           rotation: 0,
+          reserveSpace: true,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',

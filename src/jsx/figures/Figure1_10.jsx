@@ -40,6 +40,7 @@ function Figure1_10() {
         source="NCTAD secretariat calculations based on the United Nations Global Policy Model."
         subtitle="G20 countries, Percentage"
         title="Expected output gap in 2023"
+        xlabelrotation={-60}
         ymax={10}
         ymin={-16}
       />

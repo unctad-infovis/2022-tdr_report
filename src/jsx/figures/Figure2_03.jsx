@@ -42,7 +42,7 @@ function Figure2_03() {
         note="Estimated change in per cent of the nominal exchange rate against the United States dollar between 1 January 2022 and 8 July 2022."
         subtitle="Percentage, January–July 2022"
         title="Nominal exchange rate depreciations against the United States dollar, selected developing countries"
-        ymax={90}
+        ymax={100}
         ymin={0}
         ylabel="Percentage"
       />

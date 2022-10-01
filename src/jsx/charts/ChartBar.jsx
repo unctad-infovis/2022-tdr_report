@@ -228,6 +228,7 @@ function BarChart({
         gridLineWidth: 1,
         gridLineDashStyle: 'shortdot',
         labels: {
+          rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',

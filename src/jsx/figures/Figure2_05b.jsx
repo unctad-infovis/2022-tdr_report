@@ -41,7 +41,7 @@ function Figure2_05b() {
         subtitle="Top 20 countries in 2020, Percentage, 2010–2021"
         title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups"
         ylabel="Percentage"
-        ymax={115}
+        ymax={100}
         ymin={0}
       />
       )}
