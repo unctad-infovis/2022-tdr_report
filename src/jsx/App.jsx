@@ -170,6 +170,7 @@ function App() {
               {(isVisible) => (
                 <p>
                   Interest rate hikes by advanced economies
+                  {' '}
                   <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>are hitting the most vulnerable hardest.</span>
                   {' '}
                   Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.

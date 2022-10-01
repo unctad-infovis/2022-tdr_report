@@ -38,7 +38,7 @@ function LineChart({
         margin: 15,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '13px',
+          fontSize: '14px',
           whiteSpace: 'normal'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
