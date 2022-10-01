@@ -1,7 +1,4 @@
 import React, { /* useState,  useEffect, useRef */ } from 'react';
-import '../styles/styles.less';
-
-// Load helpers.
 
 function Footer() {
   return (
@@ -11,7 +8,7 @@ function Footer() {
         <div className="footer_elements footer_element_downloads">
           <div className="footer_element">
             <h3><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></h3>
-            <h3>Global press release</h3>
+            <h3>Read the global press release</h3>
             <ul>
               <li>
                 <a href="https://unctad.org/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves">English</a>
@@ -29,7 +26,7 @@ function Footer() {
                 <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf">Português</a>
               </li>
             </ul>
-            <img src="./assets/img/2022-tdr_report_cover.png" alt="TDR 2022 Cover" />
+            <img src="./assets/img/2022-tdr_report_cover-min.png" alt="TDR 2022 Cover" />
           </div>
           <div className="footer_element footer_element_multimedia">
             <h3>Multimedia</h3>

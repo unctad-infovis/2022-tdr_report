@@ -1,10 +1,7 @@
 import React, { /* useState, useEffect, useRef  */} from 'react';
-import '../styles/styles.less';
 
 // https://www.npmjs.com/package/scroll-into-view
 import scrollIntoView from 'scroll-into-view';
-
-// Load helpers.
 
 const anchorClick = (target) => {
   setTimeout(() => {

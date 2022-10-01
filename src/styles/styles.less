@@ -60,7 +60,12 @@
       margin: auto auto;
       max-width: @content_max_width;
       min-height: 100%;
-      padding: 40% 0 20px 0;
+      @media all and (max-width: 849px) {
+        padding: 30% 0 20px 0;
+      }
+      @media all and (min-width: 850px) {
+        padding: 20% 0 20px 0;
+      }
       .photo_headlines {
         max-width: 700px;
         h2 {
@@ -68,6 +73,7 @@
           color: #fff;
           font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-weight: 400;
+          max-width: 800px;
           margin: 0 0 0px 0;
           padding: 0 10px;
           @media all and (max-width: 849px) {
@@ -147,16 +153,16 @@
         width: calc(50% - 20px);
       }
       .quote_container {
+        box-sizing: border-box;
         font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
         letter-spacing: 0.02em;
         margin: auto auto;
+        max-width: 600px;
         overflow: hidden;
+        padding: 60px 0 0 70px;
         position: relative;
         text-transform: uppercase;
         width: 100%;
-        box-sizing: border-box;
-        padding: 60px 0 0 70px;
-        max-width: 400px;
         .quote_element {
           &.quote_mark {
             position: absolute;
@@ -178,8 +184,8 @@
             font-weight: 700;
             line-height: 28px;
             line-height: 32px;
-            position: relative;
             margin-bottom: 15px;
+            position: relative;
             transform: translate(0, -250px);
             &.visible {
               transform: translate(0, 0);
@@ -190,8 +196,8 @@
             }
           }
           &.quote_text_lower {
-            font-weight: 300;
             font-size: 16px;
+            font-weight: 300;
             line-height: 22px;
             margin-bottom: 15px;
             position: relative;
@@ -219,8 +225,8 @@
             }
             .name {
               display: inline-block;
-              margin-bottom: 0;
               font-size: 20px;
+              margin-bottom: 0;
             }
             &.visible {
               transform: translate(0, 0);
@@ -252,10 +258,10 @@
           li {
             display: flex;
             margin-bottom: 20px;
-            @media all and (max-width: 849px) {
+            @media all and (max-width: 399px) {
               flex-direction: column;
             }
-            @media all and (min-width: 850px) {
+            @media all and (min-width: 400px) {
               flex-direction: row;
             }
             .list_indicator {

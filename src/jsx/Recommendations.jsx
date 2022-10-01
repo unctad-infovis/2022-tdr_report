@@ -1,12 +1,9 @@
 import React, { /* useState, useEffect, useRef */ } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/styles.less';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
 import IsVisible from 'react-is-visible';
-
-// Load helpers.
 
 function Recommendations({ headline, recommendation_list }) {
   return (

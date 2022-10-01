@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartBar from '../charts/ChartBar.jsx';
 
 function Figure2_05b() {
@@ -40,10 +38,10 @@ function Figure2_05b() {
         data_decimals={1}
         idx="2_05b"
         source="UNCTAD secretariat calculations based on World Bank data."
-        subtitle="Top 20 countries in 2020, percentage"
-        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups, 2010–2021"
+        subtitle="Top 20 countries in 2020, Percentage, 2010–2021"
+        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups"
         ylabel="Percentage"
-        ymax={109}
+        ymax={115}
         ymin={0}
       />
       )}

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from './../helpers/CSVtoJSON.js';
-
 import ChartLine from './../charts/ChartLine.jsx';
 
 function Figure3_09() {

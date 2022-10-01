@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from './../helpers/CSVtoJSON.js';
-
 import ChartLine from './../charts/ChartLine.jsx';
 
 function Figure2_06() {
@@ -45,9 +43,9 @@ function Figure2_06() {
         note="The index is normalized such that a zero indicates the index is at its average value, with positive values representing how many standard deviations the index is above this average value (and negative values representing the opposite)."
         show_only_first_and_last_labels
         source="Benigno et al. (2022)."
-        subtitle="Standard deviations from average value"
+        subtitle="Standard deviations from average value, January 2005–June 2022"
         tick_interval={13}
-        title="Global supply chain pressure index (GSCPI), January 2005–June 2022"
+        title="Global supply chain pressure index (GSCPI)"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>

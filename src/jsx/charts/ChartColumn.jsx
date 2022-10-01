@@ -1,9 +1,5 @@
-import React, {
-  /* useState, */ useEffect, useCallback, useRef
-} from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-
-import '../../styles/styles.less';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
@@ -12,11 +8,13 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
+import highchartsExporting from 'highcharts/modules/exporting';
 
 // Load helpers.
 import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
+highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -38,8 +36,7 @@ function ColumnChart({
         margin: 15,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '11px',
-          maxWidth: '95%',
+          fontSize: '13px',
           whiteSpace: 'normal'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,

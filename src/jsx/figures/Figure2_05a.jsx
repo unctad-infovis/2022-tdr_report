@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartLine from '../charts/ChartLine.jsx';
 
 function Figure2_05a() {
@@ -44,9 +42,9 @@ function Figure2_05a() {
         note="LMICs=Lower middle-income countries, LICs=Low-income countries, MICs=Middle-income countries, UMICs=Upper middle-income countries"
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on World Bank data."
-        subtitle="Income group averages, percentage"
+        subtitle="Income group averages, Percentage, 2010–2021"
         tick_interval={1}
-        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups, 2010–2021"
+        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups"
         xlabel="Year"
       />
       )}

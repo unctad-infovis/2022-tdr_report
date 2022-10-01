@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartColumn from '../charts/ChartColumn.jsx';
 
 function Figure1_10() {
@@ -40,8 +38,8 @@ function Figure1_10() {
         data_decimals={1}
         idx="1_10"
         source="NCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="Percentage"
-        title="Expected output gap in 2023 in G20 countries"
+        subtitle="G20 countries, Percentage"
+        title="Expected output gap in 2023"
         ymax={10}
         ymin={-16}
       />

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartLine from '../charts/ChartLine.jsx';
 
 function Figure1_04() {
@@ -72,9 +70,9 @@ function Figure1_04() {
         note="Labour share is calculated as the ratio of the sum of compensation of employees and mixed income to GDP."
         show_only_first_and_last_labels
         source="United Nations Global Policy Model database."
-        subtitle="Percentage of the GDP"
+        subtitle="Percentage of the GDP, 1980–2022"
         tick_interval={1}
-        title="Labour share, 1980–2022"
+        title="Labour share"
         xlabel="Year"
       />
       )}

@@ -1,19 +1,13 @@
 import React, { /* useState, */ useEffect, useRef } from 'react';
-import '../styles/styles.less';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
-// Load helpers.
-
 function Quote() {
   const chartRef = useRef();
 
   const isVisible = useIsVisible(chartRef, { once: true });
-  useEffect(() => {
-
-  }, []);
 
   useEffect(() => {
     if (isVisible === true) {

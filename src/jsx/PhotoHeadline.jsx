@@ -1,8 +1,5 @@
 import React, { /* useState, useEffect, useRef */ } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/styles.less';
-
-// Load helpers.
 
 function PhotoHeadline({ img, text_lower, text_upper }) {
   return (

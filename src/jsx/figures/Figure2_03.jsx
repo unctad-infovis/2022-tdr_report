@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartBar from '../charts/ChartBar.jsx';
 
 function Figure2_03() {
@@ -42,8 +40,8 @@ function Figure2_03() {
         labels_inside
         source="UNCTAD secretariat calculations based on Refinitiv."
         note="Estimated change in per cent of the nominal exchange rate against the United States dollar between 1 January 2022 and 8 July 2022."
-        subtitle="Percentage"
-        title="Nominal exchange rate depreciations against the United States dollar, selected developing countries, January–July 2022"
+        subtitle="Percentage, January–July 2022"
+        title="Nominal exchange rate depreciations against the United States dollar, selected developing countries"
         ymax={90}
         ymin={0}
         ylabel="Percentage"

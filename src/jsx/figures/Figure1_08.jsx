@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/styles.less';
 
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
-
 import ChartLine from '../charts/ChartLine.jsx';
 
 function Figure1_08() {
@@ -41,9 +39,9 @@ function Figure1_08() {
         data_decimals={1}
         idx="1_08"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="Percentage change"
+        subtitle="Global economy, Percentage change"
         tick_interval={1}
-        title="Global growth cycles before and after the Global financial crisis (GFC) and the COVID-19 shock, global economy"
+        title="Global growth cycles before and after the Global financial crisis (GFC) and the COVID-19 shock"
       />
       )}
       <noscript>Your browser does not support JavaScript!</noscript>
