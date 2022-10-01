@@ -6,7 +6,7 @@ import '../styles/styles.less';
 
 function PhotoHeadline({ img, text_lower, text_upper }) {
   return (
-    <div className="app">
+    <>
       <div className="photo_headline_container" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backgroundImage: `url(./assets/img/${img})` }}>
         <div className="photo_headline_content">
           <div className="photo_headlines">
@@ -16,7 +16,7 @@ function PhotoHeadline({ img, text_lower, text_upper }) {
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
-    </div>
+    </>
   );
 }
 

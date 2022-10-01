@@ -5,14 +5,14 @@ import '../styles/styles.less';
 
 function Video() {
   return (
-    <div>
+    <>
       <div className="video_container">
         <video src="./assets/vid/Animation 169.mp4" autoPlay muted>
           <track default kind="captions" srcLang="en" src="" />
         </video>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
-    </div>
+    </>
   );
 }
 
