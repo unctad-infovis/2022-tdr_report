@@ -50,10 +50,13 @@
   .photo_headline_container {
     background-attachment: fixed;
     background-blend-mode: darken;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: scroll;
+    background-size: cover;
     position: relative;
+    @supports (-webkit-touch-callout: none) {
+      background-attachment: scroll;
+    }
     .photo_headline_content {
       display: flex;
       flex-direction: column;
