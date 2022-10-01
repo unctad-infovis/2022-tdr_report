@@ -36,8 +36,7 @@ function BarChart({
         margin: 15,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '14px',
-          whiteSpace: 'normal'
+          fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
         verticalAlign: 'bottom',
