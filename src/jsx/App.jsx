@@ -49,7 +49,7 @@ function App() {
                   {' '}
                   economic growth will slow to 2.5% in 2022 and drop to 2.2% in 2023. The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than
                   {' '}
-                  <span className="highlight">$17 trillion – close to 20% of the world’s income.</span>
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>$17 trillion – close to 20% of the world’s income.</span>
                 </p>
               )}
             </IsVisible>

@@ -98,27 +98,15 @@
             line-height: 26px;
           }
           .highlight {
-            // text-decoration: underline 0.15em @unblue;
-            // text-underline-offset: 0.25em;
-            overflow: hidden;
-            position: relative;
-            &:after {
-              background-color: @unblue;
-              bottom: -0.15em;
-              content: '';
-              height: 0.2em;
-              left: 0;
-              opacity: 0;
-              position: absolute;
-              transform: translate3d(-100%, 0, 0);
-              width: 100%;
-            }
-            &.visible:after {
-              // text-decoration: underline 0.15em @unblue;
-              // transition: text-decoration-color 300ms;
-              opacity: 1;
-              transform: translate3d(0, 0, 0);
-              transition: opacity 1000ms, transform 2000ms;
+            background-image: linear-gradient(to right, #fff, #fff), linear-gradient(to right, @unblue, @unblue, @unblue);
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 0.1em, 0 0.15em;
+            transition: background-size 3s;
+            &.visible {
+              background-size: 0 0.1em, 100% 0.15em;
+              transition-duration: 3s;
+              transition-property: background-size;
             }
           }
         }
