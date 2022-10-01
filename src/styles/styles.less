@@ -19,56 +19,65 @@
     .navigation {
       align-items: center;
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-evenly;
       margin: auto auto;
       max-width: @content_max_width;
-      padding: 15px 0;
-      button {
-        background-color: #fff;
-        border-radius: 50px;
-        border: 0;
-        cursor: pointer;
-        color: #000;
-        font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        line-height: 20px;
-        padding: 8px 15px 7px 15px;
-        text-transform: uppercase;
-        &:hover {
-          background-color: @ungreen;
+      padding: 15px 0 5px 0;
+      .button_container {
+        margin-bottom: 10px;
+        button {
+          background-color: #fff;
+          border-radius: 50px;
+          border: 0;
+          cursor: pointer;
+          color: #000;
+          font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          line-height: 20px;
+          padding: 8px 15px 7px 15px;
+          text-transform: uppercase;
+          &:hover {
+            background-color: @ungreen;
+          }
         }
       }
     }
   }
   .photo_headline_container {
-   background-attachment: fixed;
-   background-blend-mode: darken;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding-bottom: 40%;
-   position: relative;
-   .photo_headline_content {
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .photo_headline_content {
       display: flex;
       flex-direction: column;
       margin: auto auto;
       max-width: @content_max_width;
       min-height: 100%;
+      padding: 40% 0 20px 0;
       .photo_headlines {
-        bottom: 20px;
         max-width: 700px;
-        position: absolute;
         h2 {
           box-sizing: border-box;
           color: #fff;
           font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 60px;
           font-weight: 400;
-          line-height: 60px;
-          margin: 0 0 10px 0;
+          margin: 0 0 0px 0;
           padding: 0 10px;
+          @media all and (max-width: 849px) {
+            line-height: 40px;
+            font-size: 40px;
+          }
+          @media all and (min-width: 850px) {
+            line-height: 60px;
+            font-size: 60px;
+          }
           &.highlight {
             color: @unblue;
             font-weight: 700;
@@ -81,11 +90,25 @@
     display: flex;
     margin: auto auto;
     max-width: @content_max_width;
+    align-items: flex-start;
+    justify-content: center;
+    @media all and (max-width: 849px) {
+      flex-direction: column;
+    }
+    @media all and (min-width: 850px) {
+      flex-direction: row;
+    }
     .left_column {
       box-sizing: border-box;
-      margin: 40px 40px 40px 0;
       padding: 0 10px;
-      width: calc(50% - 20px);
+      @media all and (max-width: 849px) {
+        margin: 40px auto auto auto;
+        max-width: 600px;
+      }
+      @media all and (min-width: 850px) {
+        margin: 40px 40px 40px 0;
+        width: calc(50% - 20px);
+      }
       .text_container {
         margin-bottom: 40px;
         p {
@@ -114,9 +137,15 @@
     }
     .right_column {
       box-sizing: border-box;
-      margin: 40px 0;
       padding: 0 10px;
-      width: calc(50% - 20px);
+      @media all and (max-width: 849px) {
+        margin: auto auto 60px auto;
+        max-width: 600px;
+      }
+      @media all and (min-width: 850px) {
+        margin: 40px 0;
+        width: calc(50% - 20px);
+      }
       .quote_container {
         font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
         letter-spacing: 0.02em;
@@ -125,12 +154,13 @@
         position: relative;
         text-transform: uppercase;
         width: 100%;
+        box-sizing: border-box;
         padding: 60px 0 0 70px;
         max-width: 400px;
         .quote_element {
           &.quote_mark {
             position: absolute;
-            transform: translate(-75px, -200px);
+            transform: translate(-75px, -250px);
             img {
               opacity: 0.5;
               width: 150px;
@@ -150,7 +180,7 @@
             line-height: 32px;
             position: relative;
             margin-bottom: 15px;
-            transform: translate(0, -160px);
+            transform: translate(0, -250px);
             &.visible {
               transform: translate(0, 0);
               transition-delay: 250ms;
@@ -165,7 +195,7 @@
             line-height: 22px;
             margin-bottom: 15px;
             position: relative;
-            transform: translate(0, 150px);
+            transform: translate(0, 200px);
             &.visible {
               transform: translate(0, 0);
               transition-delay: 250ms;
@@ -222,6 +252,12 @@
           li {
             display: flex;
             margin-bottom: 20px;
+            @media all and (max-width: 849px) {
+              flex-direction: column;
+            }
+            @media all and (min-width: 850px) {
+              flex-direction: row;
+            }
             .list_indicator {
               background-color: @unblue;
               border-radius: 50%;
@@ -234,6 +270,12 @@
               margin-right: 10px;
               text-align: center;
               width: 50px;
+              @media all and (max-width: 849px) {
+                margin-bottom: 5px;
+              }
+              @media all and (min-width: 850px) {
+                margin-right: 10px;
+              }
             }
             .list_text {
               width: calc(100% - 50px);
@@ -247,23 +289,17 @@
       }
     }
     .chart_container {
-      margin: auto auto 40px -10px;
       max-width: 600px;
-      .title_container {
-        margin: 0 0 20px 0;
-        h3 {
-          font-size: 30px;
-          font-weight: 700;
-          margin: 0;
-        }
-        h4 {
-          font-size: 20px;
-          font-weight: 400;
-          margin: 0;
-        }
+      @media all and (max-width: 849px) {
+        margin: auto auto 20px auto;
+      }
+      @media all and (min-width: 850px) {
+        margin: auto auto 40px auto;
       }
       .chart {
         opacity: 0;
+        margin-top: -10px;
+        margin-left: -10px;
         transition-duration: 500ms;
         transition-property: opacity;
         min-height: 440px;
@@ -296,29 +332,48 @@
       font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 60px;
       letter-spacing: 0.02em;
+      line-height: 60px;
       margin: auto auto 20px auto;
       max-width: @content_max_width;
       text-align: center;
       text-transform: uppercase;
     }
     .footer_elements {
+      align-items: flex-start;
       display: flex;
       margin: auto auto;
       max-width: @content_max_width;
-      align-items: flex-start;
+      @media all and (max-width: 849px) {
+        flex-direction: column;
+      }
+      @media all and (min-width: 850px) {
+        flex-direction: row;
+      }
       .footer_element {
         background-color: @unblue;
         border-radius: 5px;
+        box-sizing: border-box;
         color: #fff;
-        margin: 20px;
+        max-width: 600px;
         padding: 20px;
-        width: 100%;
+        width: calc(100% - 40px);
+        @media all and (max-width: 849px) {
+          margin: 20px auto auto auto;
+        }
+        @media all and (min-width: 850px) {
+          margin: 20px;
+        }
         p {
           font-size: 20px;
           margin: 0 0 5px 0;
           line-height: 26px;
         }
+        img {
+          width: 100%;
+          max-width: 400px;
+        }
         .iframe_container {
+          max-width: 400px;
           margin: 0 0 20px 0;
           iframe {
             border: 0;
@@ -363,11 +418,11 @@
             list-style-type: none;
             padding: 0;
             li {
-              align-items: top;
+              align-items: center;
               display: flex;
               width: 100%;
               .icon {
-                background-position: 50% 3px;
+                background-position: 50% 50%;
                 background-repeat: no-repeat;
                 content: '';
                 display: inline-block;

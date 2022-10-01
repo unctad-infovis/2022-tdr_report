@@ -29,33 +29,92 @@ function App() {
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
-            <p className="ingress">The world is headed towards a global recession and prolonged stagnation unless we quickly change the current policy course of monetary and fiscal tightening in advanced economies.</p>
-            <p className="ingress">Supply-side shocks, waning consumer and investor confidence and the war in Ukraine have provoked a global slowdown and triggered inflationary pressures.</p>
-            <p className="ingress">All regions will be affected, but alarm bells are ringing most for developing countries, many of which are edging closer to debt default. Climate stress is intensifying, with mounting loss and damage in vulnerable countries who lack the fiscal space to deal with disasters, let alone invest in their own long-term development.</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  The world is headed towards a global recession and prolonged stagnation
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>unless we quickly change the current policy course</span>
+                  {' '}
+                  of monetary and fiscal tightening in advanced economies.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  Supply-side shocks, waning consumer and investor confidence and the war in Ukraine
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>have provoked a global slowdown</span>
+                  {' '}
+                  and triggered inflationary pressures.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  All regions will be affected, but
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>alarm bells are ringing most for developing countries</span>
+                  , many of which are edging closer to debt default. Climate stress is intensifying, with mounting loss and damage in vulnerable countries who lack the fiscal space to deal with disasters, let alone invest in their own long-term development.
+                </p>
+              )}
+            </IsVisible>
           </div>
         </div>
         <div className="right_column">
           <Quote />
         </div>
       </div>
-      <PhotoHeadline img="2022-tdr_report-photo04-min.jpg" text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
+      <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
             <IsVisible once>
               {(isVisible) => (
                 <p>
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>UNCTAD projects that world</span>
+                  UNCTAD projects that
                   {' '}
-                  economic growth will slow to 2.5% in 2022 and drop to 2.2% in 2023. The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>world economic growth will slow to 2.5% in 2022</span>
                   {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>$17 trillion – close to 20% of the world’s income.</span>
+                  and drop to 2.2% in 2023. The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than $17 trillion – close to 20% of the world’s income.
                 </p>
               )}
             </IsVisible>
-            <p>Despite this, leading central banks are raising interest rates sharply, threatening to cut off growth altogether and making life much harder for heavily indebted firms, households and governments.</p>
-            <p>The global slowdown will affect all economies. But developing countries are exposed most to the cascade of debt, health and climate crises. Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.</p>
-            <p>The average growth rate for developing economies is projected to drop below 3% – a pace that is insufficient for sustainable development and will further squeeze public and private finances and damage employment prospects.</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Despite this, leading central banks are raising interest rates sharply,
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>threatening to cut off growth altogether</span>
+                  {' '}
+                  and making life much harder for heavily indebted firms, households and governments.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  The global slowdown will affect all economies. But
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>developing countries are exposed</span>
+                  {' '}
+                  most to the cascade of debt, health and climate crises. Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  The average growth rate for developing economies is projected to drop below 3% –
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>a pace that is insufficient for sustainable development</span>
+                  {' '}
+                  and will further squeeze public and private finances and damage employment prospects.
+                </p>
+              )}
+            </IsVisible>
           </div>
           <Figure110 />
         </div>
@@ -64,17 +123,37 @@ function App() {
           <Recommendations headline="UNCTAD calls for" recommendation_list={['Central banks in developed economies to revert course and avoid the temptation to try to bring down prices by relying on ever higher interest rates.', 'Advanced economies to avoid austerity measures.', 'International organizations to reform the multilateral architecture to give developing countries greater fiscal space and fairer say in decision-making processes.']} />
         </div>
       </div>
-      <div className="two_column_layout">
-        <div className="left_column" />
-        <div className="right_column" />
-      </div>
-      <PhotoHeadline img="2022-tdr_report-photo03-min.jpg" text_upper="A widespread" text_lower="debt crisis in developing countries is a real risk" />
+      <PhotoHeadline img="2022-tdr_report-photo02-min.jpg" text_upper="A widespread" text_lower="debt crisis in developing countries is a real risk" />
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
-            <p>With 60% of low-income countries and 30% of emerging market economies in or near debt distress, the possibility of a global debt crisis is high.</p>
-            <p>Countries that were showing signs of debt distress before the pandemic – including Sri Lanka, Suriname and Zambia – are being hit especially hard by the global slowdown. And climate shocks are heightening the risk of economic instability in indebted developing countries.</p>
-            <p>The situation in developing countries is worse than recognized by the Group of 20 major economies (G20) and other international financial fora. Developing countries have already spent an estimated $379 billion of reserves to defend their currencies this year, almost double the amount of new Special Drawing Rights recently allocated to them by the International Monetary Fund (IMF).</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  With 60% of low-income countries and 30% of emerging market economies in or near debt distress, the
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>possibility of a global debt crisis is high.</span>
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Countries that were showing signs of debt distress before the pandemic – including Sri Lanka, Suriname and Zambia – are being hit especially hard by the global slowdown. And climate shocks are heightening
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>the risk of economic instability in indebted developing countries.</span>
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The situation in developing countries is worse than recognized</span>
+                  {' '}
+                  by the Group of 20 major economies (G20) and other international financial fora. Developing countries have already spent an estimated $379 billion of reserves to defend their currencies this year, almost double the amount of new Special Drawing Rights recently allocated to them by the International Monetary Fund (IMF).
+                </p>
+              )}
+            </IsVisible>
           </div>
           <Figure205b />
         </div>
@@ -83,13 +162,41 @@ function App() {
           <Recommendations headline="UNCTAD calls for" recommendation_list={['International financial institutions to urgently provide increased liquidity and extend real debt relief for developing countries.', 'The IMF to allow for a larger, more permanent and fairer use of Special Drawing Rights, an international reserve asset created to supplement the official reserves of its member countries.', 'Countries to prioritize a multilateral legal framework for handling debt restructuring, including all official and private creditors.']} />
         </div>
       </div>
-      <PhotoHeadline img="2022-tdr_report-photo02-min.jpg" text_upper="Interest rate hikes" text_lower="are hitting the poorest hardest" />
+      <PhotoHeadline img="2022-tdr_report-photo03-min.jpg" text_upper="Interest rate hikes" text_lower="are hitting the poorest hardest" />
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
-            <p>Interest rate hikes by advanced economies are hitting the most vulnerable hardest. Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.</p>
-            <p>The prices of necessities like food and energy have soared in the wake of the war in Ukraine. And a stronger dollar makes the situation worse, raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.</p>
-            <p>This year’s interest rate hikes in the United States, for example, could cut $3.6 trillion of future income for developing countries (excluding China).</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Interest rate hikes by advanced economies
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>are hitting the most vulnerable hardest.</span>
+                  {' '}
+                  Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  The prices of necessities like food and energy have soared in the wake of the war in Ukraine. And
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>a stronger dollar makes the situation worse</span>
+                  , raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  This year’s interest rate hikes in the United States, for example, could cut
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>$3.6 trillion of future income</span>
+                  {' '}
+                  for developing countries (excluding China).
+                </p>
+              )}
+            </IsVisible>
           </div>
           <Figure104 />
         </div>
@@ -98,14 +205,52 @@ function App() {
           <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to increase public spending and use strategic price controls to directly target energy, food and other vital areas.', 'Public and private investors to channel more money into renewable energy research and development.', 'Stronger global support for the UN-led Black Sea Grain Initiative set up to reintroduce vital food and fertilizer exports from Ukraine to the rest of the world.']} />
         </div>
       </div>
-      <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" text_upper="More must be done to" text_lower="calm commodity markets and address price speculation" />
+      <PhotoHeadline img="2022-tdr_report-photo04-min.jpg" text_upper="More must be done to" text_lower="calm commodity markets and address price speculation" />
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
-            <p>Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means the damage could be lasting since it’s the top input cost for many small farmers around the world.</p>
-            <p>Although the war in Ukraine has contributed to this situation, commodity markets have been in a turbulent state for a decade.</p>
-            <p>The Black Sea Grain Initiative led by the United Nations has had a significant impact in lowering global food prices. However, insufficient attention has been paid to the role of speculators and betting frenzies in futures contracts, commodity swaps and exchange traded funds.</p>
-            <p>Also, large multinational corporations with considerable market power appear to have taken undue advantage of the current context to raise markups to boost profits on the backs of some of the world’s poorest people.</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>the damage could be lasting</span>
+                  {' '}
+                  since it’s the top input cost for many small farmers around the world.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Although the war in Ukraine has contributed to this situation,
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>commodity markets have been in a turbulent state for a decade.</span>
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  The Black Sea Grain Initiative led by the United Nations has had a significant impact in lowering global food prices. However,
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>insufficient attention has been paid to the role of speculators</span>
+                  {' '}
+                  and betting frenzies in futures contracts, commodity swaps and exchange traded funds.
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p>
+                  Also, large multinational corporations with considerable market power appear to have
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>taken undue advantage of the current context</span>
+                  {' '}
+                  to raise markups to boost profits on the backs of some of the world’s poorest people.
+                </p>
+              )}
+            </IsVisible>
           </div>
           <Figure209b />
         </div>

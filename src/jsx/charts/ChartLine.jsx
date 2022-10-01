@@ -78,7 +78,7 @@ function LineChart({
             }, 1800);
           }
         },
-        height: 550,
+        height: 600,
         marginRight: 40,
         resetZoomButton: {
           theme: {

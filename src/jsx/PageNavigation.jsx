@@ -6,16 +6,16 @@ import scrollIntoView from 'scroll-into-view';
 
 // Load helpers.
 
-const anchorClick = () => {
+const anchorClick = (target) => {
   setTimeout(() => {
-    scrollIntoView(document.querySelector('.footer_container'), {
+    scrollIntoView(document.querySelector(target), {
       align: {
         left: 0,
         leftOffset: 0,
         lockX: false,
         lockY: false,
         top: 0,
-        topOffset: -100
+        topOffset: 50
       },
       cancellable: false,
       time: 1000
@@ -28,10 +28,10 @@ function PageNavigation() {
     <>
       <div className="pagenavigation_container">
         <div className="navigation">
-          <button type="button" onClick={() => anchorClick('')}>Press</button>
-          <button type="button" onClick={() => anchorClick('')}>Download</button>
-          <button type="button" onClick={() => anchorClick('')}>Multimedia</button>
-          <button type="button" onClick={() => anchorClick('')}>Regional outlooks</button>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Press</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Download</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_multimedia')}>Multimedia</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_regional')}>Regional outlooks</button></div>
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>

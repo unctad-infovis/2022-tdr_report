@@ -8,8 +8,30 @@ function Footer() {
     <>
       <div className="footer_container">
         <h2>What do you want to do next</h2>
-        <div className="footer_elements">
+        <div className="footer_elements footer_element_downloads">
           <div className="footer_element">
+            <h3><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></h3>
+            <h3>Global press release</h3>
+            <ul>
+              <li>
+                <a href="https://unctad.org/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves">English</a>
+                {', '}
+                <a href="https://unctad.org/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques">Français</a>
+                {', '}
+                <a href="https://unctad.org/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de">Español</a>
+                {', '}
+                <a href="https://unctad.org/system/files/press-material/PR22014_ar_TDR22_0.pdf">العربية</a>
+                {', '}
+                <a href="https://unctad.org/system/files/press-material/PR22014_ch_TDR22.pdf">简体中文</a>
+                {', '}
+                <a href="https://unctad.org/system/files/press-material/PR22014_ru_TDR22_0.pdf">Русский</a>
+                {', '}
+                <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf">Português</a>
+              </li>
+            </ul>
+            <img src="./assets/img/2022-tdr_report_cover.png" alt="TDR 2022 Cover" />
+          </div>
+          <div className="footer_element footer_element_multimedia">
             <h3>Multimedia</h3>
             <p>Listen the Weekly Tradecast episode where the Author Mr. xxxx xxxx highlights the report</p>
             <div className="iframe_container">
@@ -18,15 +40,15 @@ function Footer() {
             <ul className="podcasts_container">
               <li>
                 <span className="icon" />
-                <span className="text"><a href="https://unctad.org/podcast/ghosts-recessions-past-history-repeating-itself">Listen: Ghosts of recessions past</a></span>
+                <span className="text"><a href="https://unctad.org/podcast/ghosts-recessions-past-history-repeating-itself">Ghosts of recessions past</a></span>
               </li>
               <li>
                 <span className="icon" />
-                <span className="text"><a href="https://unctad.org/podcast/drowning-debt-how-developing-countries-can-survive-crisis">Listen: Drowning in debt</a></span>
+                <span className="text"><a href="https://unctad.org/podcast/drowning-debt-how-developing-countries-can-survive-crisis">Drowning in debt</a></span>
               </li>
               <li>
                 <span className="icon" />
-                <span className="text"><a href="https://unctad.org/podcast/war-and-price-cost-rising-inflation">Listen: The cost of rising inflation</a></span>
+                <span className="text"><a href="https://unctad.org/podcast/war-and-price-cost-rising-inflation">The cost of rising inflation</a></span>
               </li>
             </ul>
             <ul className="videos_container">
@@ -40,101 +62,33 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer_element">
-            <h3><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></h3>
-            <h3><a href="#press">Read the press release</a></h3>
-          </div>
-          <div className="footer_element">
+          <div className="footer_element footer_element_regional">
             <h3>Regional outlooks</h3>
             <ul>
               <li>
                 Africa
                 <ul>
-                  <li>
-                    <a href="#english">english</a>
-                    {', '}
-                    <a href="#english">arabic</a>
-                    {', '}
-                    <a href="#english">chinese</a>
-                    {', '}
-                    <a href="#english">french</a>
-                    {', '}
-                    <a href="#english">russian</a>
-                    {', '}
-                    <a href="#english">spanish</a>
-                  </li>
+                  <li><a href="https://unctad.org/press-material/africas-economic-growth-decelerates-sharply">English</a></li>
+                  <li><a href="https://unctad.org/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement">Français</a></li>
                 </ul>
               </li>
               <li>
-                East and Southeast Asia
+                East and South-East Asia
                 <ul>
-                  <li>
-                    <a href="#english">english</a>
-                    {', '}
-                    <a href="#english">arabic</a>
-                    {', '}
-                    <a href="#english">chinese</a>
-                    {', '}
-                    <a href="#english">french</a>
-                    {', '}
-                    <a href="#english">russian</a>
-                    {', '}
-                    <a href="#english">spanish</a>
-                  </li>
+                  <li><a href="https://unctad.org/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions">English</a></li>
                 </ul>
               </li>
               <li>
-                West and South Asia
+                South and West Asia
                 <ul>
-                  <li>
-                    <a href="#english">english</a>
-                    {', '}
-                    <a href="#english">arabic</a>
-                    {', '}
-                    <a href="#english">chinese</a>
-                    {', '}
-                    <a href="#english">french</a>
-                    {', '}
-                    <a href="#english">russian</a>
-                    {', '}
-                    <a href="#english">spanish</a>
-                  </li>
+                  <li><a href="https://unctad.org/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across">English</a></li>
                 </ul>
               </li>
               <li>
-                Latin America
+                Latin America and the Caribbean
                 <ul>
-                  <li>
-                    <a href="#english">english</a>
-                    {', '}
-                    <a href="#english">arabic</a>
-                    {', '}
-                    <a href="#english">chinese</a>
-                    {', '}
-                    <a href="#english">french</a>
-                    {', '}
-                    <a href="#english">russian</a>
-                    {', '}
-                    <a href="#english">spanish</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Developed economies
-                <ul>
-                  <li>
-                    <a href="#english">english</a>
-                    {', '}
-                    <a href="#english">arabic</a>
-                    {', '}
-                    <a href="#english">chinese</a>
-                    {', '}
-                    <a href="#english">french</a>
-                    {', '}
-                    <a href="#english">russian</a>
-                    {', '}
-                    <a href="#english">spanish</a>
-                  </li>
+                  <li><a href="https://unctad.org/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america">English</a></li>
+                  <li>Español to come</li>
                 </ul>
               </li>
             </ul>
