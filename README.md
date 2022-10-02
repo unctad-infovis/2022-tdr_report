@@ -2,6 +2,10 @@
 
 **Live demo** https://unctad-infovis.github.io/2022-tdr_report/
 
+## Inspiration
+
+* [OECD, Paying the Price of War](https://www.oecd.org/economic-outlook/september-2022/)
+
 ## Rights of usage
 
 Contact Teemo Tebest.

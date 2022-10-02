@@ -30,6 +30,7 @@ function LineChart({
 }) {
   const chartRef = useRef();
 
+  const chartHeight = 600;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
@@ -72,7 +73,7 @@ function LineChart({
             }, 1800);
           }
         },
-        height: 600,
+        height: chartHeight,
         marginRight: 20,
         resetZoomButton: {
           theme: {
@@ -345,7 +346,7 @@ function LineChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container">
+    <div className="chart_container" style={{ minHeight: chartHeight }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>

@@ -28,6 +28,7 @@ function ColumnChart({
 }) {
   const chartRef = useRef();
 
+  const chartHeight = 650;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
@@ -276,7 +277,7 @@ function ColumnChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container">
+    <div className="chart_container" style={{ minHeight: chartHeight }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>

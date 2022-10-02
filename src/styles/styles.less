@@ -47,13 +47,43 @@
       }
     }
   }
+  .progress_indicator_container {
+    background-color: #ccc;
+    display: flex;
+    height: 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    .section {
+      background-color: transparent;
+      border: 0;
+      flex-grow: 1;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      &:hover {
+        opacity: 0.5;
+      }
+      .progress {
+        background-color: @unblue;
+        height: 10px;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+      }
+    }
+    .section_divider {
+      background-color: #fff;
+      width: 2px;
+    }
+  }
   .photo_headline_container {
     background-attachment: fixed;
     background-blend-mode: darken;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     @supports (-webkit-touch-callout: none) {
       background-attachment: scroll;
       background-position: center 0;
@@ -106,11 +136,11 @@
     }
   }
   .two_column_layout {
+    align-items: flex-start;
     display: flex;
+    justify-content: center;
     margin: auto auto;
     max-width: @content_max_width;
-    align-items: flex-start;
-    justify-content: center;
     @media all and (max-width: 849px) {
       flex-direction: column;
     }
