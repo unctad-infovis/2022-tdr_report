@@ -67,17 +67,9 @@ function App() {
                 </p>
               )}
             </IsVisible>
-            <IsVisible once>
-              {(isVisible) => (
-                <p className="ingress">
-                  Supply-side shocks, waning consumer and investor confidence and the war in Ukraine
-                  {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>have provoked a global slowdown</span>
-                  {' '}
-                  and triggered inflationary pressures.
-                </p>
-              )}
-            </IsVisible>
+            <p className="ingress">
+              Supply-side shocks, waning consumer and investor confidence and the war in Ukraine have provoked a global slowdown and triggered inflationary pressures.
+            </p>
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
@@ -106,45 +98,29 @@ function App() {
                     <p>
                       UNCTAD projects that
                       {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>world economic growth will slow to 2.5% in 2022</span>
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>world economic growth will slow to 2.5% in 2022 and drop to 2.2% in 2023.</span>
                       {' '}
-                      and drop to 2.2% in 2023. The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than $17 trillion – close to 20% of the world’s income.
+                      The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than $17 trillion – close to 20% of the world’s income.
                     </p>
                   )}
                 </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Despite this, leading central banks are raising interest rates sharply,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>threatening to cut off growth altogether</span>
-                      {' '}
-                      and making life much harder for heavily indebted firms, households and governments.
-                    </p>
-                  )}
-                </IsVisible>
+                <p>
+                  Despite this, leading central banks are raising interest rates sharply, threatening to cut off growth altogether and making life much harder for heavily indebted firms, households and governments.
+                </p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
                       The global slowdown will affect all economies. But
                       {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>developing countries are exposed</span>
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>developing countries are exposed most to the cascade of debt, health and climate crises.</span>
                       {' '}
-                      most to the cascade of debt, health and climate crises. Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.
+                      Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.
                     </p>
                   )}
                 </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The average growth rate for developing economies is projected to drop below 3% –
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>a pace that is insufficient for sustainable development</span>
-                      {' '}
-                      and will further squeeze public and private finances and damage employment prospects.
-                    </p>
-                  )}
-                </IsVisible>
+                <p>
+                  The average growth rate for developing economies is projected to drop below 3% – a pace that is insufficient for sustainable development and will further squeeze public and private finances and damage employment prospects.
+                </p>
               </div>
               <Figure110 />
             </div>
@@ -168,15 +144,9 @@ function App() {
                     </p>
                   )}
                 </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Countries that were showing signs of debt distress before the pandemic – including Sri Lanka, Suriname and Zambia – are being hit especially hard by the global slowdown. And climate shocks are heightening
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>the risk of economic instability in indebted developing countries.</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p>
+                  Countries that were showing signs of debt distress before the pandemic – including Sri Lanka, Suriname and Zambia – are being hit especially hard by the global slowdown. And climate shocks are heightening the risk of economic instability in indebted developing countries.
+                </p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
@@ -214,24 +184,16 @@ function App() {
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      The prices of necessities like food and energy have soared in the wake of the war in Ukraine. And
+                      The prices of necessities like food and energy have soared in the wake of the war in Ukraine.
                       {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>a stronger dollar makes the situation worse</span>
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>And a stronger dollar makes the situation worse</span>
                       , raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.
                     </p>
                   )}
                 </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      This year’s interest rate hikes in the United States, for example, could cut
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>$3.6 trillion of future income</span>
-                      {' '}
-                      for developing countries (excluding China).
-                    </p>
-                  )}
-                </IsVisible>
+                <p>
+                  This year’s interest rate hikes in the United States, for example, could cut $3.6 trillion of future income for developing countries (excluding China).
+                </p>
               </div>
               <Figure104 />
             </div>
@@ -246,17 +208,9 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>the damage could be lasting</span>
-                      {' '}
-                      since it’s the top input cost for many small farmers around the world.
-                    </p>
-                  )}
-                </IsVisible>
+                <p>
+                  Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means the damage could be lasting since it’s the top input cost for many small farmers around the world.
+                </p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
@@ -293,7 +247,7 @@ function App() {
             </div>
             <div className="right_column">
               <Figure209a />
-              <Recommendations headline="UNCTAD urges" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
+              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
             </div>
           </div>
         </div>
