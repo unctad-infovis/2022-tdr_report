@@ -10,8 +10,8 @@ function Footer() {
             <h3>Explore the report</h3>
             <ul>
               <li>
-                <a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report </a>
-                <a href="https://unctad.org/webflyer/trade-and-development-report-2022"><img src="./assets/img/2022-tdr_report_cover-min.png" alt="TDR 2022 Cover" /></a>
+                <div><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report </a></div>
+                <div><a href="https://unctad.org/webflyer/trade-and-development-report-2022"><img src="./assets/img/2022-tdr_report_cover-min.png" alt="TDR 2022 Cover" /></a></div>
               </li>
               <li>Read the overview</li>
               <li>

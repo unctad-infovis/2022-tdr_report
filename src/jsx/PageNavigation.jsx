@@ -12,7 +12,7 @@ const anchorClick = (target) => {
         lockX: false,
         lockY: false,
         top: 0,
-        topOffset: 50
+        topOffset: 100
       },
       cancellable: false,
       time: 1000
@@ -26,7 +26,7 @@ function PageNavigation() {
       <div className="pagenavigation_container">
         <div className="navigation">
           <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Press</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Download</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Downloads</button></div>
           <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_multimedia')}>Multimedia</button></div>
           <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_regional')}>Regional outlooks</button></div>
         </div>
