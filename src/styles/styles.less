@@ -48,7 +48,7 @@
     }
   }
   .progress_indicator_container {
-    background-color: #ccc;
+    background-color: #000;
     display: flex;
     height: 10px;
     position: sticky;
@@ -56,11 +56,13 @@
     width: 100%;
     z-index: 3;
     .section {
+      appearance: none;
       background-color: transparent;
+      border-radius: 0;
       border: 0;
+      cursor: pointer;
       flex-grow: 1;
       padding: 0;
-      cursor: pointer;
       position: relative;
       &:hover {
         opacity: 0.5;
