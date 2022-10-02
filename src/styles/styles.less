@@ -27,12 +27,15 @@
       padding: 15px 0 5px 0;
       @media all and (max-width: 699px) {
         display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+        flex-direction: row;
+        flex-wrap: wrap;
       }
       .button_container {
         margin-bottom: 10px;
-        @media all and (max-width: 699px) {
+        @media all and (max-width: 569px) {
+          width: 100%;
+        }
+        @media all and (max-width: 699px) and (min-width: 570px) {
           width: 50%;
         }
         button {
