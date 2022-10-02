@@ -316,13 +316,17 @@
         }
         @media all and (min-width: 700px) {
           padding: 30px 30px 10px 30px;
-
         }
         &.visible {
           opacity: 1;
-          transition-delay: 1s;
           transition-duration: 3s;
           transition-property: opacity;
+          @media all and (max-width: 699px) {
+            transition-delay: 0s;
+          }
+          @media all and (min-width: 700px) {
+            transition-delay: 1s;
+          }
         }
         h3 {
           font-size: 30px;
