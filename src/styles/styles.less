@@ -25,6 +25,9 @@
       margin: auto auto;
       max-width: @content_max_width;
       padding: 15px 0 5px 0;
+      @media all and (max-width: 699px) {
+        display: inline;
+      }
       .button_container {
         margin-bottom: 10px;
         button {
@@ -89,10 +92,12 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    min-height: 100%;
     @supports (-webkit-touch-callout: none) {
       background-attachment: scroll;
       background-position: center 0;
-      background-size: 100%;
+      background-size: auto 100%;
     }
     .photo_headline_content {
       display: flex;
