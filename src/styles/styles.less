@@ -24,27 +24,29 @@
       justify-content: space-evenly;
       margin: auto auto;
       max-width: @content_max_width;
-      padding: 15px 0 5px 0;
+      padding: 15px 0 0px 0;
       @media all and (max-width: 699px) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
       }
       .button_container {
-        margin-bottom: 10px;
-        @media all and (max-width: 569px) {
+        @media all and (max-width: 589px) {
+          margin: 0 15px 15px 15px;
           width: 100%;
         }
-        @media all and (max-width: 699px) and (min-width: 570px) {
-          width: 50%;
+        @media all and (max-width: 699px) and (min-width: 590px) {
+          margin: 0 15px 15px 15px;
+          width: calc(50% - 30px);
+        }
+        @media all and (min-width: 700px) {
+          margin: 0 0 15px 0;
         }
         button {
           @media all and (max-width: 699px) {
             display: inline-block;
             width: 100%;
             border-radius: 0px;
-            border-left: 5px solid @unblue;
-            border-right: 5px solid @unblue;
           }
           background-color: #fff;
           border-radius: 50px;
@@ -309,7 +311,13 @@
         background-color: #000;
         color: #fff;
         opacity: 0;
-        padding: 30px 30px 10px 30px;
+        @media all and (max-width: 699px) {
+          padding: 30px 10px 10px 20px;
+        }
+        @media all and (min-width: 700px) {
+          padding: 30px 30px 10px 30px;
+
+        }
         &.visible {
           opacity: 1;
           transition-delay: 1s;
@@ -317,7 +325,7 @@
           transition-property: opacity;
         }
         h3 {
-          font-size: 40px;
+          font-size: 30px;
           margin: 0 0 20px 0;
         }
         ul {
