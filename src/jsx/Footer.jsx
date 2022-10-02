@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <div className="footer_container">
-        <h2>What do you want to do next</h2>
+        <h2>What do you want to do next?</h2>
         <div className="footer_elements footer_element_downloads">
           <div className="footer_element">
             <h3>Explore the report</h3>
