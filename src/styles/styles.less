@@ -243,9 +243,14 @@
             }
             &.visible {
               transform: translate(-75px, -71px);
-              transition-delay: 250ms;
               transition-duration: 3s;
               transition-property: transform;
+              @media all and (max-width: 699px) {
+                transition-delay: 0s;
+              }
+              @media all and (min-width: 700px) {
+                transition-delay: 250ms;
+              }
             }
           }
           &.quote_text_upper {
@@ -259,10 +264,15 @@
             transform: translate(0, -250px);
             &.visible {
               transform: translate(0, 0);
-              transition-delay: 250ms;
               transition-duration: 1.5s;
               transition-property: transform;
               transition-timing-function: ease;
+              @media all and (max-width: 699px) {
+                transition-delay: 0s;
+              }
+              @media all and (min-width: 700px) {
+                transition-delay: 250ms;
+              }
             }
           }
           &.quote_text_lower {
@@ -274,9 +284,14 @@
             transform: translate(0, 200px);
             &.visible {
               transform: translate(0, 0);
-              transition-delay: 250ms;
               transition-duration: 1.5s;
               transition-property: transform;
+              @media all and (max-width: 699px) {
+                transition-delay: 0s;
+              }
+              @media all and (min-width: 700px) {
+                transition-delay: 250ms;
+              }
             }
           }
           &.quote_signature {
@@ -300,9 +315,14 @@
             }
             &.visible {
               transform: translate(0, 0);
-              transition-delay: 250ms;
               transition-duration: 3s;
               transition-property: transform;
+              @media all and (max-width: 699px) {
+                transition-delay: 0s;
+              }
+              @media all and (min-width: 700px) {
+                transition-delay: 250ms;
+              }
             }
           }
         }
