@@ -15,7 +15,7 @@ function Figure2_09a() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_2_09a_monthly.csv' : './assets/data/2022-tdr_report_figure_2_09a_monthly.csv';
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_2_09a_monthly.csv`;
     try {
       fetch(data_file)
         .then((response) => {

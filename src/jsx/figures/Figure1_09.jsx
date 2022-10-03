@@ -21,7 +21,7 @@ function Figure1_09() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_09.csv' : './assets/data/2022-tdr_report_figure_1_09.csv';
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_1_09.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -46,7 +46,7 @@ function Figure1_09() {
         idx="1_09"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
         subtitle="Index numbers, 2016=100, 2016–2023"
-        title="COVID-19 recovery compared to pre-COVID-19 trend"
+        title=" The long covid of global economy: COVID-19 recovery compared to pre-COVID-19 trend"
         xlabel="Year"
       />
       )}

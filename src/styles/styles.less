@@ -7,9 +7,17 @@
   .video_container {
     font-size: 0;
     margin: 0;
-    min-height: calc(100vw * 9 / 16 - 2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b1014;
+    justify-content: space-evenly;
     video {
+
+      height: 100%;
+      min-height: 100%;
       margin: 0;
+      object-fit: fill;
       width: 100%;
     }
   }
@@ -31,22 +39,26 @@
         flex-wrap: wrap;
       }
       .button_container {
+        text-align: center;
         @media all and (max-width: 589px) {
           margin: 0 15px 15px 15px;
           width: 100%;
         }
-        @media all and (max-width: 699px) and (min-width: 590px) {
+        @media all and (max-width: 869px) and (min-width: 590px) {
           margin: 0 15px 15px 15px;
           width: calc(50% - 30px);
         }
-        @media all and (min-width: 700px) {
+        @media all and (min-width: 869px) {
           margin: 0 0 15px 0;
         }
         button {
-          @media all and (max-width: 699px) {
+          @media all and (max-width: 869px) {
             display: inline-block;
             width: 100%;
             border-radius: 0px;
+          }
+          @media all and (min-width: 869px) {
+            width: 150px;
           }
           background-color: #fff;
           border-radius: 50px;
@@ -54,7 +66,7 @@
           cursor: pointer;
           color: #000;
           font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 700;
           letter-spacing: 0.02em;
           line-height: 20px;
@@ -62,6 +74,15 @@
           text-transform: uppercase;
           &:hover {
             background-color: @ungreen;
+          }
+        }
+        a {
+          color: #fff;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
@@ -280,6 +301,7 @@
             font-weight: 300;
             line-height: 22px;
             margin-bottom: 15px;
+            max-width: 450px;
             position: relative;
             transform: translate(0, 200px);
             &.visible {
@@ -306,11 +328,12 @@
             .title {
               display: inline-block;
               font-size: 14px;
-              margin-bottom: 5px;
+              margin-bottom: 0px;
             }
             .name {
               display: inline-block;
               font-size: 20px;
+              font-weight: 700;
               margin-bottom: 0;
             }
             &.visible {
@@ -440,7 +463,12 @@
       letter-spacing: 0.02em;
       line-height: 60px;
       margin: auto auto 20px auto;
-      max-width: @content_max_width;
+      @media all and (max-width: 999px) {
+        max-width: 700px;
+      }
+      @media all and (min-width: 1000px) {
+        max-width: @content_max_width;
+      }
       text-align: center;
       text-transform: uppercase;
     }
@@ -449,10 +477,12 @@
       display: flex;
       margin: auto auto;
       max-width: @content_max_width;
-      @media all and (max-width: 849px) {
+      @media all and (max-width: 999px) {
+        align-items: center;
         flex-direction: column;
       }
-      @media all and (min-width: 850px) {
+      @media all and (min-width: 1000px) {
+        align-items: flex-start;
         flex-direction: row;
       }
       .footer_element {
@@ -480,8 +510,20 @@
           max-width: 200px;
         }
         .iframe_container {
-          max-width: 400px;
           margin: 0 0 20px 0;
+          &.youtube_iframe {
+            padding-bottom: 56.25%;
+            position: relative;
+            width: 100%;
+            iframe {
+              border: 0;
+              height: 100%;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100%;
+            }
+          }
           iframe {
             border: 0;
           }
@@ -493,9 +535,6 @@
           letter-spacing: 0.02em;
           line-height: 36px;
           margin: 0 0 20px 0;
-          @media all and (max-width: 849px) {
-            text-align: center;
-          }
           text-transform: uppercase;
           a {
             color: #fff;
@@ -506,8 +545,9 @@
           }
         }
         ul {
-          margin: 0;
-          padding: 0 0 0 20px;
+          margin: 0 0 20px 0;
+          padding: 0 0 0 0;
+          list-style-type: none;
           a {
             color: #fff;
             text-decoration: underline;
@@ -517,6 +557,8 @@
           }
           li {
             ul {
+          padding: 0 0 0 20px;
+              list-style-type: disc;
               li {
                 font-size: 15px;
                 margin-bottom: 0;
@@ -550,13 +592,13 @@
           &.podcasts_container {
             margin-bottom: 40px;
             li .icon {
-              background-image: url(../assets/img/icons/2022-tdr_report_podcast.png);
+              background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_podcast.png);
               background-size: auto 40px;
             }
           }
           &.videos_container {
             li .icon {
-              background-image: url(../assets/img/icons/2022-tdr_report_video.png);
+              background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_video.png);
               background-size: auto 25px;
             }
           }

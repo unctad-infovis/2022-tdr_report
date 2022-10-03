@@ -15,7 +15,7 @@ function Figure1_10() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_10.csv' : './assets/data/2022-tdr_report_figure_1_10.csv';
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_1_10.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -39,7 +39,7 @@ function Figure1_10() {
         idx="1_10"
         source="NCTAD secretariat calculations based on the United Nations Global Policy Model."
         subtitle="G20 countries, Percentage"
-        title="Expected output gap in 2023"
+        title="Lost economic potential in 2023: expected output gap in 2023"
         xlabelrotation={-60}
         ymax={10}
         ymin={-16}

@@ -89,7 +89,7 @@ function App() {
       <div className="section_wrapper">
         <ProgressIndicator section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} />
         <div ref={section1} className="section_1_container">
-          <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
+          <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" max_width={560} text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
@@ -126,7 +126,7 @@ function App() {
             </div>
             <div className="right_column">
               <Figure109 />
-              <Recommendations headline="UNCTAD calls for" recommendation_list={['Central banks in developed economies to revert course and avoid the temptation to try to bring down prices by relying on ever higher interest rates.', 'Advanced economies to avoid austerity measures.', 'International organizations to reform the multilateral architecture to give developing countries greater fiscal space and fairer say in decision-making processes.']} />
+              <Recommendations headline="UNCTAD calls on" recommendation_list={['Central banks in developed economies to revert course and avoid the temptation to try to bring down prices by relying on ever higher interest rates.', 'Advanced economies to avoid austerity measures.', 'International organizations to reform the multilateral architecture to give developing countries greater fiscal space and fairer say in decision-making processes.']} />
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ function App() {
             </div>
             <div className="right_column">
               <Figure205a />
-              <Recommendations headline="UNCTAD calls for" recommendation_list={['International financial institutions to urgently provide increased liquidity and extend real debt relief for developing countries.', 'The IMF to allow for a larger, more permanent and fairer use of Special Drawing Rights, an international reserve asset created to supplement the official reserves of its member countries.', 'Countries to prioritize a multilateral legal framework for handling debt restructuring, including all official and private creditors.']} />
+              <Recommendations headline="UNCTAD calls on" recommendation_list={['International financial institutions to urgently provide increased liquidity and extend real debt relief for developing countries.', 'The IMF to allow for a larger, more permanent and fairer use of Special Drawing Rights, an international reserve asset created to supplement the official reserves of its member countries.', 'Countries to prioritize a multilateral legal framework for handling debt restructuring, including all official and private creditors.']} />
             </div>
           </div>
         </div>
@@ -192,14 +192,14 @@ function App() {
                   )}
                 </IsVisible>
                 <p>
-                  This year’s interest rate hikes in the United States, for example, could cut $3.6 trillion of future income for developing countries (excluding China).
+                  This year’s interest rate hikes in the United States, for example, could cut $360 billion of future income for developing countries (excluding China).
                 </p>
               </div>
               <Figure104 />
             </div>
             <div className="right_column">
               <Figure203 />
-              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to increase public spending and use strategic price controls to directly target energy, food and other vital areas.', 'Public and private investors to channel more money into renewable energy research and development.', 'Stronger global support for the UN-led Black Sea Grain Initiative set up to reintroduce vital food and fertilizer exports from Ukraine to the rest of the world.']} />
+              <Recommendations headline="UNCTAD calls on" recommendation_list={['Governments to increase public spending and use strategic price controls to directly target energy, food and other vital areas.', 'Public and private investors to channel more money into renewable energy research and development.', 'Stronger global support for the UN-led Black Sea Grain Initiative set up to reintroduce vital food and fertilizer exports from Ukraine to the rest of the world.']} />
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@ function App() {
             </div>
             <div className="right_column">
               <Figure209a />
-              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
+              <Recommendations headline="UNCTAD calls on" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
             </div>
           </div>
         </div>

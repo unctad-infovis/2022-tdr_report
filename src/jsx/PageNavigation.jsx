@@ -25,10 +25,11 @@ function PageNavigation() {
     <>
       <div className="pagenavigation_container">
         <div className="navigation">
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Press</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Videos</button></div>
           <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads')}>Downloads</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_multimedia')}>Multimedia</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_regional')}>Regional outlooks</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_press')}>Press</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_podcasts')}>Podcasts</button></div>
+          <div className="button_container"><a href="https://unctad.org/publications-search?f[0]=product%3A394">Previous reports</a></div>
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>

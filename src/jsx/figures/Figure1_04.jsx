@@ -43,7 +43,7 @@ function Figure1_04() {
   }));
 
   useEffect(() => {
-    const data_file = (window.location.href.includes('unctad.org')) ? '/sites/default/files/data-file/2022-tdr_report_figure_1_04.csv' : './assets/data/2022-tdr_report_figure_1_04.csv';
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_1_04.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -70,9 +70,9 @@ function Figure1_04() {
         note="Labour share is calculated as the ratio of the sum of compensation of employees and mixed income to GDP."
         show_only_first_and_last_labels
         source="United Nations Global Policy Model database."
-        subtitle="Percentage of the GDP, 1980–2022"
+        subtitle="Labour share as percentage of the GDP, 1980–2022"
         tick_interval={1}
-        title="Labour share"
+        title="Capital gains"
         xlabel="Year"
       />
       )}

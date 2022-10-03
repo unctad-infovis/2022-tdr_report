@@ -3,8 +3,10 @@ import React, { /* useState, */ useEffect, useRef } from 'react';
 function Video() {
   const videoRef = useRef();
   useEffect(() => {
-    videoRef.current.src = videoRef.current.offsetWidth < 768 ? './assets/vid/2022-tdr_report_banner_animation_11.mp4' : './assets/vid/2022-tdr_report_banner_animation_169.mp4';
-    videoRef.current.poster = videoRef.current.offsetWidth < 768 ? './assets/img/2022-tdr_report_banner_animation_11.jpg' : './assets/img/2022-tdr_report_banner_animation_169.jpg';
+    videoRef.current.src = (window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './') + ((videoRef.current.offsetWidth < 768) ? 'assets/vid/2022-tdr_report_banner_animation_11.mp4' : 'assets/vid/2022-tdr_report_banner_animation_169.mp4');
+    videoRef.current.poster = (window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './') + ((videoRef.current.offsetWidth < 768) ? 'assets/img/2022-tdr_report_banner_animation_11.jpg' : 'assets/img/2022-tdr_report_banner_animation_169.jpg');
+    // videoRef.current.style.paddingBottom = (videoRef.current.offsetWidth < 768) ? '100%' : '56.25%';
+
     if (!videoRef.current.playing) {
       videoRef.current.play();
     }
@@ -14,7 +16,7 @@ function Video() {
       <div className="video_container">
         {
         // eslint-disable-next-line
-        <video src=""  autoPlay muted playsInline ref={videoRef} poster="">
+        <video src="" autoPlay muted playsInline ref={videoRef} poster="">
           <track default kind="captions" srcLang="en" src="" />
         </video>
         }

@@ -8,7 +8,7 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
-import highchartsExporting from 'highcharts/modules/exporting';
+// import highchartsExporting from 'highcharts/modules/exporting';
 // import highchartsRegression from 'highcharts-regression';
 
 // Load helpers.
@@ -16,7 +16,7 @@ import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
 // highchartsRegression(Highcharts);
-highchartsExporting(Highcharts);
+// highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
   lang: {
