@@ -39,7 +39,7 @@ function Figure2_05b() {
         idx="2_05b"
         source="UNCTAD secretariat calculations based on World Bank data."
         subtitle="Top 20 countries in 2020, Percentage, 2010–2021"
-        title="Servicing costs on public and publicly guaranteed external debt to government revenues, developing countries and groups"
+        title="Servicing costs on public and publicly guaranteed external debt to government revenues"
         ylabel="Percentage"
         ymax={100}
         ymin={0}

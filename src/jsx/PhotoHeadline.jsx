@@ -21,7 +21,7 @@ function PhotoHeadline({
 
 PhotoHeadline.propTypes = {
   img: PropTypes.string.isRequired,
-  max_width: PropTypes.number,
+  max_width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   text_upper: PropTypes.string.isRequired,
   text_lower: PropTypes.string.isRequired
 };

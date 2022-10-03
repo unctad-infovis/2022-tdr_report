@@ -7,9 +7,9 @@ function Footer() {
         <h2>What do you want to do next?</h2>
         <div className="footer_elements footer_element_downloads">
           <div className="footer_element">
-            <h3>Watch the video</h3>
+            {/* <h3>Watch the video</h3>
             <div className="iframe_container youtube_iframe">
-              <iframe src="https://www.youtube.com/embed/UGtKGX8B9hU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+              <iframe src="https://www.youtube.com/embed/UGtKGX8B9hU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
             <ul>
               <li>
@@ -27,7 +27,7 @@ function Footer() {
                 {', '}
                 <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf">Português</a>
               </li>
-            </ul>
+            </ul> */}
             <h3><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></h3>
             <div><a href="https://unctad.org/webflyer/trade-and-development-report-2022"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/2022-tdr_report_cover-min.png`} alt="TDR 2022 Cover" /></a></div>
           </div>
@@ -35,7 +35,7 @@ function Footer() {
             <h3>Podcasts</h3>
             <p>Listen to the Weekly Tradecast episodes that explore some of the main issues in the report</p>
             <div className="iframe_container">
-              <iframe title="The Weekly Tradecast by UNCTAD" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=xyr2d-1269cec-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowfullscreen="" />
+              <iframe title="The Weekly Tradecast by UNCTAD" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=xyr2d-1269cec-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
             </div>
             <ul className="podcasts_container">
               <li>

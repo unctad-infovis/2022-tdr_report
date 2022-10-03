@@ -121,7 +121,7 @@ function LineChart({
           color: '#000',
           cursor: 'default',
           fontFamily: 'Roboto',
-          fontSize: '16px',
+          fontSize: '14px',
           fontWeight: 400
         },
         layout: 'horizontal',
@@ -134,7 +134,8 @@ function LineChart({
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
           fontSize: '20px',
-          fontWeight: 400
+          fontWeight: 400,
+          lineHeight: '22px'
         },
         text: subtitle
       },
@@ -143,7 +144,8 @@ function LineChart({
         style: {
           color: '#000',
           fontSize: '30px',
-          fontWeight: 700
+          fontWeight: 700,
+          lineHeight: '34px'
         },
         text: title
       },

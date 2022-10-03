@@ -22,11 +22,18 @@ import Figure205b from './figures/Figure2_05b.jsx';
 import Figure209a from './figures/Figure2_09a.jsx';
 import Figure209b from './figures/Figure2_09b.jsx';
 
+const analytics = window.gtag || undefined;
+
 function App() {
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
   const section4 = useRef();
+
+  const [section1Seen, setSection1Seen] = useState(false);
+  const [section2Seen, setSection2Seen] = useState(false);
+  const [section3Seen, setSection3Seen] = useState(false);
+  const [section4Seen, setSection4Seen] = useState(false);
 
   const [section1Progress, setSection1Progress] = useState(0);
   const [section2Progress, setSection2Progress] = useState(0);
@@ -41,13 +48,64 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // const windowHeight = window.innerHeight;
     const windowHeight = 0;
     setSection1Progress((offset > section1.current.offsetTop - windowHeight) ? (Math.min(((offset - (section1.current.offsetTop - windowHeight)) / section1.current.offsetHeight) * 100, 100)) : 0);
     setSection2Progress((offset > section2.current.offsetTop - windowHeight) ? (Math.min(((offset - (section2.current.offsetTop - windowHeight)) / section2.current.offsetHeight) * 100, 100)) : 0);
     setSection3Progress((offset > section3.current.offsetTop - windowHeight) ? (Math.min(((offset - (section3.current.offsetTop - windowHeight)) / section3.current.offsetHeight) * 100, 100)) : 0);
     setSection4Progress((offset > section4.current.offsetTop - windowHeight) ? (Math.min(((offset - (section4.current.offsetTop - windowHeight)) / section4.current.offsetHeight) * 100, 100)) : 0);
   }, [offset]);
+
+  useEffect(() => {
+    if (section1Progress === 100 && section1Seen === false) {
+      setSection1Seen(true);
+      if (typeof analytics !== 'undefined') {
+        analytics('event', 'Scroll', {
+          event_category: '2022-tdr_report',
+          event_label: 'Section 1',
+          transport_type: 'beacon'
+        });
+      }
+    }
+  }, [section1Progress, section1Seen]);
+
+  useEffect(() => {
+    if (section2Progress === 100 && section2Seen === false) {
+      setSection2Seen(true);
+      if (typeof analytics !== 'undefined') {
+        analytics('event', 'Scroll', {
+          event_category: '2022-tdr_report',
+          event_label: 'Section 2',
+          transport_type: 'beacon'
+        });
+      }
+    }
+  }, [section2Progress, section2Seen]);
+
+  useEffect(() => {
+    if (section3Progress === 100 && section3Seen === false) {
+      setSection3Seen(true);
+      if (typeof analytics !== 'undefined') {
+        analytics('event', 'Scroll', {
+          event_category: '2022-tdr_report',
+          event_label: 'Section 3',
+          transport_type: 'beacon'
+        });
+      }
+    }
+  }, [section3Progress, section3Seen]);
+
+  useEffect(() => {
+    if (section4Progress === 100 && section4Seen === false) {
+      setSection4Seen(true);
+      if (typeof analytics !== 'undefined') {
+        analytics('event', 'Scroll', {
+          event_category: '2022-tdr_report',
+          event_label: 'Section 4',
+          transport_type: 'beacon'
+        });
+      }
+    }
+  }, [section4Progress, section4Seen]);
 
   return (
     <div className="app">
