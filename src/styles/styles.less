@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300, 400,700.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300.css');
 
 @import 'colors.less';
 
@@ -142,22 +143,22 @@
       flex-direction: column;
       margin: auto auto;
       max-width: @content_max_width;
-      @media all and (max-width: 949px) {
+      @media all and (max-width: 991px) {
         padding: 40% 0 20px 0;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         padding: 25% 0 20px 0;
       }
       .photo_headlines {
         background-color: rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
         padding: 15px;
-        @media all and (max-width: 949px) {
+        @media all and (max-width: 991px) {
           border-radius: 5px;
           max-width: 600px;
           margin: auto auto;
         }
-        @media all and (min-width: 950px) {
+        @media all and (min-width: 992px) {
           max-width: 800px;
         }
         h2 {
@@ -165,12 +166,15 @@
           color: #fff;
           font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-weight: 400;
-          @media all and (max-width: 949px) {
+          &:after {
+            display: none;
+          }
+          @media all and (max-width: 991px) {
             font-size: 40px;
             line-height: 40px;
             margin: auto auto;
           }
-          @media all and (min-width: 950px) {
+          @media all and (min-width: 992px) {
             font-size: 60px;
             line-height: 60px;
             margin: 0 0 0px 0;
@@ -189,20 +193,20 @@
     justify-content: center;
     margin: auto auto;
     max-width: @content_max_width;
-    @media all and (max-width: 949px) {
+    @media all and (max-width: 991px) {
       flex-direction: column;
     }
-    @media all and (min-width: 950px) {
+    @media all and (min-width: 992px) {
       flex-direction: row;
     }
     .left_column {
       box-sizing: border-box;
       padding: 0 15px;
-      @media all and (max-width: 949px) {
+      @media all and (max-width: 991px) {
         margin: 40px auto auto auto;
         max-width: 600px;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         margin: 40px 40px 40px 0;
         width: calc(50% - 20px);
       }
@@ -235,11 +239,11 @@
     .right_column {
       box-sizing: border-box;
       padding: 0 15px;
-      @media all and (max-width: 949px) {
+      @media all and (max-width: 991px) {
         margin: auto auto 60px auto;
         max-width: 600px;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         margin: 40px 0;
         width: calc(50% - 20px);
       }
@@ -399,10 +403,10 @@
               margin-right: 10px;
               text-align: center;
               width: 50px;
-              @media all and (max-width: 949px) {
+              @media all and (max-width: 991px) {
                 margin-bottom: 5px;
               }
-              @media all and (min-width: 950px) {
+              @media all and (min-width: 992px) {
                 margin-right: 10px;
               }
             }
@@ -419,10 +423,10 @@
     }
     .chart_container {
       max-width: 600px;
-      @media all and (max-width: 949px) {
+      @media all and (max-width: 991px) {
         margin: auto auto 20px auto;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         margin: auto auto 40px auto;
       }
       .chart {
@@ -460,13 +464,17 @@
       color: #fff;
       font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 60px;
+      font-weight: 700;
       letter-spacing: 0.02em;
       line-height: 60px;
       margin: auto auto 20px auto;
-      @media all and (max-width: 949px) {
+      &:after {
+        display: none;
+      }
+      @media all and (max-width: 991px) {
         max-width: 700px;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         max-width: @content_max_width;
       }
       text-align: center;
@@ -477,11 +485,11 @@
       display: flex;
       margin: auto auto;
       max-width: @content_max_width;
-      @media all and (max-width: 949px) {
+      @media all and (max-width: 991px) {
         align-items: center;
         flex-direction: column;
       }
-      @media all and (min-width: 950px) {
+      @media all and (min-width: 992px) {
         align-items: flex-start;
         flex-direction: row;
       }
@@ -493,16 +501,17 @@
         max-width: 600px;
         padding: 20px;
         width: calc(100% - 40px);
-        @media all and (max-width: 949px) {
+        @media all and (max-width: 991px) {
           margin: 20px auto auto auto;
         }
-        @media all and (min-width: 950px) {
+        @media all and (min-width: 992px) {
           margin: 20px;
         }
         p {
+          color: #fff;
           font-size: 20px;
-          margin: 0 0 5px 0;
           line-height: 26px;
+          margin: 0 0 5px 0;
         }
         img {
           margin-top: 10px;
