@@ -36,10 +36,10 @@ function PageNavigation() {
     <>
       <div className="pagenavigation_container">
         <div className="navigation">
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads', 'Videos')}>Videos</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_downloads', 'Downloads')}>Downloads</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_press', 'Press')}>Press</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.footer_element_podcasts', 'Podcasts')}>Podcasts</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_video', 'Videos')}>Videos</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_downloads', 'Downloads')}>Downloads</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_press', 'Press')}>Press</button></div>
+          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_podcasts', 'Podcasts')}>Podcasts</button></div>
           <div className="button_container"><a href="https://unctad.org/publications-search?f[0]=product%3A394" onClick={() => track('Previous reports')}>Previous reports</a></div>
         </div>
       </div>
