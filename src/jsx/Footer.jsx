@@ -27,19 +27,19 @@ function Footer() {
               </div>
               <ul>
                 <li>
-                  <a href="#boy">English</a>
+                  <a href="#video">English</a>
                   {', '}
-                  <a href="#boy">Français</a>
+                  <a href="#video">Français</a>
                   {', '}
-                  <a href="#boy">Español</a>
+                  <a href="#video">Español</a>
                   {', '}
-                  <a href="#boy">العربية</a>
+                  <a href="#video">العربية</a>
                   {', '}
-                  <a href="#boy">简体中文</a>
+                  <a href="#video">简体中文</a>
                   {', '}
-                  <a href="#boy">Русский</a>
+                  <a href="#video">Русский</a>
                   {', '}
-                  <a href="#boy">Português</a>
+                  <a href="#video">Português</a>
                 </li>
               </ul>
             </div>
@@ -73,22 +73,22 @@ function Footer() {
               </div>
               <ul>
                 <li>
-                  Downlaod the video
+                  Download the video
                   <ul>
                     <li>
-                      <a href="#boy">English</a>
+                      <a href="#video">English</a>
                       {', '}
-                      <a href="#boy">Français</a>
+                      <a href="#video">Français</a>
                       {', '}
-                      <a href="#boy">Español</a>
+                      <a href="#video">Español</a>
                       {', '}
-                      <a href="#boy">العربية</a>
+                      <a href="#video">العربية</a>
                       {', '}
-                      <a href="#boy">简体中文</a>
+                      <a href="#video">简体中文</a>
                       {', '}
-                      <a href="#boy">Русский</a>
+                      <a href="#video">Русский</a>
                       {', '}
-                      <a href="#boy">Português</a>
+                      <a href="#video">Português</a>
                     </li>
                   </ul>
                 </li>
