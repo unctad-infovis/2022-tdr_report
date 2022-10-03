@@ -23,7 +23,7 @@ function Footer() {
             <div className="footer_content">
               <h3>Watch the video</h3>
               <div className="iframe_container youtube_iframe">
-                <iframe src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                <iframe src="https://www.youtube.com/embed/QqDYv5-bDhU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
               {/* <ul>
                 <li>
@@ -116,8 +116,11 @@ function Footer() {
                 <li>
                   Africa
                   <ul>
-                    <li><a href="https://unctad.org/press-material/africas-economic-growth-decelerates-sharply" onClick={(event) => track(event.target.href)}>English</a></li>
-                    <li><a href="https://unctad.org/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement" onClick={(event) => track(event.target.href)}>Français</a></li>
+                    <li>
+                      <a href="https://unctad.org/press-material/africas-economic-growth-decelerates-sharply" onClick={(event) => track(event.target.href)}>English</a>
+                      {', '}
+                      <a href="https://unctad.org/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement" onClick={(event) => track(event.target.href)}>Français</a>
+                    </li>
                   </ul>
                 </li>
                 <li>

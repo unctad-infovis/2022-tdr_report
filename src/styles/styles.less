@@ -2,24 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300.css');
 
 @import 'colors.less';
+@import 'site_overrides.less';
 
 #app-root-2022-tdr_report .app {
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   .video_container {
     font-size: 0;
     margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #0b1014;
     justify-content: space-evenly;
     video {
-
       height: 100%;
-      min-height: 100%;
-      margin: 0;
-      object-fit: fill;
-      width: 100%;
     }
   }
   @content_max_width: 1200px;
@@ -45,20 +39,20 @@
           margin: 0 15px 15px 15px;
           width: 100%;
         }
-        @media all and (max-width: 869px) and (min-width: 590px) {
+        @media all and (max-width: 991px) and (min-width: 590px) {
           margin: 0 15px 15px 15px;
           width: calc(50% - 30px);
         }
-        @media all and (min-width: 869px) {
+        @media all and (min-width: 992px) {
           margin: 0 0 15px 0;
         }
         button {
-          @media all and (max-width: 869px) {
+          @media all and (max-width: 991px) {
             display: inline-block;
             width: 100%;
             border-radius: 0px;
           }
-          @media all and (min-width: 869px) {
+          @media all and (min-width: 992px) {
             width: 150px;
           }
           background-color: #fff;
@@ -94,7 +88,7 @@
     display: flex;
     height: 10px;
     position: sticky;
-    top: 0;
+    top: 30px;
     width: 100%;
     z-index: 3;
     .section {
@@ -520,17 +514,23 @@
         flex-direction: row;
       }
       .footer_element {
-        &.footer_element_1 {
-          width: calc(100% - 350px);
+        @media all and (max-width: 640px) {
+          margin: 20px 20px auto 20px;
+          max-width: 500px;
+          width: 100%;
         }
-        &.footer_element_2 {
-          width: 350px;
-        }
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 991px) and (min-width: 640px) {
           margin: 20px auto auto auto;
+          width: 600px;
         }
         @media all and (min-width: 992px) {
           margin: 10px;
+          &.footer_element_1 {
+            width: calc(100% - 350px);
+          }
+          &.footer_element_2 {
+            width: 350px;
+          }
         }
         .footer_content {
           width: 100%;
