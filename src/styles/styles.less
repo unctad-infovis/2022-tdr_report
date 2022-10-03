@@ -112,8 +112,9 @@
       &:hover {
         opacity: 0.5;
       }
-      .progress {
+      .progress_bar {
         background-color: @unblue;
+        border-radius: 0;
         height: 10px;
         pointer-events: none;
         position: absolute;
@@ -438,18 +439,26 @@
         min-height: 440px;
         font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
         width: 100%;
+        .unctad_logo {
+          height: 60px;
+          float: right;
+          width: 60px;
+        }
         .tooltip_container {
           .tooltip_header {
             color: #000;
             font-size: 20px;
-            margin: 0 0 10px 0;
+            line-height: 22px;
+            margin: 0 0 5px 0;
           }
           .tooltip_label {
             font-size: 18px;
             font-weight: 400;
+            line-height: 20px;
           }
           .tooltip_value {
             font-size: 18px;
+            line-height: 20px;
             font-weight: 700;
           }
         }
@@ -479,6 +488,22 @@
       }
       text-align: center;
       text-transform: uppercase;
+    }
+    .download_button {
+      margin-bottom: 20px;
+      text-align: center;
+      a {
+        background-color: #fff;
+        border-radius: 15px;
+        color: #000;
+        text-transform: uppercase;
+        padding: 7px 30px;
+        font-weight: 700;
+        text-decoration: none;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
     .footer_elements {
       align-items: flex-start;
@@ -566,8 +591,8 @@
           }
           li {
             ul {
-          padding: 0 0 0 20px;
               list-style-type: disc;
+              padding: 0 0 0 20px;
               li {
                 font-size: 15px;
                 margin-bottom: 0;

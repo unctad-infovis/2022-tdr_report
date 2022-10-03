@@ -1,10 +1,23 @@
 import React, { /* useState,  useEffect, useRef */ } from 'react';
 
+const analytics = window.gtag || undefined;
+
 function Footer() {
+  const track = (name) => {
+    console.log(name);
+    if (typeof analytics !== 'undefined') {
+      analytics('event', 'Press material', {
+        event_category: '2022-tdr_report',
+        event_label: name,
+        transport_type: 'beacon'
+      });
+    }
+  };
   return (
     <>
       <div className="footer_container">
         <h2>What do you want to do next?</h2>
+        <div className="download_button"><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></div>
         <div className="footer_elements footer_element_downloads">
           <div className="footer_element">
             {/* <h3>Watch the video</h3>
@@ -13,19 +26,19 @@ function Footer() {
             </div>
             <ul>
               <li>
-                <a href="https://unctad.org/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves">English</a>
+                <a href="">English</a>
                 {', '}
-                <a href="https://unctad.org/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques">Français</a>
+                <a href="">Français</a>
                 {', '}
-                <a href="https://unctad.org/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de">Español</a>
+                <a href="">Español</a>
                 {', '}
-                <a href="https://unctad.org/system/files/press-material/PR22014_ar_TDR22_0.pdf">العربية</a>
+                <a href="">العربية</a>
                 {', '}
-                <a href="https://unctad.org/system/files/press-material/PR22014_ch_TDR22.pdf">简体中文</a>
+                <a href="">简体中文</a>
                 {', '}
-                <a href="https://unctad.org/system/files/press-material/PR22014_ru_TDR22_0.pdf">Русский</a>
+                <a href="">Русский</a>
                 {', '}
-                <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf">Português</a>
+                <a href="">Português</a>
               </li>
             </ul> */}
             <h3><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></h3>
@@ -62,46 +75,46 @@ function Footer() {
                 Read the global press release
                 <ul>
                   <li>
-                    <a href="https://unctad.org/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves">English</a>
+                    <a href="https://unctad.org/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves" onClick={(event) => track(event.target.href)}>English</a>
                     {', '}
-                    <a href="https://unctad.org/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques">Français</a>
+                    <a href="https://unctad.org/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques" onClick={(event) => track(event.target.href)}>Français</a>
                     {', '}
-                    <a href="https://unctad.org/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de">Español</a>
+                    <a href="https://unctad.org/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de" onClick={(event) => track(event.target.href)}>Español</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22014_ar_TDR22_0.pdf">العربية</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22014_ar_TDR22_0.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22014_ch_TDR22.pdf">简体中文</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22014_ch_TDR22.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22014_ru_TDR22_0.pdf">Русский</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22014_ru_TDR22_0.pdf" onClick={(event) => track(event.target.href)}>Русский</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf">Português</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22014_pt_TDR22.pdf" onClick={(event) => track(event.target.href)}>Português</a>
                   </li>
                 </ul>
               </li>
               <li>
                 Africa
                 <ul>
-                  <li><a href="https://unctad.org/press-material/africas-economic-growth-decelerates-sharply">English</a></li>
-                  <li><a href="https://unctad.org/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement">Français</a></li>
+                  <li><a href="https://unctad.org/press-material/africas-economic-growth-decelerates-sharply" onClick={(event) => track(event.target.href)}>English</a></li>
+                  <li><a href="https://unctad.org/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement" onClick={(event) => track(event.target.href)}>Français</a></li>
                 </ul>
               </li>
               <li>
                 Latin America and the Caribbean
                 <ul>
-                  <li><a href="https://unctad.org/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america">English</a></li>
+                  <li><a href="https://unctad.org/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america" onClick={(event) => track(event.target.href)}>English</a></li>
                   {/* <li>Español to come</li> */}
                 </ul>
               </li>
               <li>
                 East and South-East Asia
                 <ul>
-                  <li><a href="https://unctad.org/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions">English</a></li>
+                  <li><a href="https://unctad.org/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions" onClick={(event) => track(event.target.href)}>English</a></li>
                 </ul>
               </li>
               <li>
                 South and West Asia
                 <ul>
-                  <li><a href="https://unctad.org/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across">English</a></li>
+                  <li><a href="https://unctad.org/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across" onClick={(event) => track(event.target.href)}>English</a></li>
                 </ul>
               </li>
             </ul>
