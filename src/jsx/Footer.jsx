@@ -25,23 +25,21 @@ function Footer() {
               <div className="iframe_container youtube_iframe">
                 <iframe src="https://www.youtube.com/embed/QqDYv5-bDhU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
-              {/* <ul>
+              <ul>
                 <li>
-                  <a href="#video">English</a>
+                  <a href="https://youtu.be/AHIS_6dyADQ" target="_blank" rel="noreferrer">Français</a>
                   {', '}
-                  <a href="#video">Français</a>
+                  <a href="https://youtu.be/r-91aKra8J8" target="_blank" rel="noreferrer">Español</a>
                   {', '}
-                  <a href="#video">Español</a>
+                  <a href="https://youtu.be/5EyVPdGdJpk" target="_blank" rel="noreferrer">العربية</a>
                   {', '}
-                  <a href="#video">العربية</a>
+                  <a href="https://youtu.be/Te2RMNI0rkA" target="_blank" rel="noreferrer">简体中文</a>
                   {', '}
-                  <a href="#video">简体中文</a>
+                  <a href="https://youtu.be/nz10v0QqXRU" target="_blank" rel="noreferrer">Русский</a>
                   {', '}
-                  <a href="#video">Русский</a>
-                  {', '}
-                  <a href="#video">Português</a>
+                  <a href="https://youtu.be/UsIx8WQFsd4" target="_blank" rel="noreferrer">Português</a>
                 </li>
-              </ul> */}
+              </ul>
             </div>
             <div className="footer_content anchor_podcasts">
               <h3>Podcasts</h3>
@@ -72,26 +70,26 @@ function Footer() {
                 <iframe src="https://www.youtube.com/embed/UGtKGX8B9hU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div> */}
               <ul>
-                {/* <li>
+                <li>
                   Download the video
                   <ul>
                     <li>
-                      <a href="#video">English</a>
+                      <a href="https://vimeo.com/755965931" target="_blank" rel="noreferrer">English</a>
                       {', '}
-                      <a href="#video">Français</a>
+                      <a href="https://vimeo.com/756145582" target="_blank" rel="noreferrer">Français</a>
                       {', '}
-                      <a href="#video">Español</a>
+                      <a href="https://vimeo.com/756145622" target="_blank" rel="noreferrer">Español</a>
                       {', '}
-                      <a href="#video">العربية</a>
+                      <a href="https://vimeo.com/756186752" target="_blank" rel="noreferrer">العربية</a>
                       {', '}
-                      <a href="#video">简体中文</a>
+                      <a href="https://vimeo.com/756145534" target="_blank" rel="noreferrer">简体中文</a>
                       {', '}
-                      <a href="#video">Русский</a>
+                      <a href="https://vimeo.com/756185578" target="_blank" rel="noreferrer">Русский</a>
                       {', '}
-                      <a href="#video">Português</a>
+                      <a href="https://vimeo.com/756146237" target="_blank" rel="noreferrer">Português</a>
                     </li>
                   </ul>
-                </li> */}
+                </li>
                 <li>
                   Read the global press release
                   <ul>
