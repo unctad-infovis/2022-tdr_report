@@ -484,7 +484,7 @@
         max-width: 700px;
       }
       @media all and (min-width: 992px) {
-        max-width: @content_max_width;
+        max-width: 1000px;
       }
       text-align: center;
       text-transform: uppercase;
@@ -508,6 +508,7 @@
     .footer_elements {
       align-items: flex-start;
       display: flex;
+      justify-content: center;
       margin: auto auto;
       max-width: @content_max_width;
       @media all and (max-width: 991px) {
@@ -515,131 +516,141 @@
         flex-direction: column;
       }
       @media all and (min-width: 992px) {
-        align-items: flex-start;
         flex-direction: row;
       }
       .footer_element {
-        background-color: @unblue;
-        border-radius: 5px;
-        box-sizing: border-box;
-        color: #fff;
-        max-width: 600px;
-        padding: 20px;
-        width: calc(100% - 40px);
+        &.footer_element_1 {
+          width: calc(100% - 400px);
+        }
+        &.footer_element_2 {
+          width: 400px;
+        }
         @media all and (max-width: 991px) {
           margin: 20px auto auto auto;
         }
         @media all and (min-width: 992px) {
-          margin: 20px;
+          margin: 10px;
         }
-        p {
-          color: #fff;
-          font-size: 20px;
-          line-height: 26px;
-          margin: 0 0 5px 0;
-        }
-        img {
-          margin-top: 10px;
+        .footer_content {
           width: 100%;
-          max-width: 200px;
-        }
-        .iframe_container {
-          margin: 0 0 20px 0;
-          &.youtube_iframe {
-            padding-bottom: 56.25%;
-            position: relative;
+          background-color: @unblue;
+          border-radius: 5px;
+          box-sizing: border-box;
+          color: #fff;
+          padding: 20px;
+          margin-bottom: 20px;
+          p {
+            color: #fff;
+            font-size: 20px;
+            line-height: 26px;
+            margin: 0 0 5px 0;
+          }
+          img {
+            margin-top: 10px;
             width: 100%;
-            iframe {
-              border: 0;
-              height: 100%;
-              left: 0;
-              position: absolute;
-              top: 0;
-              width: 100%;
-            }
+            max-width: 200px;
           }
-          iframe {
-            border: 0;
-          }
-        }
-        h3 {
-          font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 30px;
-          font-weight: 700;
-          letter-spacing: 0.02em;
-          line-height: 36px;
-          margin: 0 0 20px 0;
-          text-transform: uppercase;
           a {
             color: #fff;
-            text-decoration: underline;
-            &:hover {
-              text-decoration: none;
-            }
           }
-        }
-        ul {
-          margin: 0 0 20px 0;
-          padding: 0 0 0 0;
-          list-style-type: none;
-          a {
-            color: #fff;
-            text-decoration: underline;
-            &:hover {
-              text-decoration: none;
-            }
-          }
-          li {
-            ul {
-              list-style-type: disc;
-              padding: 0 0 0 20px;
-              li {
-                font-size: 15px;
-                margin-bottom: 0;
-              }
-            }
-          }
-          &.podcasts_container,
-          &.videos_container {
-            list-style-type: none;
-            padding: 0;
-            li {
-              align-items: center;
-              display: flex;
+          .iframe_container {
+            margin: 0 0 20px 0;
+            &.youtube_iframe {
+              padding-bottom: 56.25%;
+              position: relative;
               width: 100%;
-              .icon {
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-                content: '';
-                display: inline-block;
-                height: 40px;
-                margin-right: 10px;
-                max-width: 40px;
-                position: relative;
-                width: 40px;
-              }
-              .text {
+              iframe {
+                border: 0;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
                 width: 100%;
               }
             }
-          }
-          &.podcasts_container {
-            margin-bottom: 40px;
-            li .icon {
-              background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_podcast.png);
-              background-size: auto 40px;
+            iframe {
+              border: 0;
             }
           }
-          &.videos_container {
-            li .icon {
-              background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_video.png);
-              background-size: auto 25px;
+          h3 {
+            font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 36px;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            a {
+              color: #fff;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+              }
             }
           }
-          li {
-            font-size: 20px;
-            line-height: 26px;
-            margin: 0 0 10px 0;
+          ul {
+            margin: 0 0 20px 0;
+            padding: 0 0 0 0;
+            list-style-type: none;
+            a {
+              color: #fff;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+            li {
+              ul {
+                list-style-type: disc;
+                padding: 0 0 0 20px;
+                li {
+                  font-size: 15px;
+                  margin-bottom: 0;
+                }
+              }
+            }
+            &.podcasts_container,
+            &.videos_container {
+              list-style-type: none;
+              padding: 0;
+              li {
+                align-items: center;
+                display: flex;
+                width: 100%;
+                .icon {
+                  background-position: 50% 50%;
+                  background-repeat: no-repeat;
+                  content: '';
+                  display: inline-block;
+                  height: 40px;
+                  margin-right: 10px;
+                  max-width: 40px;
+                  position: relative;
+                  width: 40px;
+                }
+                .text {
+                  width: 100%;
+                }
+              }
+            }
+            &.podcasts_container {
+              margin-bottom: 40px;
+              li .icon {
+                background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_podcast.png);
+                background-size: auto 40px;
+              }
+            }
+            &.videos_container {
+              li .icon {
+                background-image: url(https://storage.unctad.org/2022-tdr_report/assets/img/icons/2022-tdr_report_video.png);
+                background-size: auto 25px;
+              }
+            }
+            li {
+              font-size: 20px;
+              line-height: 26px;
+              margin: 0 0 10px 0;
+            }
           }
         }
       }
