@@ -2,6 +2,10 @@
 
 **Live demo** https://unctad-infovis.github.io/2022-tdr_report/
 
+## Used in
+
+* [Trade and Development Report 2022](https://unctad.org/tdr2022)
+
 ## Inspiration
 
 * [OECD, Paying the Price of War](https://www.oecd.org/economic-outlook/september-2022/)

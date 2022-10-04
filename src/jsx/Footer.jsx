@@ -124,8 +124,11 @@ function Footer() {
                 <li>
                   Latin America and the Caribbean
                   <ul>
-                    <li><a href="https://unctad.org/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america" onClick={(event) => track(event.target.href)}>English</a></li>
-                    {/* <li>Español to come</li> */}
+                    <li>
+                      <a href="https://unctad.org/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america" onClick={(event) => track(event.target.href)}>English</a>
+                      {', '}
+                      <a href="https://unctad.org/es/news/las-restricciones-externas-y-el-debil-crecimiento-ensombrecen-el-panorama-economico-de-america" onClick={(event) => track(event.target.href)}>Español</a>
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -137,7 +140,11 @@ function Footer() {
                 <li>
                   South and West Asia
                   <ul>
-                    <li><a href="https://unctad.org/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across" onClick={(event) => track(event.target.href)}>English</a></li>
+                    <li>
+                      <a href="https://unctad.org/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across" onClick={(event) => track(event.target.href)}>English</a>
+                      {', '}
+                      <a href="https://unctad.org/system/files/press-material/PR22017_ar_TDR22_South_West_Asia_final.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
