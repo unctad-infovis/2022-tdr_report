@@ -18,7 +18,7 @@ function Video() {
       <div className="video_container">
         {
         // eslint-disable-next-line
-        <video src="" autoPlay muted playsInline ref={videoRef} poster="">
+        <video autoPlay muted playsInline ref={videoRef} poster="">
           <source src="" type="video/mp4" ref={mp4Ref} />
           <source src="" type="video/webm" ref={webmRef} />
           <track default kind="captions" srcLang="en" src="" />
