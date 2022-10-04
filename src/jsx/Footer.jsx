@@ -71,7 +71,6 @@ function Footer() {
               </div>
               <div><a href="https://vimeo.com/756503117" target="_blank" rel="noreferrer">Download the press conference</a></div>
               <br />
-              <br />
               <ul>
                 <li>
                   Download the video
