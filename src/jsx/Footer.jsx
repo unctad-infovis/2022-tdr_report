@@ -17,10 +17,10 @@ function Footer() {
     <>
       <div className="footer_container">
         <h2>What do you want to do next?</h2>
-        <div className="download_button"><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></div>
+        <div className="download_button anchor_downloads"><a href="https://unctad.org/webflyer/trade-and-development-report-2022">Download the report</a></div>
         <div className="footer_elements">
           <div className="footer_element footer_element_1">
-            <div className="footer_content">
+            <div className="footer_content anchor_video">
               <h3>Watch the video</h3>
               <div className="iframe_container youtube_iframe">
                 <iframe src="https://www.youtube.com/embed/QqDYv5-bDhU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
