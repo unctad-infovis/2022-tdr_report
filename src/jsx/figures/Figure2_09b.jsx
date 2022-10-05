@@ -46,7 +46,7 @@ function Figure2_09b() {
         subtitle="Index numbers, 2015=100, January 2015–July 2022"
         // tick_interval={493}
         tick_interval={3}
-        title="Energy price indices"
+        title="Grain price indices"
         ymin={0}
       />
       )}
