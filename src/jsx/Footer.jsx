@@ -4,7 +4,6 @@ const analytics = window.gtag || undefined;
 
 function Footer() {
   const track = (name) => {
-    console.log(name);
     if (typeof analytics !== 'undefined') {
       analytics('event', 'Press material', {
         event_category: '2022-tdr_report',

@@ -265,7 +265,7 @@ function BarChart({
         type: 'linear'
       }
     });
-    document.querySelector(`#chartIdx${idx}`).style.opacity = 1;
+    chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
   }, [idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {

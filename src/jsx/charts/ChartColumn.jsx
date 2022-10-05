@@ -265,7 +265,7 @@ function ColumnChart({
         type: 'linear'
       }
     });
-    document.querySelector(`#chartIdx${idx}`).style.opacity = 1;
+    chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
   }, [idx, data, data_decimals, note, source, subtitle, title, xlabel, xlabelrotation, ymax, ymin]);
 
   useEffect(() => {

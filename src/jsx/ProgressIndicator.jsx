@@ -7,7 +7,7 @@ import scrollIntoView from 'scroll-into-view';
 const analytics = window.gtag || undefined;
 
 function ProgressIndicator({
-  section1Progress, section2Progress, section3Progress, section4Progress
+  appRef, section1Progress, section2Progress, section3Progress, section4Progress
 }) {
   const track = (name) => {
     if (typeof analytics !== 'undefined') {
@@ -21,7 +21,7 @@ function ProgressIndicator({
   const anchorClick = (target, name) => {
     track(name);
     setTimeout(() => {
-      scrollIntoView(document.querySelector(target), {
+      scrollIntoView(appRef.current.querySelector(target), {
         align: {
           left: 0,
           leftOffset: 0,
@@ -60,6 +60,8 @@ function ProgressIndicator({
 }
 
 ProgressIndicator.propTypes = {
+  appRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]).isRequired,
   section1Progress: PropTypes.number,
   section2Progress: PropTypes.number,
   section3Progress: PropTypes.number,

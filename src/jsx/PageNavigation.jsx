@@ -1,11 +1,12 @@
 import React, { /* useState, useEffect, useRef  */} from 'react';
+import PropTypes from 'prop-types';
 
 // https://www.npmjs.com/package/scroll-into-view
 import scrollIntoView from 'scroll-into-view';
 
 const analytics = window.gtag || undefined;
 
-function PageNavigation() {
+function PageNavigation({ appRef }) {
   const track = (name) => {
     if (typeof analytics !== 'undefined') {
       analytics('event', 'Navigation Click', {
@@ -18,7 +19,7 @@ function PageNavigation() {
   const anchorClick = (target, name) => {
     track(name);
     setTimeout(() => {
-      scrollIntoView(document.querySelector(target), {
+      scrollIntoView(appRef.current.querySelector(target), {
         align: {
           left: 0,
           leftOffset: 0,
@@ -47,5 +48,13 @@ function PageNavigation() {
     </>
   );
 }
+
+PageNavigation.propTypes = {
+  appRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]).isRequired
+};
+PageNavigation.defaultProps = {
+
+};
 
 export default PageNavigation;

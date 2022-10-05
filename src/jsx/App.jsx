@@ -25,6 +25,7 @@ import Figure209b from './figures/Figure2_09b.jsx';
 const analytics = window.gtag || undefined;
 
 function App() {
+  const appRef = useRef();
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
@@ -108,9 +109,9 @@ function App() {
   }, [section4Progress, section4Seen]);
 
   return (
-    <div className="app">
+    <div className="app" ref={appRef}>
       <Video />
-      <PageNavigation />
+      <PageNavigation appRef={appRef} />
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
@@ -145,7 +146,7 @@ function App() {
         </div>
       </div>
       <div className="section_wrapper">
-        <ProgressIndicator section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} />
+        <ProgressIndicator appRef={appRef} section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} />
         <div ref={section1} className="section_1_container">
           <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" max_width={560} text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
           <div className="two_column_layout">

@@ -5,21 +5,21 @@ import 'intersection-observer';
 import { useIsVisible } from 'react-is-visible';
 
 function Quote() {
-  const chartRef = useRef();
+  const quoteRef = useRef();
 
-  const isVisible = useIsVisible(chartRef, { once: true });
+  const isVisible = useIsVisible(quoteRef, { once: true });
 
   useEffect(() => {
     if (isVisible === true) {
       setTimeout(() => {
-        document.querySelectorAll('.quote_container div').forEach(el => el.classList.add('visible'));
+        quoteRef.current.querySelectorAll('.quote_container div').forEach(el => el.classList.add('visible'));
       }, 700);
     }
   }, [isVisible]);
 
   return (
     <>
-      <div ref={chartRef}>
+      <div ref={quoteRef}>
         {(isVisible) && (
           <div className="quote_container">
             <div className="quote_element quote_mark">

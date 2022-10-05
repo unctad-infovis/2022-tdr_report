@@ -336,7 +336,7 @@ function LineChart({
         type: 'linear'
       }
     });
-    document.querySelector(`#chartIdx${idx}`).style.opacity = 1;
+    chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
   }, [allow_decimals, data, data_decimals, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
 
   useEffect(() => {
