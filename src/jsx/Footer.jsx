@@ -144,7 +144,7 @@ function Footer() {
                     <li>
                       <a href="/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions" onClick={(event) => track(event.target.href)}>English</a>
                       {', '}
-                      <a href="/system/files/press-material/PR22016.Rev_.1_ch_TDR22_East_SouthEast_Asia_Final.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                      <a href="/system/files/press-material/PR22016.Rev_.1_ch_TDR22_East_SouthEast_Asia_Final.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
                     </li>
                   </ul>
                 </li>
