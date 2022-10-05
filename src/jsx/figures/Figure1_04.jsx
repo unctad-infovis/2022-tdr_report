@@ -70,9 +70,9 @@ function Figure1_04() {
         note="Labour share is calculated as the ratio of the sum of compensation of employees and mixed income to GDP."
         show_only_first_and_last_labels
         source="United Nations Global Policy Model database."
-        subtitle="Labour share as percentage of the GDP, 1980–2022"
+        subtitle="Total income from labour as a percentage of GDP, 1980–2022"
         tick_interval={1}
-        title="Capital gains"
+        title="Capital gains and labour pains"
         xlabel="Year"
       />
       )}

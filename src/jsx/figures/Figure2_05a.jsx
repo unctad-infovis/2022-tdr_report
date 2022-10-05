@@ -42,9 +42,9 @@ function Figure2_05a() {
         note="LMICs=Lower middle-income countries, LICs=Low-income countries, MICs=Middle-income countries, UMICs=Upper middle-income countries"
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on World Bank data."
-        subtitle="Developing countries and groups, Income group averages, Percentage, 2010–2021"
+        subtitle="Servicing costs on public and publicly guaranteed external debt as a percentage of government revenues, Income group averages, Percentage, 2010–2021"
         tick_interval={1}
-        title="Servicing costs on public and publicly guaranteed external debt to government revenues"
+        title="The rising costs of public debt for developing countries"
         xlabel="Year"
       />
       )}
