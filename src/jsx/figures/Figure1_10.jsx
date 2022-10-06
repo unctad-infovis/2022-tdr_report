@@ -38,7 +38,7 @@ function Figure1_10() {
         data_decimals={1}
         idx="1_10"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="Expected output gap in 2023, G20 countries, Percentage"
+        subtitle="Expected output gap in 2023 in G20 countries; Percentage"
         title="Lost economic potential"
         xlabelrotation={-60}
         ymax={10}

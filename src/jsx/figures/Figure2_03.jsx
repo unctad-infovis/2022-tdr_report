@@ -40,7 +40,7 @@ function Figure2_03() {
         labels_inside
         source="UNCTAD secretariat calculations based on Refinitiv."
         note="Estimated change in per cent of the nominal exchange rate against the United States dollar between 1 January 2022 and 8 July 2022."
-        subtitle="Selected developing countries, Against the United States dollar, Percentage, January–July 2022"
+        subtitle="Selected developing countries, against the United States dollar; Percentage; January–July 2022"
         title="Nominal exchange rate depreciations"
         ymax={100}
         ymin={0}

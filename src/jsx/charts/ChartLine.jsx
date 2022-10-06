@@ -9,13 +9,13 @@ import { useIsVisible } from 'react-is-visible';
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 // import highchartsExporting from 'highcharts/modules/exporting';
-// import highchartsRegression from 'highcharts-regression';
+import highchartsRegression from 'highcharts-regression';
 
 // Load helpers.
 import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
-// highchartsRegression(Highcharts);
+highchartsRegression(Highcharts);
 // highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
@@ -133,9 +133,9 @@ function LineChart({
         enabled: true,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '20px',
+          fontSize: '16px',
           fontWeight: 400,
-          lineHeight: '22px'
+          lineHeight: '18px'
         },
         text: subtitle
       },

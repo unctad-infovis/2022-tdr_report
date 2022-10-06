@@ -104,8 +104,9 @@ function ColumnChart({
         enabled: true,
         style: {
           color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '20px',
-          fontWeight: 400
+          fontSize: '16px',
+          fontWeight: 400,
+          lineHeight: '18px'
         },
         text: subtitle
       },

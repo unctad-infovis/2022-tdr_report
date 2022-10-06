@@ -45,8 +45,8 @@ function Figure1_09() {
         data_decimals={0}
         idx="1_09"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
-        subtitle="COVID-19 recovery compared to pre-COVID-19 trend, Index numbers, 2016=100, 2016–2023"
-        title=" The long COVID of the global economy"
+        subtitle="COVID-19 recovery compared to pre-pandemic trend; Index numbers, 2016=100; 2016–2023"
+        title="The long COVID of the global economy"
         xlabel="Year"
       />
       )}
