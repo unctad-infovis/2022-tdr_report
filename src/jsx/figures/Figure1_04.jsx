@@ -41,7 +41,6 @@ function Figure1_04() {
       }
     }
   }));
-
   useEffect(() => {
     const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_1_04.csv`;
     try {

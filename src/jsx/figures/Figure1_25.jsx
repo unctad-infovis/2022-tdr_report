@@ -41,7 +41,7 @@ function Figure1_25() {
         note="Data refer to the ratio of corporate profits to gross production value."
         show_only_first_and_last_labels
         source="UNCTAD secretariat calculations based on OECD data."
-        subtitle="United States; Percentage; 1st quarter 2017–2nd quarter of 2021"
+        subtitle="United States, percentage, 1st quarter 2017–2nd quarter of 2021"
         tick_interval={1}
         title="Aggregate markup"
       />
