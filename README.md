@@ -6,6 +6,10 @@
 
 * [Trade and Development Report 2022](https://unctad.org/tdr2022)
 
+## Referred in
+
+* [NyTimes(https://www.nytimes.com/2022/10/07/business/economy/federal-reserve-global-fallout.html)
+
 ## Inspiration
 
 * [OECD, Paying the Price of War](https://www.oecd.org/economic-outlook/september-2022/)
