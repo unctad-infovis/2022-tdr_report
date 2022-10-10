@@ -417,7 +417,10 @@
         margin: auto auto 40px auto;
       }
       hr {
-        margin: 0;
+        border-color: #eeeeee;
+        border-style: solid;
+        border-width: 1px 0 0 0;
+        margin: 0.5em 0;
       }
       .chart {
         font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -449,6 +452,14 @@
             font-size: 18px;
             font-weight: 700;
             line-height: 20px;
+          }
+        }
+      }
+      .highcharts-contextmenu {
+        li {
+          font-size: 12px !important;
+          &:hover {
+            background-color: @unblue !important; 
           }
         }
       }
