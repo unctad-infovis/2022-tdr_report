@@ -9,12 +9,14 @@ import { useIsVisible } from 'react-is-visible';
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 import highchartsExporting from 'highcharts/modules/exporting';
+import highchartsExportData from 'highcharts/modules/export-data';
 
 // Load helpers.
 import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
+highchartsExportData(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -98,9 +100,7 @@ function ColumnChart({
       exporting: {
         buttons: {
           contextButton: {
-            menuItems: [
-              'viewFullscreen', 'separator', 'downloadPNG'
-            ],
+            menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
             symbol: 'download',
             symbolFill: '#000'
           }
