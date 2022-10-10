@@ -24,6 +24,23 @@ Highcharts.setOptions({
     thousandsSep: ','
   }
 });
+Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
+  const path = [
+    // Arrow stem
+    'M', x + w * 0.5, y,
+    'L', x + w * 0.5, y + h * 0.7,
+    // Arrow head
+    'M', x + w * 0.3, y + h * 0.5,
+    'L', x + w * 0.5, y + h * 0.7,
+    'L', x + w * 0.7, y + h * 0.5,
+    // Box
+    'M', x, y + h * 0.9,
+    'L', x, y + h,
+    'L', x + w, y + h,
+    'L', x + w, y + h * 0.9
+  ];
+  return path;
+};
 
 function LineChart({
   allow_decimals, data, data_decimals, export_title_margin, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
@@ -112,8 +129,9 @@ function LineChart({
           contextButton: {
             menuItems: [
               'viewFullscreen', 'separator', 'downloadPNG'
-            ]
-          },
+            ],
+            symbol: 'download'
+          }
         },
         chartOptions: {
           chart: {
