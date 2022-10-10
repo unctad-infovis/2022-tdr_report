@@ -36,6 +36,7 @@ function Figure1_10() {
       <ChartColumn
         data={dataFigure}
         data_decimals={1}
+        export_title_margin={80}
         idx="1_10"
         source="UNCTAD secretariat calculations based on the United Nations Global Policy Model."
         subtitle="Expected output gap in 2023 in G20 countries; percentage"

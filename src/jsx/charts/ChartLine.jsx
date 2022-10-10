@@ -8,7 +8,7 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
-// import highchartsExporting from 'highcharts/modules/exporting';
+import highchartsExporting from 'highcharts/modules/exporting';
 import highchartsRegression from 'highcharts-regression';
 
 // Load helpers.
@@ -16,7 +16,7 @@ import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
 highchartsRegression(Highcharts);
-// highchartsExporting(Highcharts);
+highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -26,7 +26,7 @@ Highcharts.setOptions({
 });
 
 function LineChart({
-  allow_decimals, data, data_decimals, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
+  allow_decimals, data, data_decimals, export_title_margin, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep
 }) {
   const chartRef = useRef();
 
@@ -108,9 +108,32 @@ function LineChart({
         enabled: false
       },
       exporting: {
+        buttons: {
+          contextButton: {
+            menuItems: [
+              'viewFullscreen', 'separator', 'downloadPNG'
+            ]
+          },
+        },
         chartOptions: {
-          legend: {
-            enabled: true
+          chart: {
+            events: {
+              load() {
+                // eslint-disable-next-line react/no-this-in-sfc
+                this.renderer
+                  .image('https://unctad.org/sites/default/files/2022-06/unctad_logo.svg', 5, 15, 100, 100)
+                  .add();
+              }
+            },
+          },
+          subtitle: {
+            x: 100,
+            widthAdjust: -144
+          },
+          title: {
+            x: 100,
+            margin: export_title_margin,
+            widthAdjust: -144
           }
         }
       },
@@ -337,7 +360,7 @@ function LineChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [allow_decimals, data, data_decimals, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
+  }, [allow_decimals, data, data_decimals, export_title_margin, idx, labels, line_width, note, show_only_first_and_last_labels, source, subtitle, tick_interval, title, xlabel, ymax, ymin, ystep]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -361,6 +384,7 @@ LineChart.propTypes = {
   allow_decimals: PropTypes.bool,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
+  export_title_margin: PropTypes.number,
   idx: PropTypes.string.isRequired,
   labels: PropTypes.bool,
   line_width: PropTypes.number,
@@ -377,10 +401,11 @@ LineChart.propTypes = {
 };
 
 LineChart.defaultProps = {
-  note: false,
   allow_decimals: true,
+  export_title_margin: 0,
   labels: true,
   line_width: 5,
+  note: false,
   show_only_first_and_last_labels: false,
   subtitle: false,
   tick_interval: 1,

@@ -35,9 +35,10 @@ function Figure2_05a() {
       {dataFigure && (
       <ChartLine
         allow_decimals={false}
-        idx="2_05a"
         data={dataFigure}
         data_decimals={0}
+        export_title_margin={20}
+        idx="2_05a"
         labels={false}
         note="LMICs=Lower middle-income countries, LICs=Low-income countries, MICs=Middle-income countries, UMICs=Upper middle-income countries"
         show_only_first_and_last_labels

@@ -64,6 +64,7 @@ function Figure1_04() {
         allow_decimals={false}
         data={dataFigure}
         data_decimals={1}
+        export_title_margin={30}
         idx="1_04"
         labels={false}
         note="Labour share is calculated as the ratio of the sum of compensation of employees and mixed income to GDP."

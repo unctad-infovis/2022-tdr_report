@@ -36,6 +36,7 @@ function Figure2_05b() {
       <ChartBar
         data={dataFigure}
         data_decimals={1}
+        export_title_margin={20}
         idx="2_05b"
         source="UNCTAD secretariat calculations based on World Bank data."
         subtitle="Servicing costs on public and publicly guaranteed external debt as a percentage of government revenues; top 20 countries in 2020"

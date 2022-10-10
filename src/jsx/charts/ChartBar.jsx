@@ -8,13 +8,13 @@ import { useIsVisible } from 'react-is-visible';
 // https://www.highcharts.com/
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
-// import highchartsExporting from 'highcharts/modules/exporting';
+import highchartsExporting from 'highcharts/modules/exporting';
 
 // Load helpers.
 import roundNr from '../helpers/RoundNr.js';
 
 highchartsAccessibility(Highcharts);
-// highchartsExporting(Highcharts);
+highchartsExporting(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -24,7 +24,7 @@ Highcharts.setOptions({
 });
 
 function BarChart({
-  idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+  data, data_decimals, export_title_margin, idx, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -79,9 +79,32 @@ function BarChart({
         enabled: false
       },
       exporting: {
+        buttons: {
+          contextButton: {
+            menuItems: [
+              'viewFullscreen', 'separator', 'downloadPNG'
+            ]
+          },
+        },
         chartOptions: {
-          legend: {
-            enabled: true
+          chart: {
+            events: {
+              load() {
+                // eslint-disable-next-line react/no-this-in-sfc
+                this.renderer
+                  .image('https://unctad.org/sites/default/files/2022-06/unctad_logo.svg', 5, 15, 100, 100)
+                  .add();
+              }
+            },
+          },
+          subtitle: {
+            x: 100,
+            widthAdjust: -144
+          },
+          title: {
+            x: 100,
+            margin: export_title_margin,
+            widthAdjust: -144
           }
         }
       },
@@ -112,6 +135,7 @@ function BarChart({
       },
       title: {
         align: 'left',
+        margin: 30,
         style: {
           color: '#000',
           fontSize: '30px',
@@ -267,7 +291,7 @@ function BarChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [idx, data, data_decimals, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [export_title_margin, data, data_decimals, idx, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -288,9 +312,10 @@ function BarChart({
 }
 
 BarChart.propTypes = {
-  idx: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
+  export_title_margin: PropTypes.number,
+  idx: PropTypes.string.isRequired,
   labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
@@ -303,6 +328,7 @@ BarChart.propTypes = {
 };
 
 BarChart.defaultProps = {
+  export_title_margin: 0,
   labels_inside: false,
   note: false,
   subtitle: false,
