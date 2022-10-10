@@ -101,7 +101,8 @@ function ColumnChart({
             menuItems: [
               'viewFullscreen', 'separator', 'downloadPNG'
             ],
-            symbol: 'download'
+            symbol: 'download',
+            symbolFill: '#000'
           }
         },
         chartOptions: {
@@ -109,9 +110,7 @@ function ColumnChart({
             events: {
               load() {
                 // eslint-disable-next-line react/no-this-in-sfc
-                this.renderer
-                  .image('https://unctad.org/sites/default/files/2022-06/unctad_logo.svg', 5, 15, 100, 100)
-                  .add();
+                this.renderer.image('https://unctad.org/sites/default/files/2022-06/unctad_logo.svg', 5, 15, 100, 100).add();
               }
             },
           },
