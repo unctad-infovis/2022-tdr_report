@@ -21,6 +21,7 @@ highchartsExportData(Highcharts);
 Highcharts.setOptions({
   lang: {
     decimalPoint: '.',
+    downloadCSV: 'Download CSV data',
     thousandsSep: ','
   }
 });
