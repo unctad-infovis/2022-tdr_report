@@ -8,7 +8,8 @@
 
 ## Referred in
 
-* [NyTimes(https://www.nytimes.com/2022/10/07/business/economy/federal-reserve-global-fallout.html)
+* [New York Times(https://www.nytimes.com/2022/10/07/business/economy/federal-reserve-global-fallout.html)
+* [CNBC](https://www.cnbc.com/2022/10/04/unctad-warns-that-asia-global-economy-headed-for-a-recession.html)
 
 ## Inspiration
 
