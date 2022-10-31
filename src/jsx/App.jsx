@@ -306,7 +306,7 @@ function App() {
             </div>
             <div className="right_column">
               <Figure209a />
-              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, anitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
+              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, antitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
             </div>
           </div>
         </div>
