@@ -48,7 +48,6 @@ function Figure2_03() {
         ylabel="Percentage"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

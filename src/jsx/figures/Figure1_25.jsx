@@ -46,7 +46,6 @@ function Figure1_25() {
         title="Aggregate markup"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

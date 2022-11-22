@@ -46,7 +46,6 @@ function Figure3_09() {
         xlabel=""
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

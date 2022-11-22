@@ -46,7 +46,6 @@ function Figure1_10() {
         ymin={-16}
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

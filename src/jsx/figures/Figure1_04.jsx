@@ -76,7 +76,6 @@ function Figure1_04() {
         xlabel="Year"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

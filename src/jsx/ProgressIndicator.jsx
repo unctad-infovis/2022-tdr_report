@@ -54,7 +54,6 @@ function ProgressIndicator({
           <div className="progress_bar" style={{ width: `${section4Progress}%` }} />
         </button>
       </div>
-      <noscript>Your browser does not support JavaScript!</noscript>
     </>
   );
 }

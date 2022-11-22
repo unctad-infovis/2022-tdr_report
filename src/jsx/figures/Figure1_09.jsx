@@ -50,7 +50,6 @@ function Figure1_09() {
         xlabel="Year"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

@@ -44,7 +44,6 @@ function Figure1_08() {
         title="Global growth cycles before and after the Global financial crisis (GFC) and the COVID-19 shock"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

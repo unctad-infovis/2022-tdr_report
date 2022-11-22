@@ -50,7 +50,6 @@ function Figure2_09a() {
         ymin={0}
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

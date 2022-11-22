@@ -48,7 +48,6 @@ function Figure2_06() {
         title="Global supply chain pressure index (GSCPI)"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

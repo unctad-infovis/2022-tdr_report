@@ -49,7 +49,6 @@ function Figure2_05a() {
         xlabel="Year"
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }
