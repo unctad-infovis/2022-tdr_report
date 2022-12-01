@@ -36,25 +36,23 @@ function ProgressIndicator({
     }, 50);
   };
   return (
-    <>
-      <div className="progress_indicator_container">
-        <button type="button" className="section" onClick={() => anchorClick('.section_1_container', 'Section 1')}>
-          <div className="progress_bar" style={{ width: `${section1Progress}%` }} />
-        </button>
-        <div className="section_divider" />
-        <button type="button" className="section" onClick={() => anchorClick('.section_2_container', 'Section 2')}>
-          <div className="progress_bar" style={{ width: `${section2Progress}%` }} />
-        </button>
-        <div className="section_divider" />
-        <button type="button" className="section" onClick={() => anchorClick('.section_3_container', 'Section 3')}>
-          <div className="progress_bar" style={{ width: `${section3Progress}%` }} />
-        </button>
-        <div className="section_divider" />
-        <button type="button" className="section" onClick={() => anchorClick('.section_4_container', 'Section 4')}>
-          <div className="progress_bar" style={{ width: `${section4Progress}%` }} />
-        </button>
-      </div>
-    </>
+    <div className="progress_indicator_container">
+      <button type="button" className="section" onClick={() => anchorClick('.section_1_container', 'Section 1')}>
+        <div className="progress_bar" style={{ width: `${section1Progress}%` }} />
+      </button>
+      <div className="section_divider" />
+      <button type="button" className="section" onClick={() => anchorClick('.section_2_container', 'Section 2')}>
+        <div className="progress_bar" style={{ width: `${section2Progress}%` }} />
+      </button>
+      <div className="section_divider" />
+      <button type="button" className="section" onClick={() => anchorClick('.section_3_container', 'Section 3')}>
+        <div className="progress_bar" style={{ width: `${section3Progress}%` }} />
+      </button>
+      <div className="section_divider" />
+      <button type="button" className="section" onClick={() => anchorClick('.section_4_container', 'Section 4')}>
+        <div className="progress_bar" style={{ width: `${section4Progress}%` }} />
+      </button>
+    </div>
   );
 }
 

@@ -18,27 +18,25 @@ function Quote() {
   }, [isVisible]);
 
   return (
-    <>
-      <div ref={quoteRef}>
-        {(isVisible) && (
-          <div className="quote_container">
-            <div className="quote_element quote_mark">
-              <img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/icons/2022-tdr_report_quote.png`} alt="Quote icon" />
-            </div>
-            <div className="quote_element quote_text_upper">
-              There is still time to step back from the edge of recession.
-            </div>
-            <div className="quote_element quote_text_lower">
-              The current course of action is hurting the most vulnerable. This is a matter of policy choices and political will.
-            </div>
-            <div className="quote_element quote_signature">
-              <div className="title">UNCTAD Secretary-General</div>
-              <div className="name">Rebeca Grynspan</div>
-            </div>
-          </div>
-        )}
+    <div ref={quoteRef}>
+      {(isVisible) && (
+      <div className="quote_container">
+        <div className="quote_element quote_mark">
+          <img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/icons/2022-tdr_report_quote.png`} alt="Quote icon" />
+        </div>
+        <div className="quote_element quote_text_upper">
+          There is still time to step back from the edge of recession.
+        </div>
+        <div className="quote_element quote_text_lower">
+          The current course of action is hurting the most vulnerable. This is a matter of policy choices and political will.
+        </div>
+        <div className="quote_element quote_signature">
+          <div className="title">UNCTAD Secretary-General</div>
+          <div className="name">Rebeca Grynspan</div>
+        </div>
       </div>
-    </>
+      )}
+    </div>
   );
 }
 

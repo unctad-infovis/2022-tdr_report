@@ -14,20 +14,19 @@ function Video() {
     }
   }, []);
   return (
-    <>
-      <div className="video_container">
-        {
-        // eslint-disable-next-line
-        <video autoPlay muted playsInline ref={videoRef} poster="">
-          <source src="" type="video/mp4" ref={mp4Ref} />
-          <source src="" type="video/webm" ref={webmRef} />
-          <track default kind="captions" srcLang="en" src="" />
-          Your browser does not support the video tag.
-        </video>
-        }
-
+    <div className="video_container">
+      <video autoPlay muted playsInline ref={videoRef} poster="">
+        <source src="" type="video/mp4" ref={mp4Ref} />
+        <source src="" type="video/webm" ref={webmRef} />
+        <track default kind="captions" srcLang="en" src="" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="title_container">
+        <h4 className="unctad_logo">
+          <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />
+        </h4>
       </div>
-    </>
+    </div>
   );
 }
 
