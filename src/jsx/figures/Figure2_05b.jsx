@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import '../../styles/styles.less';
+
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
 import ChartBar from '../charts/ChartBar.jsx';
@@ -31,7 +33,7 @@ function Figure2_05b() {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       {dataFigure && (
       <ChartBar
         data={dataFigure}
