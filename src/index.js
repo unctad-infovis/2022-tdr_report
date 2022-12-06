@@ -18,7 +18,11 @@ import Figure205b from './jsx/figures/Figure2_05b.jsx';
 // import Figure309 from './jsx/Figure3_09.jsx';
 import App from './jsx/App.jsx';
 
-createRoot(document.getElementById('app-root-2022-tdr_report')).render(<App />);
+const AppRoot = document.getElementById('app-root-2022-tdr_report');
+if (AppRoot) {
+  const root = createRoot(AppRoot);
+  root.render(<App />);
+}
 // createRoot(document.getElementById('app-root-2022-tdr_report_video')).render(<Video />);
 // createRoot(document.getElementById('app-root-2022-tdr_report_quote')).render(<Quote />);
 // createRoot(document.getElementById('app-root-2022-tdr_report_figure_1_04')).render(<Figure104 />);
