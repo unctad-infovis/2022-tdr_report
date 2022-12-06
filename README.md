@@ -5,6 +5,12 @@
 ## Used in
 
 * [Trade and Development Report 2022](https://unctad.org/tdr2022)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1599780896181198849)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1586789065084616705)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1583840663065399296)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1582072986982846464)
+* [UNCTAD/Instagram](https://www.instagram.com/p/CkWTOcYtGH0/)
+* [UNCTAD/Instagram](https://www.instagram.com/p/Clyl-QWqS6X/)
 
 ## Referred in
 
