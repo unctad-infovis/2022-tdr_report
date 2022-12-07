@@ -21,6 +21,7 @@ import Figure205a from './figures/Figure2_05a.jsx';
 import Figure205b from './figures/Figure2_05b.jsx';
 import Figure209a from './figures/Figure2_09a.jsx';
 import Figure209b from './figures/Figure2_09b.jsx';
+import Figure315e from './figures/Figure3_15e.jsx';
 
 const analytics = window.gtag || undefined;
 
@@ -30,16 +31,19 @@ function App() {
   const section2 = useRef();
   const section3 = useRef();
   const section4 = useRef();
+  const section5 = useRef();
 
   const [section1Seen, setSection1Seen] = useState(false);
   const [section2Seen, setSection2Seen] = useState(false);
   const [section3Seen, setSection3Seen] = useState(false);
   const [section4Seen, setSection4Seen] = useState(false);
+  const [section5Seen, setSection5Seen] = useState(false);
 
   const [section1Progress, setSection1Progress] = useState(0);
   const [section2Progress, setSection2Progress] = useState(0);
   const [section3Progress, setSection3Progress] = useState(0);
   const [section4Progress, setSection4Progress] = useState(0);
+  const [section5Progress, setSection5Progress] = useState(0);
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
@@ -54,6 +58,7 @@ function App() {
     setSection2Progress((offset > section2.current.offsetTop - windowHeight) ? (Math.min(((offset - (section2.current.offsetTop - windowHeight)) / section2.current.offsetHeight) * 100, 100)) : 0);
     setSection3Progress((offset > section3.current.offsetTop - windowHeight) ? (Math.min(((offset - (section3.current.offsetTop - windowHeight)) / section3.current.offsetHeight) * 100, 100)) : 0);
     setSection4Progress((offset > section4.current.offsetTop - windowHeight) ? (Math.min(((offset - (section4.current.offsetTop - windowHeight)) / section4.current.offsetHeight) * 100, 100)) : 0);
+    setSection5Progress((offset > section5.current.offsetTop - windowHeight) ? (Math.min(((offset - (section4.current.offsetTop - windowHeight)) / section5.current.offsetHeight) * 100, 100)) : 0);
   }, [offset]);
 
   useEffect(() => {
@@ -108,6 +113,19 @@ function App() {
     }
   }, [section4Progress, section4Seen]);
 
+  useEffect(() => {
+    if (section5Progress === 100 && section5Seen === false) {
+      setSection5Seen(true);
+      if (typeof analytics !== 'undefined') {
+        analytics('event', 'Scroll', {
+          event_category: '2022-tdr_report',
+          event_label: 'Section 5',
+          transport_type: 'beacon'
+        });
+      }
+    }
+  }, [section5Progress, section5Seen]);
+
   return (
     <div className="app" ref={appRef}>
       <Video />
@@ -146,7 +164,7 @@ function App() {
         </div>
       </div>
       <div className="section_wrapper">
-        <ProgressIndicator appRef={appRef} section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} />
+        <ProgressIndicator appRef={appRef} section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} section5Progress={section5Progress} />
         <div ref={section1} className="section_1_container">
           <PhotoHeadline img="2022-tdr_report-photo01-min.jpg" max_width={560} text_upper="Global slowdown will affect all regions" text_lower="but impact developing countries most" />
           <div className="two_column_layout">
@@ -309,6 +327,49 @@ function App() {
               <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments to include tighter commodity market regulation as part of their policy mix to curb price spikes that are hitting consumers in the developing world hard.', 'Governments to deploy a pragmatic strategy, including price controls, antitrust measures and windfall taxes on excessive corporate profits and to use these funds to support the most vulnerable.']} />
             </div>
           </div>
+        </div>
+        <div ref={section5} className="section_5_container">
+          <PhotoHeadline img="2022-tdr_report-photo05-min.jpg" text_upper="South-South cooperation can make a difference" text_lower=" but is not a substitute for multilateralism" />
+          <div className="two_column_layout">
+            <div className="left_column">
+              <div className="text_container">
+                <p>As economic pressures build, South-South cooperation could help developing countries pursue climate mitigation and sustainable development.</p>
+                <IsVisible once>
+                  {(isVisible) => (
+                    <p>
+                      UNCTAD simulated a South-led low-carbon transition based on increased coordination and cooperation between developing economies on industrial policy, investment, finance and agriculture. Under this scenario, UNCTAD’s Global Policy Model gave the following results:
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
+                    </p>
+                  )}
+                </IsVisible>
+                <ul>
+                  <li>Energy efficiency gains that are compatible with faster growth in the global South and long-standing development goals. </li>
+                  <li>An additional 300 million jobs worldwide could be created, with gains across all developing regions and an improved share for wages in total income. </li>
+                  <li>Growth would also pick up in developed economies, above that of the last decade, allowing for increased investment in energy transition and improved energy efficiency.  </li>
+                  <li>A decline in annual CO2 emissions to about 30 billion tons by the end of the decade, enough to escape the IPCC catastrophic global warming scenario of up to 4.5 degrees Celsius above preindustrial levels but not enough to hit the 1.5 degree target. </li>
+                </ul>
+                <IsVisible once>
+                  {(isVisible) => (
+                    <p>
+                      However, scaling up this strategy requires an effective multilateral system that gives developing countries the necessary policy space and financial support.
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
+                    </p>
+                  )}
+                </IsVisible>
+                <IsVisible once>
+                  {(isVisible) => (
+                    <p>
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
+                    </p>
+                  )}
+                </IsVisible>
+              </div>
+            </div>
+            <div className="right_column">
+              <Figure315e />
+            </div>
+          </div>
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['Coordinated industrial policies based on intellectual property and technology available within the global South.', 'Cooperation on finance and technology to boost South-South trade and strengthen regional financial preparedness to protect developing economies from global economic fluctuations.', 'Coordination of agricultural policies among developing economies, to ensure agriculture provides employment and food security for people living in the global South, as well as resources for low-carbon industrialization.', 'Industrialization based on minimal use of fossil fuel machinery and an emphasis on local production to meet basic needs. ']} />
         </div>
       </div>
       <Footer />

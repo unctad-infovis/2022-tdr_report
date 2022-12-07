@@ -234,6 +234,7 @@
       }
       .text_container {
         margin-bottom: 40px;
+        ul,
         p {
           font-size: 18px;
           line-height: 24px;
@@ -376,72 +377,7 @@
           }
         }
       }
-      .recommendations_container {
-        background-color: #000;
-        color: #fff;
-        opacity: 0;
-        @media all and (max-width: 699px) {
-          padding: 30px 10px 10px 20px;
-        }
-        @media all and (min-width: 700px) {
-          padding: 30px 30px 10px 30px;
-        }
-        &.visible {
-          opacity: 1;
-          transition-duration: 3s;
-          transition-property: opacity;
-          @media all and (max-width: 699px) {
-            transition-delay: 0s;
-          }
-          @media all and (min-width: 700px) {
-            transition-delay: 1s;
-          }
-        }
-        h3 {
-          font-size: 30px;
-          margin: 0 0 20px 0;
-        }
-        ul {
-          margin: 0;
-          padding: 0;
-          li {
-            display: flex;
-            margin-bottom: 20px;
-            @media all and (max-width: 349px) {
-              flex-direction: column;
-            }
-            @media all and (min-width: 350px) {
-              flex-direction: row;
-            }
-            .list_indicator {
-              background-color: @unblue;
-              border-radius: 50%;
-              display: inline-block;
-              font-size: 30px;
-              font-weight: 700;
-              height: 50px;
-              color: #fff;
-              line-height: 50px;
-              margin-right: 10px;
-              text-align: center;
-              width: 50px;
-              @media all and (max-width: 991px) {
-                margin-bottom: 5px;
-              }
-              @media all and (min-width: 992px) {
-                margin-right: 10px;
-              }
-            }
-            .list_text {
-              width: calc(100% - 50px);
-              font-size: 20px;
-              line-height: 26px;
-              list-style-type: none;
-              margin-bottom: 5px;
-            }
-          }
-        }
-      }
+      
     }
     .chart_container {
       max-width: 600px;
@@ -511,7 +447,74 @@
       }
     }
   }
-
+  .recommendations_container {
+    background-color: #000;
+    color: #fff;
+    margin: auto auto 40px;
+    max-width: 700px;
+    opacity: 0;
+    @media all and (max-width: 699px) {
+      padding: 30px 10px 10px 20px;
+    }
+    @media all and (min-width: 700px) {
+      padding: 30px 30px 10px 30px;
+    }
+    &.visible {
+      opacity: 1;
+      transition-duration: 3s;
+      transition-property: opacity;
+      @media all and (max-width: 699px) {
+        transition-delay: 0s;
+      }
+      @media all and (min-width: 700px) {
+        transition-delay: 1s;
+      }
+    }
+    h3 {
+      font-size: 30px;
+      margin: 0 0 20px 0;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        margin-bottom: 20px;
+        @media all and (max-width: 349px) {
+          flex-direction: column;
+        }
+        @media all and (min-width: 350px) {
+          flex-direction: row;
+        }
+        .list_indicator {
+          background-color: @unblue;
+          border-radius: 50%;
+          display: inline-block;
+          font-size: 30px;
+          font-weight: 700;
+          height: 50px;
+          color: #fff;
+          line-height: 50px;
+          margin-right: 10px;
+          text-align: center;
+          width: 50px;
+          @media all and (max-width: 991px) {
+            margin-bottom: 5px;
+          }
+          @media all and (min-width: 992px) {
+            margin-right: 10px;
+          }
+        }
+        .list_text {
+          width: calc(100% - 50px);
+          font-size: 20px;
+          line-height: 26px;
+          list-style-type: none;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
   .footer_container {
     background-color: #000;
     padding: 30px 0;
