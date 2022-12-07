@@ -356,13 +356,6 @@ function App() {
                     </p>
                   )}
                 </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
-                    </p>
-                  )}
-                </IsVisible>
               </div>
             </div>
             <div className="right_column">
