@@ -336,7 +336,7 @@ function LineChart({
         labels: {
           formatter() {
             // eslint-disable-next-line react/no-this-in-sfc
-            return (allow_decimals) ? this.value.toFixed(2) : this.value;
+            return (allow_decimals) ? this.value.toFixed(2).toLocaleString('en-US') : this.value.toLocaleString('en-US');
           },
           step: ystep,
           style: {

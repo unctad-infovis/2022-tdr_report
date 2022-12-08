@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { transpose } from 'csv-transpose';
+
 // Load helpers.
 import CSVtoJSON from '../helpers/CSVtoJSON.js';
 import ChartLine from '../charts/ChartLine.jsx';
@@ -15,7 +17,7 @@ function Figure3_15e() {
   }));
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_3_09.csv`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/data/2022-tdr_report_figure_3_15e.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -24,7 +26,7 @@ function Figure3_15e() {
           }
           return response.text();
         })
-        .then(body => setDataFigure(cleanData(CSVtoJSON(body))));
+        .then(body => setDataFigure(cleanData(CSVtoJSON(transpose(body)))));
     } catch (error) {
       console.error(error);
     }
@@ -34,15 +36,15 @@ function Figure3_15e() {
     <div>
       {dataFigure && (
       <ChartLine
+        allow_decimals={false}
         data={dataFigure}
         data_decimals={0}
         idx="3_15e"
         labels={false}
         note="Global environmental outcomes in two simulated scenarios"
-        show_only_first_and_last_labels
         source=" UNCTAD secretariat calculations based on United Nations Global Policy Model"
         subtitle="Projected emissions for business-as-usual scenario vs. South-led low-carbon transition, billion tons, annual average, 1990–2030"
-        tick_interval={1}
+        tick_interval={5}
         title="CO2 emissions: The South-South cooperation effect"
         xlabel=""
       />

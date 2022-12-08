@@ -9,8 +9,12 @@ function Figure1_10() {
   const [dataFigure, setDataFigure] = useState(false);
 
   const cleanData = (data) => data.map(el => ({
-    data: Object.values(el).map(val => parseFloat(val)).filter(val => !Number.isNaN(val)),
-    labels: Object.keys(el).filter(val => val !== 'Name'),
+    data: Object.values(el).map((e, j) => ({
+      color: (Object.keys(el).filter(val => !Number.isNaN(val))[j] === 'Euro area') ? '#004987' : '#009edb',
+      name: Object.keys(el).filter(val => !Number.isNaN(val))[j],
+      y: parseFloat(e),
+    })),
+    labels: Object.keys(el).filter(val => !Number.isNaN(val)),
     name: el.Name
   }));
 
