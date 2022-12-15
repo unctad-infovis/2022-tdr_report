@@ -5,7 +5,7 @@ function PhotoHeadline({
   img, max_width, text_lower, text_upper
 }) {
   return (
-    <div className="photo_headline_container" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backgroundImage: `url(${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/${img})` }}>
+    <div className="photo_headline_container" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backgroundImage: `url(${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/${img})` }}>
       <div className="photo_headline_content">
         <div className="photo_headlines">
           <h2 className="" style={{ maxWidth: max_width }}>{text_upper}</h2>
