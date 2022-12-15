@@ -333,26 +333,42 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <p>As economic pressures build, South-South cooperation could help developing countries pursue climate mitigation and sustainable development.</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      UNCTAD simulated a South-led low-carbon transition based on increased coordination and cooperation between developing economies on industrial policy, investment, finance and agriculture. Under this scenario, UNCTAD’s Global Policy Model gave the following results:
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
+                      As economic pressures build,
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>South-South cooperation could help developing countries pursue climate mitigation</span>
+                      {' '}
+                      and sustainable development.
                     </p>
                   )}
                 </IsVisible>
-                <ul>
-                  <li>Energy efficiency gains that are compatible with faster growth in the global South and long-standing development goals. </li>
-                  <li>An additional 300 million jobs worldwide could be created, with gains across all developing regions and an improved share for wages in total income. </li>
-                  <li>Growth would also pick up in developed economies, above that of the last decade, allowing for increased investment in energy transition and improved energy efficiency.  </li>
-                  <li>A decline in annual CO2 emissions to about 30 billion tons by the end of the decade, enough to escape the IPCC catastrophic global warming scenario of up to 4.5 degrees Celsius above preindustrial levels but not enough to hit the 1.5 degree target. </li>
-                </ul>
+                <p>UNCTAD simulated a South-led low-carbon transition based on increased coordination and cooperation between developing economies on industrial policy, investment, finance and agriculture. Under this scenario, UNCTAD’s Global Policy Model gave the following results:</p>
+                <IsVisible once>
+                  {(isVisible) => (
+                    <ul>
+                      <li>Energy efficiency gains that are compatible with faster growth in the global South and long-standing development goals. </li>
+                      <li>
+                        <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>An additional 300 million jobs worldwide could be created</span>
+                        , with gains across all developing regions and an improved share for wages in total income.
+                        {' '}
+                      </li>
+                      <li>Growth would also pick up in developed economies, above that of the last decade, allowing for increased investment in energy transition and improved energy efficiency.  </li>
+                      <li>
+                        <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>A decline in annual CO2 emissions to about 30 billion tons</span>
+                        {' '}
+                        by the end of the decade, enough to escape the IPCC catastrophic global warming scenario of up to 4.5 degrees Celsius above preindustrial levels but not enough to hit the 1.5 degree target.
+                        {' '}
+                      </li>
+                    </ul>
+                  )}
+                </IsVisible>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      However, scaling up this strategy requires an effective multilateral system that gives developing countries the necessary policy space and financial support.
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>highlight</span>
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>However, scaling up this strategy requires an effective multilateral system</span>
+                      {' '}
+                      that gives developing countries the necessary policy space and financial support.
                     </p>
                   )}
                 </IsVisible>
