@@ -43,7 +43,12 @@ function Footer() {
             <h3>Podcasts</h3>
             <p>Listen to the Weekly Tradecast episodes that explore some of the main issues in the report</p>
             <div className="iframe_container">
+              <iframe title="The Weekly Tradecast by UNCTAD" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=wngdm-137c3c0-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
+              <span className="text"><a href="/podcast/multinational-manoeuvres-how-rule-shopping-big-companies-dilutes-development">Multinational manoeuvres</a></span>
+              <br />
+              <br />
               <iframe title="The Weekly Tradecast by UNCTAD" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=k45e8-12db012-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
+              <span className="text"><a href="/podcast/changing-course-shift-policies-needed-avert-global-recession">Changing course</a></span>
             </div>
             <ul className="podcasts_container">
               <li>
