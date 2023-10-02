@@ -338,6 +338,7 @@ function App() {
                   {(isVisible) => (
                     <p>
                       As economic pressures build,
+                      {' '}
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>South-South cooperation could help developing countries pursue climate mitigation</span>
                       {' '}
                       and sustainable development.
