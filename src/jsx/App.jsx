@@ -130,7 +130,7 @@ function App() {
     <div className="app" ref={appRef}>
       <Video />
       <PageNavigation appRef={appRef} />
-      <div className="download_button"><a href="https://unctad.org/tdr2023">See the Trade and Development Report 2023</a></div>
+      {/*<div className="download_button"><a href="https://unctad.org/tdr2023">See the Trade and Development Report 2023</a></div>*/}
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
