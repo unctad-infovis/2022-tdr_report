@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  useState, useEffect, useRef, useCallback
+} from 'react';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
@@ -74,35 +76,35 @@ function App() {
   useEffect(() => {
     if (section1Progress === 100 && section1Seen === false) {
       setSection1Seen(true);
-      track('Scroll', 'Section 1')
+      track('Scroll', 'Section 1');
     }
   }, [section1Progress, section1Seen, track]);
 
   useEffect(() => {
     if (section2Progress === 100 && section2Seen === false) {
       setSection2Seen(true);
-      track('Scroll', 'Section 2')
+      track('Scroll', 'Section 2');
     }
   }, [section2Progress, section2Seen, track]);
 
   useEffect(() => {
     if (section3Progress === 100 && section3Seen === false) {
       setSection3Seen(true);
-      track('Scroll', 'Section 3')
+      track('Scroll', 'Section 3');
     }
   }, [section3Progress, section3Seen, track]);
 
   useEffect(() => {
     if (section4Progress === 100 && section4Seen === false) {
       setSection4Seen(true);
-      track('Scroll', 'Section 4')
+      track('Scroll', 'Section 4');
     }
   }, [section4Progress, section4Seen, track]);
 
   useEffect(() => {
     if (section5Progress === 100 && section5Seen === false) {
       setSection5Seen(true);
-      track('Scroll', 'Section 5')
+      track('Scroll', 'Section 5');
     }
   }, [section5Progress, section5Seen, track]);
 
@@ -110,7 +112,7 @@ function App() {
     <div className="app" ref={appRef}>
       <Video />
       <PageNavigation appRef={appRef} />
-      {/*<div className="download_button"><a href="https://unctad.org/tdr2023">See the Trade and Development Report 2023</a></div>*/}
+      {/* <div className="download_button"><a href="https://unctad.org/tdr2023">See the Trade and Development Report 2023</a></div> */}
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
