@@ -1,17 +1,17 @@
-import React, { /* useState,  useEffect, useRef */ } from 'react';
-
-const analytics = window.gtag || undefined;
+import React, { /* useState,  useEffect, useRef */useCallback } from 'react';
 
 function Footer() {
-  const track = (name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', 'Press material', {
-        event_category: '2022-tdr_report',
-        event_label: name,
-        transport_type: 'beacon'
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2022-tdr_report',
+        transport_type: 'beacon',
+        value: value_event
       });
     }
-  };
+  }, [analytics]);
   return (
     <div className="footer_container">
       <h2>What do you want to do next?</h2>
@@ -105,19 +105,19 @@ function Footer() {
                 <h4>Read the global press release</h4>
                 <ul>
                   <li>
-                    <a href="/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="/press-material/unctad-warns-policy-induced-global-recession-inadequate-financial-support-leaves" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques" onClick={(event) => track(event.target.href)}>Français</a>
+                    <a href="/fr/press-material/la-cnuced-met-en-garde-contre-une-recession-mondiale-induite-par-les-politiques" onClick={(event) => track('Anchor', event.target.href)}>Français</a>
                     {', '}
-                    <a href="/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de" onClick={(event) => track(event.target.href)}>Español</a>
+                    <a href="/es/press-material/la-unctad-advierte-de-una-ralentizacion-mundial-provocada-por-los-ajustes-de" onClick={(event) => track('Anchor', event.target.href)}>Español</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22014.Rev_.1_ar_TDR22_Final.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                    <a href="/system/files/press-material/PR22014.Rev_.1_ar_TDR22_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>العربية</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22014_Rev.1_ch_TDR22.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
+                    <a href="/system/files/press-material/PR22014_Rev.1_ch_TDR22.pdf" onClick={(event) => track('Anchor', event.target.href)}>简体中文</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22014.Rev_.1_ru_TDR22_Final.pdf" onClick={(event) => track(event.target.href)}>Русский</a>
+                    <a href="/system/files/press-material/PR22014.Rev_.1_ru_TDR22_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>Русский</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22014.Rev_.1_pt_TDR22_Final.pdf" onClick={(event) => track(event.target.href)}>Português</a>
+                    <a href="/system/files/press-material/PR22014.Rev_.1_pt_TDR22_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>Português</a>
                   </li>
                 </ul>
               </li>
@@ -126,9 +126,9 @@ function Footer() {
                 Africa
                 <ul>
                   <li>
-                    <a href="/press-material/africas-economic-growth-decelerates-sharply" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="/press-material/africas-economic-growth-decelerates-sharply" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement" onClick={(event) => track(event.target.href)}>Français</a>
+                    <a href="/fr/press-material/la-croissance-economique-de-lafrique-ralentit-fortement" onClick={(event) => track('Anchor', event.target.href)}>Français</a>
                   </li>
                 </ul>
               </li>
@@ -136,9 +136,9 @@ function Footer() {
                 Latin America and the Caribbean
                 <ul>
                   <li>
-                    <a href="/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="/press-material/external-constraints-sluggish-growth-cast-long-economic-shadow-over-latin-america" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="/es/press-material/las-restricciones-externas-y-el-debil-crecimiento-ensombrecen-el-panorama-economico" onClick={(event) => track(event.target.href)}>Español</a>
+                    <a href="/es/press-material/las-restricciones-externas-y-el-debil-crecimiento-ensombrecen-el-panorama-economico" onClick={(event) => track('Anchor', event.target.href)}>Español</a>
                   </li>
                 </ul>
               </li>
@@ -146,9 +146,9 @@ function Footer() {
                 East and South-East Asia
                 <ul>
                   <li>
-                    <a href="/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="/press-material/asias-growth-decelerates-significantly-amid-deteriorating-global-conditions" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22016.Rev_.1_ch_TDR22_East_SouthEast_Asia_Final.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
+                    <a href="/system/files/press-material/PR22016.Rev_.1_ch_TDR22_East_SouthEast_Asia_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>简体中文</a>
                   </li>
                 </ul>
               </li>
@@ -156,9 +156,9 @@ function Footer() {
                 South and West Asia
                 <ul>
                   <li>
-                    <a href="/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="/press-material/global-energy-market-volatility-leading-slower-and-divergent-growth-prospects-across" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="/system/files/press-material/PR22017_ar_TDR22_South_West_Asia_final.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                    <a href="/system/files/press-material/PR22017_ar_TDR22_South_West_Asia_final.pdf" onClick={(event) => track('Anchor', event.target.href)}>العربية</a>
                   </li>
                 </ul>
               </li>
