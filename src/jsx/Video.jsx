@@ -23,7 +23,7 @@ function Video() {
       </video>
       <div className="title_container">
         <h4 className="unctad_logo">
-          <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />
+          <img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/unctad_logo_white.svg`} alt="UNCTAD logo" />
         </h4>
       </div>
     </div>
