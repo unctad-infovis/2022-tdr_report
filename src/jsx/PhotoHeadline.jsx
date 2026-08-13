@@ -2,7 +2,7 @@ import React, { /* useState, useEffect, useRef */ } from 'react';
 import PropTypes from 'prop-types';
 
 function PhotoHeadline({
-  img, max_width, text_lower, text_upper
+  img, max_width = 'auto', text_lower, text_upper
 }) {
   return (
     <div className="photo_headline_container" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backgroundImage: `url(${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-tdr_report/' : './'}assets/img/${img})` }}>
@@ -21,10 +21,6 @@ PhotoHeadline.propTypes = {
   max_width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   text_lower: PropTypes.string.isRequired,
   text_upper: PropTypes.string.isRequired
-};
-
-PhotoHeadline.defaultProps = {
-  max_width: 'auto'
 };
 
 export default PhotoHeadline;
