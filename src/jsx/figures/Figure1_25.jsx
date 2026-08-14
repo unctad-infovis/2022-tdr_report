@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 // Load helpers.
-import CSVtoJSON from './../helpers/CSVtoJSON.js';
-import ChartLine from './../charts/ChartLine.jsx';
+import CSVtoJSON from '../helpers/CSVtoJSON.js';
+import ChartLine from '../charts/ChartLine.jsx';
 
 function Figure1_25() {
   // Data states.
