@@ -4,7 +4,7 @@ import React, {
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
-import IsVisible from 'react-is-visible';
+import { useIsVisible } from 'react-is-visible';
 
 import '../styles/styles.less';
 
@@ -26,6 +26,34 @@ import Figure209b from './figures/Figure2_09b.jsx';
 import Figure315e from './figures/Figure3_15e.jsx';
 
 function App() {
+  const isVisibleRef1 = useRef();
+  const isVisible1 = useIsVisible(isVisibleRef1, { once: true });
+  const isVisibleRef2 = useRef();
+  const isVisible2 = useIsVisible(isVisibleRef2, { once: true });
+  const isVisibleRef3 = useRef();
+  const isVisible3 = useIsVisible(isVisibleRef3, { once: true });
+  const isVisibleRef4 = useRef();
+  const isVisible4 = useIsVisible(isVisibleRef4, { once: true });
+  const isVisibleRef5 = useRef();
+  const isVisible5 = useIsVisible(isVisibleRef5, { once: true });
+  const isVisibleRef6 = useRef();
+  const isVisible6 = useIsVisible(isVisibleRef6, { once: true });
+  const isVisibleRef7 = useRef();
+  const isVisible7 = useIsVisible(isVisibleRef7, { once: true });
+  const isVisibleRef8 = useRef();
+  const isVisible8 = useIsVisible(isVisibleRef8, { once: true });
+  const isVisibleRef9 = useRef();
+  const isVisible9 = useIsVisible(isVisibleRef9, { once: true });
+  const isVisibleRef10 = useRef();
+  const isVisible10 = useIsVisible(isVisibleRef10, { once: true });
+  const isVisibleRef11 = useRef();
+  const isVisible11 = useIsVisible(isVisibleRef11, { once: true });
+  const isVisibleRef12 = useRef();
+  const isVisible12 = useIsVisible(isVisibleRef12, { once: true });
+  const isVisibleRef13 = useRef();
+  const isVisible13 = useIsVisible(isVisibleRef13, { once: true });
+  const isVisibleRef14 = useRef();
+  const isVisible14 = useIsVisible(isVisibleRef14, { once: true });
   const appRef = useRef();
   const section1 = useRef();
   const section2 = useRef();
@@ -116,30 +144,22 @@ function App() {
       <div className="two_column_layout">
         <div className="left_column">
           <div className="text_container">
-            <IsVisible once>
-              {(isVisible) => (
-                <p className="ingress">
-                  The world is headed towards a global recession and prolonged stagnation
-                  {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>unless we quickly change the current policy course</span>
-                  {' '}
-                  of monetary and fiscal tightening in advanced economies.
-                </p>
-              )}
-            </IsVisible>
+            <p ref={isVisibleRef1} className="ingress">
+              The world is headed towards a global recession and prolonged stagnation
+              {' '}
+              <span className={`highlight ${(isVisible1) ? 'visible' : ''}`}>unless we quickly change the current policy course</span>
+              {' '}
+              of monetary and fiscal tightening in advanced economies.
+            </p>
             <p className="ingress">
               Supply-side shocks, waning consumer and investor confidence and the war in Ukraine have provoked a global slowdown and triggered inflationary pressures.
             </p>
-            <IsVisible once>
-              {(isVisible) => (
-                <p className="ingress">
-                  All regions will be affected, but
-                  {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>alarm bells are ringing most for developing countries</span>
-                  , many of which are edging closer to debt default. Climate stress is intensifying, with mounting loss and damage in vulnerable countries who lack the fiscal space to deal with disasters, let alone invest in their own long-term development.
-                </p>
-              )}
-            </IsVisible>
+            <p ref={isVisibleRef2} className="ingress">
+              All regions will be affected, but
+              {' '}
+              <span className={`highlight ${(isVisible2) ? 'visible' : ''}`}>alarm bells are ringing most for developing countries</span>
+              , many of which are edging closer to debt default. Climate stress is intensifying, with mounting loss and damage in vulnerable countries who lack the fiscal space to deal with disasters, let alone invest in their own long-term development.
+            </p>
           </div>
         </div>
         <div className="right_column">
@@ -153,31 +173,23 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      UNCTAD projects that
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>world economic growth will slow to 2.5% in 2022 and drop to 2.2% in 2023.</span>
-                      {' '}
-                      The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than $17 trillion – close to 20% of the world’s income.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef3}>
+                  UNCTAD projects that
+                  {' '}
+                  <span className={`highlight ${(isVisible3) ? 'visible' : ''}`}>world economic growth will slow to 2.5% in 2022 and drop to 2.2% in 2023.</span>
+                  {' '}
+                  The global slowdown would leave real GDP still below its pre-pandemic trend, costing the world more than $17 trillion – close to 20% of the world’s income.
+                </p>
                 <p>
                   Despite this, leading central banks are raising interest rates sharply, threatening to cut off growth altogether and making life much harder for heavily indebted firms, households and governments.
                 </p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The global slowdown will affect all economies. But
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>developing countries are exposed most to the cascade of debt, health and climate crises.</span>
-                      {' '}
-                      Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef4}>
+                  The global slowdown will affect all economies. But
+                  {' '}
+                  <span className={`highlight ${(isVisible4) ? 'visible' : ''}`}>developing countries are exposed most to the cascade of debt, health and climate crises.</span>
+                  {' '}
+                  Middle-income countries in Latin America and low-income countries in Africa could suffer some of the sharpest slowdowns this year.
+                </p>
                 <p>
                   The average growth rate for developing economies is projected to drop below 3% – a pace that is insufficient for sustainable development and will further squeeze public and private finances and damage employment prospects.
                 </p>
@@ -195,27 +207,19 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      With 60% of low-income countries and 30% of emerging market economies in or near debt distress, the
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>possibility of a global debt crisis is high.</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef5}>
+                  With 60% of low-income countries and 30% of emerging market economies in or near debt distress, the
+                  {' '}
+                  <span className={`highlight ${(isVisible5) ? 'visible' : ''}`}>possibility of a global debt crisis is high.</span>
+                </p>
                 <p>
                   Countries that were showing signs of debt distress before the pandemic – including Sri Lanka, Suriname and Zambia – are being hit especially hard by the global slowdown. And climate shocks are heightening the risk of economic instability in indebted developing countries.
                 </p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The situation in developing countries is worse than recognized</span>
-                      {' '}
-                      by the Group of 20 major economies (G20) and other international financial fora. Developing countries have already spent an estimated $379 billion of reserves to defend their currencies this year, almost double the amount of new Special Drawing Rights recently allocated to them by the International Monetary Fund (IMF).
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef6}>
+                  <span className={`highlight ${(isVisible6) ? 'visible' : ''}`}>The situation in developing countries is worse than recognized</span>
+                  {' '}
+                  by the Group of 20 major economies (G20) and other international financial fora. Developing countries have already spent an estimated $379 billion of reserves to defend their currencies this year, almost double the amount of new Special Drawing Rights recently allocated to them by the International Monetary Fund (IMF).
+                </p>
               </div>
               <Figure205b />
             </div>
@@ -230,27 +234,19 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Interest rate hikes by advanced economies
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>are hitting the most vulnerable hardest.</span>
-                      {' '}
-                      Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The prices of necessities like food and energy have soared in the wake of the war in Ukraine.
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>And a stronger dollar makes the situation worse</span>
-                      , raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef7}>
+                  Interest rate hikes by advanced economies
+                  {' '}
+                  <span className={`highlight ${(isVisible7) ? 'visible' : ''}`}>are hitting the most vulnerable hardest.</span>
+                  {' '}
+                  Some 90 developing countries have seen their currencies weaken against the dollar this year – over a third of them by more than 10%.
+                </p>
+                <p ref={isVisibleRef8}>
+                  The prices of necessities like food and energy have soared in the wake of the war in Ukraine.
+                  {' '}
+                  <span className={`highlight ${(isVisible8) ? 'visible' : ''}`}>And a stronger dollar makes the situation worse</span>
+                  , raising the price of imports in developing countries. The consequences are devastating for the poor across the globe, especially in a time of stagnant wages for most workers.
+                </p>
                 <p>
                   This year’s interest rate hikes in the United States, for example, could cut $360 billion of future income for developing countries (excluding China).
                 </p>
@@ -271,37 +267,25 @@ function App() {
                 <p>
                   Prices of commodities – particularly food and energy – climbed for much of the last two years, posing significant challenges for households everywhere. Added upward pressure on fertilizer prices means the damage could be lasting since it’s the top input cost for many small farmers around the world.
                 </p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Although the war in Ukraine has contributed to this situation,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>commodity markets have been in a turbulent state for a decade.</span>
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The Black Sea Grain Initiative led by the United Nations has had a significant impact in lowering global food prices. However,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>insufficient attention has been paid to the role of speculators</span>
-                      {' '}
-                      and betting frenzies in futures contracts, commodity swaps and exchange traded funds.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Also, large multinational corporations with considerable market power appear to have
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>taken undue advantage of the current context</span>
-                      {' '}
-                      to raise markups to boost profits on the backs of some of the world’s poorest people.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef9}>
+                  Although the war in Ukraine has contributed to this situation,
+                  {' '}
+                  <span className={`highlight ${(isVisible9) ? 'visible' : ''}`}>commodity markets have been in a turbulent state for a decade.</span>
+                </p>
+                <p ref={isVisibleRef10}>
+                  The Black Sea Grain Initiative led by the United Nations has had a significant impact in lowering global food prices. However,
+                  {' '}
+                  <span className={`highlight ${(isVisible10) ? 'visible' : ''}`}>insufficient attention has been paid to the role of speculators</span>
+                  {' '}
+                  and betting frenzies in futures contracts, commodity swaps and exchange traded funds.
+                </p>
+                <p ref={isVisibleRef11}>
+                  Also, large multinational corporations with considerable market power appear to have
+                  {' '}
+                  <span className={`highlight ${(isVisible11) ? 'visible' : ''}`}>taken undue advantage of the current context</span>
+                  {' '}
+                  to raise markups to boost profits on the backs of some of the world’s poorest people.
+                </p>
               </div>
               <Figure209b />
             </div>
@@ -316,46 +300,34 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      As economic pressures build,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>South-South cooperation could help developing countries pursue climate mitigation</span>
-                      {' '}
-                      and sustainable development.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={isVisibleRef12}>
+                  As economic pressures build,
+                  {' '}
+                  <span className={`highlight ${(isVisible12) ? 'visible' : ''}`}>South-South cooperation could help developing countries pursue climate mitigation</span>
+                  {' '}
+                  and sustainable development.
+                </p>
                 <p>UNCTAD simulated a South-led low-carbon transition based on increased coordination and cooperation between developing economies on industrial policy, investment, finance and agriculture. Under this scenario, UNCTAD’s Global Policy Model gave the following results:</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <ul>
-                      <li>Energy efficiency gains that are compatible with faster growth in the global South and long-standing development goals. </li>
-                      <li>
-                        <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>An additional 300 million jobs worldwide could be created</span>
-                        , with gains across all developing regions and an improved share for wages in total income.
-                        {' '}
-                      </li>
-                      <li>Growth would also pick up in developed economies, above that of the last decade, allowing for increased investment in energy transition and improved energy efficiency.  </li>
-                      <li>
-                        <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>A decline in annual CO2 emissions to about 30 billion tons</span>
-                        {' '}
-                        by the end of the decade, enough to escape the IPCC catastrophic global warming scenario of up to 4.5 degrees Celsius above preindustrial levels but not enough to hit the 1.5 degree target.
-                        {' '}
-                      </li>
-                    </ul>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>However, scaling up this strategy requires an effective multilateral system</span>
-                      {' '}
-                      that gives developing countries the necessary policy space and financial support.
-                    </p>
-                  )}
-                </IsVisible>
+                <ul ref={isVisibleRef13}>
+                  <li>Energy efficiency gains that are compatible with faster growth in the global South and long-standing development goals. </li>
+                  <li>
+                    <span className={`highlight ${(isVisible13) ? 'visible' : ''}`}>An additional 300 million jobs worldwide could be created</span>
+                    , with gains across all developing regions and an improved share for wages in total income.
+                    {' '}
+                  </li>
+                  <li>Growth would also pick up in developed economies, above that of the last decade, allowing for increased investment in energy transition and improved energy efficiency.  </li>
+                  <li>
+                    <span className={`highlight ${(isVisible13) ? 'visible' : ''}`}>A decline in annual CO2 emissions to about 30 billion tons</span>
+                    {' '}
+                    by the end of the decade, enough to escape the IPCC catastrophic global warming scenario of up to 4.5 degrees Celsius above preindustrial levels but not enough to hit the 1.5 degree target.
+                    {' '}
+                  </li>
+                </ul>
+                <p ref={isVisibleRef14}>
+                  <span className={`highlight ${(isVisible14) ? 'visible' : ''}`}>However, scaling up this strategy requires an effective multilateral system</span>
+                  {' '}
+                  that gives developing countries the necessary policy space and financial support.
+                </p>
               </div>
             </div>
             <div className="right_column">
